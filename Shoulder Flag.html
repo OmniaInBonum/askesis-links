@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para la Bandera de Hombro</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en la Bandera de Hombro (Shoulder Flag), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/shoulderflag.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-shoulderflag" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-shoulderflag" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-user-ninja mr-3 text-askesis-orange"></i>Guía de Apoyo para la Bandera de Hombro</h1>
+        <p class="guide-subtitle">Principios, Progresiones y Claves para Dominar la Shoulder Flag.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DE LA SHOULDER FLAG</h2>
+
+            <div>
+                <h3>A. Definición y Contexto</h3>
+                <p>La Bandera de Hombro (Shoulder Flag) es un ejercicio de fuerza isométrica y habilidad que se realiza comúnmente en pole dance, calistenia y artes circenses. Implica sostener el cuerpo horizontalmente, paralelo al suelo y lateral a un poste vertical, utilizando un hombro como principal punto de contacto y apoyo contra el poste, asistido por las manos.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Entender la mecánica es crucial para un entrenamiento seguro y efectivo.</p>
+                <ul>
+                    <li><strong>Puntos de Apoyo Clave:</strong>
+                        <ul>
+                            <li><strong>Hombro de Contacto:</strong> El hombro (generalmente la parte lateral/posterior del deltoides y la zona del acromion) se presiona firmemente contra el poste, actuando como un fulcro.</li>
+                            <li><strong>Mano Inferior:</strong> Usualmente la mano del mismo lado que el hombro de contacto. Empuja contra el poste para crear espacio y estabilidad, y ayuda a prevenir la rotación.</li>
+                            <li><strong>Mano Superior:</strong> La mano del lado opuesto al hombro de contacto. Generalmente agarra el poste por encima del hombro, tirando o estabilizando para controlar la parte superior del cuerpo y ayudar a la elevación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fuerzas Dominantes:</strong>
+                        <ul>
+                            <li><strong>Compresión en el Hombro:</strong> El hombro de contacto soporta una gran cantidad de presión.</li>
+                            <li><strong>Fuerza Lateral del Core:</strong> Los oblicuos y el cuadrado lumbar del lado "superior" del cuerpo (el que mira hacia arriba) trabajan intensamente para levantar y mantener las caderas y piernas.</li>
+                            <li><strong>Fuerza de Empuje (Brazo Inferior) y Tracción/Estabilización (Brazo Superior).</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong>Alineación Corporal:</strong> Una línea recta desde la cabeza hasta los pies, perpendicular al poste, es el objetivo.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Posicionamiento del Hombro ("Shoulder Wedge"):</strong>
+                        <ul>
+                            <li>Crear un "nicho" o "cuña" con el hombro es <strong>vital</strong>. El deltoides y los músculos circundantes deben estar activamente contraídos y presionados contra el poste. Esto no solo proporciona apoyo sino que también protege la articulación.</li>
+                            <li>El omóplato del hombro de contacto suele estar ligeramente protraído y elevado o en una posición neutra activa.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Posición y Acción de las Manos:</strong>
+                        <ul>
+                            <li><strong>Mano Inferior (generalmente del mismo lado):</strong> Colocada por debajo del hombro de contacto. Dedos apuntando hacia abajo o ligeramente hacia un lado. Empuja activamente para mantener el cuerpo alejado del poste en la parte inferior.</li>
+                            <li><strong>Mano Superior (generalmente del lado opuesto):</strong> Colocada por encima del hombro de contacto. Agarre firme (pronado o neutro). Puede tirar ligeramente para ayudar a elevar el cuerpo o principalmente estabilizar la posición.</li>
+                            <li>La distancia entre las manos puede variar.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación Intensa del Core Lateral:</strong>
+                        <ul>
+                            <li>Los oblicuos, el cuadrado lumbar y los glúteos mediales del lado superior del cuerpo deben contraerse poderosamente para elevar las caderas y mantenerlas alineadas con el torso y la cabeza.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mantener el Cuerpo Lateral al Poste:</strong> Evitar que el pecho o la espalda roten hacia el suelo o el techo.</li>
+                    <li><strong>Brazos:</strong> El brazo inferior estará extendido o ligeramente flexionado, empujando. El brazo superior puede estar más flexionado, tirando/estabilizando.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA LA SHOULDER FLAG</h2>
+            <p>Construir la fuerza específica y la tolerancia a la presión en el hombro es fundamental.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Fundamentales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Acondicionamiento del Hombro:</strong> Acostumbrarse a la presión. Empezar apoyando el hombro contra el poste con los pies en el suelo, inclinándose gradualmente para transferir más peso.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Core Lateral:</strong> Planchas laterales (variaciones: con elevación de pierna/cadera, con peso), windmills, suitcase carries.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Fuerza de Empuje:</strong> Flexiones (especialmente declinadas o de pica), fondos, overhead press.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Tracción:</strong> Dominadas, remos.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas de la Shoulder Flag:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Tuck Shoulder Mount / Entrada Agrupada:</strong></p>
+                    <p>Desde el suelo, posicionar el hombro y las manos. Saltar llevando las rodillas al pecho y buscando quedar con la cadera alta, cerca del poste. Esto es más una entrada que un hold, pero ayuda a encontrar la posición del hombro.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Tuck Shoulder Flag Hold (Bandera de Hombro Agrupada):</strong></p>
+                    <p>Una vez en la posición de "shoulder mount" o entrando directamente, llevar las rodillas al pecho y tratar de alejar la cadera del poste para formar una línea horizontal desde el hombro de contacto hasta la cadera. Mantener.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Advanced Tuck Shoulder Flag (Bandera de Hombro Agrupada Avanzada):</strong></p>
+                    <p>Alejar las rodillas del pecho, manteniendo un ángulo de 90 grados en cadera y rodillas. Aumenta la palanca significativamente.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. One-Leg Extended Shoulder Flag (Bandera de Hombro con una Pierna Extendida):</strong></p>
+                    <p>Extender una pierna (generalmente la superior) en línea con el torso, mientras la otra permanece flexionada. Practicar con ambas piernas para la extensión.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>5. Straddle Shoulder Flag (Bandera de Hombro con Piernas Abiertas):</strong></p>
+                    <p>Extender ambas piernas y abrirlas lateralmente (straddle). Cuanto más cerradas estén las piernas, más difícil será. Este es un paso clave.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Full Shoulder Flag (Bandera de Hombro Completa):</strong></p>
+                    <p>El cuerpo completamente recto y horizontal, desde la cabeza hasta los pies, con las piernas juntas y extendidas, lateral al poste. La forma final.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">La calidad de la "cuña" del hombro y la activación del core son cruciales. Entrena holds de máxima calidad. Pequeños micro-ajustes con las manos y el core te ayudarán a mantener el equilibrio. <strong>Asegúrate de entrenar ambos hombros</strong> para un desarrollo equilibrado.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Elevaciones Laterales de Cadera en el Suelo (Side Hip Lifts):</strong> Para fortalecer los oblicuos y glúteo medio.</li>
+                    <li><strong>Dragon Flag o Progresiones:</strong> Para fuerza general del core.</li>
+                    <li><strong>Handstand Work:</strong> Para estabilidad y fuerza general del hombro.</li>
+                    <li><strong>Rotaciones de Manguito Rotador:</strong> Para la salud del hombro.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Escuchar al Cuerpo, Paciencia y Piel</h3>
+                <p class="warning-dark">La Shoulder Flag ejerce una presión muy específica y potencialmente alta sobre la articulación del hombro y la piel. Progresa con mucha cautela. Si sientes dolor articular agudo, <strong>detente inmediatamente</strong>. La piel necesitará tiempo para acondicionarse a la presión; no fuerces demasiado al principio.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en la Shoulder Flag:</h4>
+                <ul>
+                    <li><strong>Hombro de Contacto (Apoyo Principal):</strong>
+                        <ul>
+                            <li><strong>Deltoides (Especialmente Medial y Posterior):</strong> Proporcionan el "cojín" y resisten la presión, además de abducir y estabilizar el brazo.</li>
+                            <li><strong>Músculos del Manguito Rotador (Supraspinoso, Infraespinoso, Teres Menor, Subescapular):</strong> Estabilizadores cruciales de la articulación glenohumeral bajo carga.</li>
+                            <li><strong>Serrato Anterior y Trapecio (Medio/Inferior):</strong> Estabilización escapular, creando la "plataforma" sólida del hombro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazo Inferior (Mano de Empuje):</strong>
+                        <ul>
+                            <li><strong>Tríceps Braquial:</strong> Extensión del codo para empujar.</li>
+                            <li><strong>Deltoides Anterior:</strong> Asiste en el empuje y estabilización.</li>
+                            <li><strong>Pectoral Mayor (Porción Clavicular):</strong> Ayuda en el empuje y aducción horizontal.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazo Superior (Mano de Tracción/Estabilización):</strong>
+                        <ul>
+                            <li><strong>Latissimus Dorsi (Dorsal Ancho), Teres Major:</strong> Tiran hacia abajo o estabilizan la parte superior del cuerpo.</li>
+                            <li><strong>Bíceps Braquial, Braquial:</strong> Flexión del codo y agarre.</li>
+                            <li><strong>Deltoides Posterior:</strong> Ayuda a estabilizar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core (Muy enfocado en el lado "superior" o que mira hacia arriba):</strong>
+                        <ul>
+                            <li><strong>Oblicuos (Interno y Externo):</strong> Motor principal para la flexión lateral y elevación de la cadera.</li>
+                            <li><strong>Quadratus Lumborum (QL):</strong> Asiste en la elevación de la cadera y estabilización lateral de la columna.</li>
+                            <li><strong>Transverso del Abdomen:</strong> Contribuye a la rigidez general del torso.</li>
+                            <li><strong>Erectores Espinales:</strong> Trabajan para mantener la alineación espinal.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Caderas y Piernas (Estabilizadores):</strong>
+                        <ul>
+                            <li><strong>Glúteo Medio y Menor (especialmente del lado superior):</strong> Abducción de la cadera para elevar las piernas.</li>
+                            <li><strong>Tensor Fasciae Latae (TFL):</strong> Asiste en la abducción y flexión de cadera.</li>
+                            <li><strong>Aductores (del lado inferior):</strong> Pueden ayudar a "apretar" las piernas hacia la línea media.</li>
+                            <li><strong>Cuádriceps e Isquiotibiales:</strong> Para mantener las piernas extendidas.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Plancha Lateral (Side Plank):</strong> 60 segundos por lado con excelente forma y cadera bien alta.</li>
+                    <li><strong>Side Plank con Elevaciones de Cadera:</strong> 15-20 repeticiones por lado.</li>
+                    <li><strong>Dominadas:</strong> 5-8 repeticiones estrictas.</li>
+                    <li><strong>Fondos:</strong> 10-15 repeticiones estrictas.</li>
+                    <li><strong>Buena movilidad de hombro</strong> y tolerancia a la presión. No tener lesiones previas significativas en el hombro de contacto sin rehabilitación completa.</li>
+                    <li><strong>Familiaridad con ejercicios en poste vertical</strong> si se practica pole dance (ej. varios tipos de giros, subidas básicas).</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Deslizamiento del Hombro / "Cuña" Ineficaz:</strong>
+                        <p><em>Causa:</em> Posicionamiento incorrecto del hombro, falta de presión activa, deltoides no suficientemente enganchados.
+                        <em>Corrección:</em> Experimentar con la colocación exacta del hombro. Enfocarse en "clavar" activamente el hombro en el poste. Acondicionar el hombro gradualmente.</p>
+                    </li>
+                    <li><strong>Caída de Cadera (Pérdida de la Línea Horizontal):</strong>
+                        <p><em>Causa:</em> Core lateral débil, especialmente oblicuos y QL del lado superior. Fatiga.
+                        <em>Corrección:</em> Fortalecer el core lateral con ejercicios específicos (ver sección de fortalecimiento). En los intentos, pensar en "empujar la cadera hacia el techo".</p>
+                    </li>
+                    <li><strong>Rotación del Cuerpo (Pecho hacia arriba o abajo):</strong>
+                        <p><em>Causa:</em> Desequilibrio entre el empuje de la mano inferior y la tracción/estabilización de la mano superior; core no suficientemente activado para resistir la rotación.
+                        <em>Corrección:</em> Ajustar la acción de las manos. Apretar fuertemente el core visualizando mantener el torso y caderas perfectamente laterales al poste. Filmarse para detectar.</p>
+                    </li>
+                    <li><strong>Hombro de Contacto "Pasivo" o Colapsado:</strong>
+                        <p><em>Causa:</em> No empujar activamente con el hombro hacia el poste; falta de activación de los estabilizadores escapulares.
+                        <em>Corrección:</em> Pensar en "alejar el cuerpo del poste" con el hombro de contacto, creando una plataforma sólida. Fortalecer serrato anterior y trapecio.</p>
+                    </li>
+                    <li><strong>Excesiva Flexión del Brazo de Empuje (Inferior):</strong>
+                        <p><em>Causa:</em> Falta de fuerza en el tríceps o deltoides anterior, o mala técnica.
+                        <em>Corrección:</em> Intentar mantener el brazo inferior lo más extendido posible. Fortalecer los músculos de empuje.</p>
+                    </li>
+                     <li><strong>Miedo o Incomodidad por la Presión:</strong>
+                        <p><em>Causa:</em> Sensibilidad natural de la zona del hombro a la presión, falta de aclimatación.
+                        <em>Corrección:</em> Progresión muy gradual. Empezar con holds muy cortos, o con parte del peso en los pies. La piel y los tejidos se adaptarán con el tiempo, pero no hay que forzarlo.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Importancia de la "Cuña" del Hombro y la Sinergia de Manos:</h4>
+                <p>La "cuña" no es pasiva. Es una contracción isométrica activa del deltoides y los músculos circundantes contra el poste. Esto, combinado con un fuerte empuje de la mano inferior (generalmente del mismo lado que el hombro en contacto) y una tracción o estabilización de la mano superior (opuesta), crea el sistema de palancas y soporte. Las manos trabajan en sinergia para controlar la rotación y la altura del cuerpo.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones y Piel:</h4>
+                <ul>
+                    <li><strong>Hombro de Contacto:</strong> El más crítico. Calentamiento exhaustivo. Movilidad en todos los planos. Fortalecimiento de los estabilizadores (manguito rotador, serrato, trapecio). <strong>No entrenar con dolor agudo.</strong></li>
+                    <li><strong>Muñecas y Codos:</strong> También bajo tensión. Calentamiento y fortalecimiento general.</li>
+                    <li><strong>Piel:</strong> La zona del hombro en contacto puede sufrir abrasiones o molestias al principio. Usar ropa adecuada puede ayudar. Incrementar la duración de los holds gradualmente para permitir que la piel se adapte ("skin conditioning").</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Consideraciones:</h4>
+                <ul>
+                    <li>Dada la alta demanda en el hombro, es mejor no entrenar Shoulder Flag todos los días, especialmente al principio. 2-3 sesiones por semana, enfocadas en la técnica y holds de calidad, pueden ser suficientes.</li>
+                    <li>Incluir siempre un calentamiento muy completo para los hombros antes de intentar progresiones.</li>
+                    <li>Semanas de descarga o menor intensidad son importantes para la recuperación articular.</li>
+                    <li><strong>Entrenar AMBOS LADOS</strong> es crucial para el desarrollo simétrico y para dar descanso alternativo al hombro de contacto principal.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de Asistencia y Variaciones:</h4>
+                <ul>
+                    <li><strong>Asistencia con los Pies ("Spotting"):</strong> Tener un compañero que pueda sostener ligeramente las piernas o caderas puede ayudar a encontrar la posición y el equilibrio.</li>
+                    <li><strong>Barra más Baja / Empezar desde el Suelo:</strong> Practicar la entrada (kick-up) a las progresiones desde una altura que permita que los pies toquen el suelo si se pierde el equilibrio.</li>
+                    <li><strong>Bandas de Resistencia:</strong> Pueden ser difíciles de configurar para este movimiento, pero si se logra pasar una banda por las caderas y anclarla al poste de forma segura, podría ofrecer algo de asistencia.</li>
+                    <li><strong>Superficie del Poste:</strong> El material y diámetro del poste pueden afectar el agarre y la comodidad. Los postes de pole dance suelen tener un diámetro específico para un buen agarre.</li>
+                </ul>
+                <p class="tip-dark"><strong>Entrada (Mount):</strong> Para el Shoulder Flag, una entrada común es el "shoulder mount", donde se salta o se invierte para colocar el hombro. Dominar una entrada limpia y controlada es un paso importante hacia el hold.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
