@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Front Lever</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Front Lever, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('https://placehold.co/1200x800/121212/F58220?text=Front+Lever+Askesis&font=roboto') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange);
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green);
+        }
+        .guide-section h3 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green);
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange);
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-book-open mr-3 text-askesis-orange"></i>Guía de Apoyo para el Front Lever</h1>
+        <p class="guide-subtitle">Principios, Progresiones y Consejos Clave para Conquistar este Elemento Avanzado.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section">
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL FRONT LEVER</h2>
+
+            <div>
+                <h3>A. Definición y Origen</h3>
+                <p>El Front Lever es un impresionante ejercicio de fuerza estática originado en la gimnasia y popularizado en la calistenia. Consiste en mantener el cuerpo completamente horizontal, paralelo al suelo pero mirando hacia arriba, soportado únicamente por las manos agarradas a una barra (o anillas), con los brazos totalmente extendidos y el cuerpo formando una línea recta desde los hombros hasta los pies.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Comprender la biomecánica es crucial para un entrenamiento efectivo y para entender la dificultad del ejercicio.</p>
+                <ul>
+                    <li><strong>Sistema de Palancas:</strong>
+                        <ul>
+                            <li><strong>Punto de Apoyo (Fulcro):</strong> Las manos en la barra/anillas.</li>
+                            <li><strong>Resistencia:</strong> El peso de todo el cuerpo (torso, cadera, piernas) que la gravedad intenta tirar hacia abajo.</li>
+                            <li><strong>Fuerza:</strong> Generada principalmente por la musculatura de la espalda (dorsales, redondos), hombros (deltoides posterior), y una inmensa activación del core para mantener la horizontalidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Impacto de las Proporciones Corporales:</strong>
+                        <ul>
+                            <li>Personas con un torso y piernas más largas tendrán una palanca de resistencia mayor, haciendo el ejercicio más difícil.</li>
+                            <li>Individuos más compactos o con un torso relativamente corto y piernas más ligeras pueden tener una ventaja biomecánica.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Tipo de Agarre y Anchura:</strong>
+                        <ul>
+                            <li><strong>Pronado (Overhand Grip):</strong> Es el agarre estándar y más común. Los pulgares pueden estar por encima o por debajo de la barra.</li>
+                            <li><strong>Agarre Neutro (Hammer Grip) o Supino (Underhand Grip):</strong> Menos comunes para el Front Lever puro, pueden cambiar la implicación muscular y la dificultad.</li>
+                            <li><strong>Anchura:</strong> Generalmente a la anchura de los hombros o ligeramente más ancho. Un agarre muy ancho o muy estrecho puede aumentar la dificultad o el estrés articular.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Posición Escapular: </strong>
+                        <ul>
+                            <li><strong>Retracción y Depresión:</strong> Es <strong>fundamental</strong>. Las escápulas (omóplatos) deben estar activamente retraídas (juntas hacia la columna) y deprimidas (empujadas hacia abajo, alejadas de las orejas). Esto crea una base sólida y activa la musculatura de la espalda de manera óptima.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación del Core y Cadera:</strong>
+                        <ul>
+                            <li><strong>Core Fuerte:</strong> Abdominales, oblicuos y lumbares deben estar fuertemente contraídos para evitar que la cadera caiga (hip sag), lo cual es un error común que rompe la línea horizontal.</li>
+                            <li><strong>Retroversión Pélvica (Posterior Pelvic Tilt - PPT):</strong> A menudo ayuda a activar mejor los glúteos y el core, manteniendo una línea recta y evitando la hiperextensión lumbar. Consiste en "meter la cola".</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos Rectos:</strong> Los codos deben estar completamente bloqueados durante todo el ejercicio. Doblar los brazos convierte el ejercicio en una variación diferente y menos exigente.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>II. PROGRESIONES HACIA EL FRONT LEVER</h2>
+            <p>Es crucial dominar cada progresión antes de pasar a la siguiente para construir la fuerza y la técnica necesarias.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Dinámicos Iniciales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Skin the Cat / German Hangs:</strong> Para movilidad y acondicionamiento de hombros.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Ice Cream Makers (o Bodyweight Rows Invertidas Avanzadas):</strong> Transición de una posición de remo invertido a una extensión de brazos, simulando parte del movimiento.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Front Lever Raises (Elevaciones a Front Lever):</strong> Desde colgado, elevar el cuerpo en la progresión actual (tuck, advanced tuck, etc.) hasta la posición horizontal y bajar controladamente. Excelente para fuerza específica.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Isométricas (Holds):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Tuck Front Lever:</strong></p>
+                    <p>Llevar las rodillas lo más cerca posible del pecho, manteniendo la espalda y los hombros en la posición correcta (retracción y depresión escapular). El cuerpo (desde hombros a cadera) debe estar lo más horizontal posible.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Advanced Tuck Front Lever:</strong></p>
+                    <p>Alejar las rodillas del pecho, formando un ángulo de aproximadamente 90 grados entre el torso y los muslos, y entre los muslos y las tibias. Aumenta significativamente la palanca.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. One-Leg Front Lever (Front Lever a una Pierna):</strong></p>
+                    <p>Desde la posición de Advanced Tuck, extender una pierna completamente en línea con el torso, mientras la otra permanece flexionada. Practicar con ambas piernas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Straddle Front Lever (Front Lever con Piernas Abiertas):</strong></p>
+                    <p>Extender ambas piernas y abrirlas hacia los lados. Cuanto más cerradas estén las piernas, más difícil será. Esta progresión es a menudo saltada o introducida después de dominar el full front lever con una pierna o el half-lay, ya que puede ser técnicamente diferente por la apertura de cadera.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Half-Lay Front Lever (o Front Lever con rodillas a 90º):</strong></p>
+                    <p>Los muslos están en línea con el torso (horizontales), pero las rodillas están flexionadas a 90 grados. Es un paso intermedio común entre el Advanced Tuck/One-Leg y el Full Front Lever.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Full Front Lever (Front Lever Completo):</strong></p>
+                    <p>El cuerpo completamente recto y horizontal, desde los hombros hasta los pies, con las piernas juntas y extendidas. Es la forma final del ejercicio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div class="section">
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">Similar a la planche, la clave para aumentar la duración de tus holds es trabajar con <strong>máximo esfuerzo</strong>. Intenta aguantar cada repetición de tu progresión actual durante el mayor tiempo posible con buena forma. Cuando la forma empiece a romperse, termina la repetición. Esto estimula la adaptación.</p>
+            </div>
+            <div class="section">
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Dominadas (Pull-ups):</strong> Con lastre y diferentes agarres, son fundamentales para la fuerza de tracción de la espalda.</li>
+                    <li><strong>Remos Invertidos (Bodyweight Rows):</strong> Variando la inclinación y usando una sola pierna o lastre para aumentar la dificultad.</li>
+                    <li><strong>Ejercicios de Core:</strong> Dragon flags, L-sit to handstand, hanging leg raises, ab wheel.</li>
+                    <li><strong>Trabajo de Escápulas:</strong> Scapular pull-ups (retracción y depresión activa desde colgado).</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>C. Escuchar al Cuerpo y Paciencia</h3>
+                <p class="warning-dark">El Front Lever es un ejercicio avanzado que requiere mucho tiempo y dedicación. Sé paciente con tu progreso y no te saltes progresiones. Escucha a tu cuerpo: si sientes dolor (especialmente en codos u hombros), descansa y evalúa tu técnica o volumen de entrenamiento.</p>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div class="section">
+                <h4>A. Músculos Detallados Involucrados en el Front Lever:</h4>
+                <ul>
+                    <li><strong>Músculos Primarios (Motores Principales):</strong>
+                        <ul>
+                            <li><strong>Latissimus Dorsi (Dorsal Ancho):</strong> El músculo más grande de la espalda, crucial para la aducción y extensión del hombro (el movimiento de "tirar" el cuerpo hacia arriba y mantenerlo horizontal).</li>
+                            <li><strong>Teres Major (Redondo Mayor):</strong> Asiste al dorsal en la extensión y aducción del hombro.</li>
+                            <li><strong>Romboides (Mayor y Menor):</strong> Fundamentales para la retracción escapular (juntar los omóplatos).</li>
+                            <li><strong>Trapecio (Porciones Media e Inferior):</strong> Asisten en la retracción y depresión escapular.</li>
+                            <li><strong>Deltoides Posterior:</strong> Ayuda en la extensión del hombro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Músculos del Core (Estabilizadores del Tronco):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal, Oblicuos (Interno y Externo), Transverso del Abdomen:</strong> Esenciales para mantener la rigidez del torso, prevenir el arqueo lumbar (hip sag) y mantener la línea horizontal.</li>
+                            <li><strong>Erectores Espinales:</strong> Trabajan isométricamente para estabilizar la columna.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Músculos Estabilizadores y Asistentes:</strong>
+                        <ul>
+                            <li><strong>Bíceps Braquial y Braquial:</strong> Contribuyen a la flexión del codo si se permite una ligera flexión, pero en un Front Lever con brazos rectos, actúan principalmente como estabilizadores y en la supinación si se usa ese agarre.</li>
+                            <li><strong>Tríceps Braquial:</strong> Importante para mantener los codos bloqueados y extendidos.</li>
+                            <li><strong>Músculos del Antebrazo:</strong> Para la fuerza de agarre.</li>
+                            <li><strong>Pectoral Mayor (Especialmente porción esternocostal):</strong> Asiste en la aducción del hombro.</li>
+                            <li><strong>Glúteos (Mayor, Medio, Menor) e Isquiotibiales:</strong> Para mantener la extensión de la cadera y las piernas alineadas con el cuerpo.</li>
+                            <li><strong>Cuádriceps:</strong> Para mantener las rodillas extendidas.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Dominadas (Pull-ups):</strong> Al menos 10-15 repeticiones estrictas con rango completo. Algunos sugieren poder hacer dominadas con lastre (ej. +20-25% del peso corporal).</li>
+                    <li><strong>Fondos en Barra (Bar Dips) o Anillas:</strong> Fuerza general de empuje.</li>
+                    <li><strong>Remo Invertido (Bodyweight Row):</strong> Capacidad de realizar series de 15-20 repeticiones con el cuerpo paralelo al suelo.</li>
+                    <li><strong>Hanging Leg Raises (Elevaciones de Piernas Colgado):</strong> 10-15 repeticiones estrictas tocando la barra con los pies.</li>
+                    <li><strong>Dragon Flags:</strong> Poder realizar varias repeticiones con buena forma.</li>
+                    <li><strong>Control Escapular:</strong> Habilidad para realizar retracciones y depresiones escapulares activas y conscientes desde una posición colgada.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Brazos Flexionados:</strong>
+                        <p><em>Causa:</em> Falta de fuerza en los extensores del codo (tríceps) o intento de compensar la falta de fuerza en la espalda.
+                        <em>Corrección:</em> Fortalecer tríceps. Practicar progresiones más fáciles con enfoque absoluto en el bloqueo de codos. Usar bandas de asistencia para sentir la posición correcta.</p>
+                    </li>
+                    <li><strong>Hip Sag (Cadera Caída / "Banana" Invertida):</strong>
+                        <p><em>Causa:</em> Core débil, especialmente los flexores de la cadera y abdominales inferiores; glúteos no activados.
+                        <em>Corrección:</em> Fortalecer el core (hollow body holds, dragon flags, L-sits). Practicar la retroversión pélvica y la contracción activa de glúteos en progresiones más sencillas.</p>
+                    </li>
+                    <li><strong>Escápulas Protruidas o Elevadas:</strong>
+                        <p><em>Causa:</em> Falta de fuerza o conciencia en los retractores y depresores escapulares (romboides, trapecio medio/inferior).
+                        <em>Corrección:</em> Practicar "scapular pull-ups" enfocándose en la retracción y depresión. Realizar remos con énfasis en juntar las escápulas.</p>
+                    </li>
+                    <li><strong>Uso Excesivo de Impulso (Kipping):</strong>
+                        <p><em>Causa:</em> Intentar alcanzar una progresión para la cual aún no se tiene la fuerza estática.
+                        <em>Corrección:</em> Enfocarse en la entrada y salida controlada del movimiento. Trabajar en holds isométricos y negativas lentas.</p>
+                    </li>
+                    <li><strong>No mantener la línea corporal recta:</strong>
+                        <p><em>Causa:</em> Falta de tensión corporal general (glúteos, piernas, core).
+                        <em>Corrección:</em> Practicar la "tensión total del cuerpo" en el suelo (hollow body) y transferirla a las progresiones. Apretar glúteos, extender rodillas y apuntar los pies.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>D. Importancia de la Depresión Escapular:</h4>
+                <p>Además de la retracción (juntar las escápulas), la depresión escapular (empujar los hombros hacia abajo, lejos de las orejas) es vital. Esto crea espacio en la articulación del hombro, activa más eficazmente los dorsales y protege los hombros de posibles pinzamientos.</p>
+            </div>
+
+            <div class="section">
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Hombros:</strong> Además del manguito rotador, realizar ejercicios para la salud general del hombro como face pulls, YTWLs, y estiramientos para la cápsula posterior.</li>
+                    <li><strong>Codos:</strong> El "golfer's elbow" (epicondilitis medial) puede ser un problema por la tensión en los flexores del antebrazo y el tendón del bíceps. Fortalecer los extensores de la muñeca y realizar estiramientos puede ayudar a prevenirlo. Considerar el uso de agarres rotatorios (anillas) si la barra fija causa molestias.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>F. Frecuencia de Entrenamiento y Periodización:</h4>
+                <ul>
+                    <li>Para atletas avanzados, se pueden considerar microciclos con diferente énfasis: un día de holds máximos, otro día de volumen con progresiones más fáciles o dinámicas, y un día de ejercicios accesorios.</li>
+                    <li>Incluir semanas de descarga (deload) cada 4-8 semanas para permitir una recuperación completa y evitar el estancamiento o lesiones por sobreuso.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>G. Uso de Bandas de Resistencia:</h4>
+                <p>Las bandas de resistencia pueden ser una herramienta útil para el Front Lever:</p>
+                <ul>
+                    <li><strong>Asistencia:</strong> Colocar una banda alrededor de la barra y pasarla por la cadera puede ayudar a sentir la posición correcta de una progresión más avanzada y acumular tiempo bajo tensión.</li>
+                    <li><strong>Resistencia (menos común para FL, más para Planche):</strong> No tan aplicable para el hold, pero sí para ejercicios dinámicos.</li>
+                    <li>Es importante no volverse dependiente de las bandas y reducir gradualmente su asistencia.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
