@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Handstand</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Handstand (Parada de Manos), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/Handstand-kick-up.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-handstand" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-handstand" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-hands-helping mr-3 text-askesis-orange"></i>Guía de Apoyo para el Handstand</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Consejos Esenciales para la Parada de Manos.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL HANDSTAND</h2>
+
+            <div>
+                <h3>A. Definición y Origen</h3>
+                <p>El Handstand, o parada de manos, es una habilidad fundamental en disciplinas como la gimnasia, yoga, calistenia y circo. Consiste en mantener el cuerpo completamente vertical e invertido, equilibrado únicamente sobre las manos, con los brazos extendidos y el cuerpo formando una línea recta desde las manos hasta los pies.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Comprender la biomecánica es crucial para un entrenamiento efectivo y para entender los desafíos del equilibrio.</p>
+                <ul>
+                    <li><strong>Sistema de Apoyo y Equilibrio:</strong>
+                        <ul>
+                            <li><strong>Base de Soporte:</strong> Las manos en el suelo. La posición de los dedos y la distribución del peso son clave.</li>
+                            <li><strong>Centro de Masa (CdM):</strong> Debe alinearse verticalmente sobre la base de soporte. Pequeños ajustes con los dedos, muñecas y hombros controlan el CdM.</li>
+                            <li><strong>Fuerza de Reacción del Suelo:</strong> Generada por el empuje activo de hombros y brazos para mantener la altura y estabilidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Impacto de la Alineación Corporal:</strong>
+                        <ul>
+                            <li>Una línea corporal recta (tobillos, rodillas, caderas, hombros, muñecas apilados) es la forma más eficiente y estable.</li>
+                            <li>Una "banana back" (hiperextensión lumbar) es un desequilibrio común que compromete la eficiencia y puede causar estrés en la espalda baja.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Posición de las Manos y Dedos:</strong>
+                        <ul>
+                            <li><strong>Anchura:</strong> Generalmente a la anchura de los hombros o ligeramente más ancho.</li>
+                            <li><strong>Dedos:</strong> Bien abiertos, con el dedo índice apuntando hacia adelante o ligeramente hacia afuera. El peso se distribuye por toda la palma y los dedos, usándolos activamente para el equilibrio.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Posición Escapular y de Hombros:</strong>
+                        <ul>
+                            <li><strong>Elevación y Protracción Ligera:</strong> Es <strong>fundamental</strong>. Los hombros deben estar activos, "empujando el suelo lejos" (elevación), llevando las escápulas hacia las orejas y ligeramente hacia adelante (protracción). Esto crea una plataforma estable y fuerte, evitando "colapsar" en los hombros.</li>
+                            <li><strong>Hombros Abiertos:</strong> Flexión completa del hombro (180 grados) es necesaria para una línea vertical.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación del Core y Cadera:</strong>
+                        <ul>
+                            <li><strong>Core Fuerte:</strong> Abdominales, oblicuos y lumbares deben estar fuertemente contraídos para mantener una línea recta y evitar la "banana back".</li>
+                            <li><strong>Retroversión Pélvica (Posterior Pelvic Tilt - PPT):</strong> A menudo ayuda a activar mejor los glúteos y el core, manteniendo una línea recta y protegiendo la lumbar. Consiste en "meter la cola" y apretar los glúteos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos Rectos:</strong> Los codos deben estar completamente bloqueados durante todo el ejercicio. Doblar los brazos reduce la estabilidad y la eficiencia.</li>
+                    <li><strong>Posición de la Cabeza y Mirada:</strong>
+                        <ul>
+                            <li><strong>Posición Neutra:</strong> Idealmente, la cabeza está en una posición neutra, con las orejas entre los bíceps.</li>
+                            <li><strong>Mirada:</strong> Generalmente entre las manos o ligeramente por delante. Evitar mirar excesivamente hacia las manos (hiperextensión del cuello) o hacia los pies.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL HANDSTAND LIBRE</h2>
+            <p>Es crucial dominar cada progresión y desarrollar la fuerza y conciencia corporal necesarias antes de avanzar.</p>
+
+            <div>
+                <h3>A. Preparación y Acondicionamiento:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Movilidad de Muñecas y Hombros:</strong> Crucial para evitar lesiones y alcanzar la posición correcta. Incluir círculos, estiramientos de flexores/extensores de muñeca, y ejercicios de apertura de hombros (ej. dislocaciones con banda, passthroughs).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Core:</strong> Hollow body holds, L-sits, planchas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Fuerza de Empuje de Hombros:</strong> Pike push-ups, flexiones declinadas, overhead press.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas (Con y Sin Pared):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Wall Walks (Caminatas por la Pared):</strong></p>
+                    <p>Comenzar en posición de plancha con los pies en la pared, caminar con las manos hacia la pared y con los pies hacia arriba, hasta que el pecho esté cerca o tocando la pared. Bajar controladamente. Desarrolla fuerza y confianza en inversión.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Chest-to-Wall Handstand (Parada de Manos de Pecho a la Pared):</strong></p>
+                    <p>Subir a la posición de Wall Walk y mantenerla. Enfocarse en la línea recta, hombros elevados y empujando, core apretado. Permite trabajar la resistencia y la forma correcta.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Back-to-Wall Handstand (Parada de Manos de Espalda a la Pared - Kick-ups):</strong></p>
+                    <p>Patear hacia la pared para llegar a la parada de manos. Usar la pared como "seguro". Practicar el control de la patada y el equilibrio, intentando despegar los talones de la pared por breves momentos.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Intentos de Handstand Libre (Freestanding Attempts):</strong></p>
+                    <p>Patear hacia el handstand sin pared o separándose gradualmente de ella. Enfocarse en encontrar el punto de equilibrio. Aprender a caer de forma segura (pirueta o rueda lateral) es importante.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Variaciones para el Equilibrio (si se tiene la fuerza pero falta equilibrio):</strong></p>
+                    <p>Tuck Handstand (rodillas al pecho), Straddle Handstand (piernas abiertas). Estas variaciones bajan el centro de masa y pueden ser más fáciles de equilibrar inicialmente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Straight Handstand (Parada de Manos Recta Libre):</strong></p>
+                    <p>El cuerpo completamente recto y vertical, desde las manos hasta los pies. Es la forma final del handstand básico.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">La consistencia es clave. Practica holds de calidad con <strong>máximo enfoque en la forma</strong>. Entrar, encontrar el equilibrio y mantener. Al principio, incluso unos pocos segundos son un logro. Grábate para autocorregir la forma.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Handstand contra la pared (Chest-to-Wall):</strong> Para construir resistencia y perfeccionar la línea.</li>
+                    <li><strong>Pike Push-ups y Handstand Push-ups (HSPU) (asistidos o libres):</strong> Para fuerza de hombros y tríceps.</li>
+                    <li><strong>Ejercicios de Core:</strong> Hollow body rocks, dragon flags, toe-to-bar.</li>
+                    <li><strong>Trabajo de Hombros y Escápulas:</strong> Scapular push-ups, wall slides (para serratus anterior), face pulls.</li>
+                    <li><strong>Entradas y Salidas:</strong> Practicar diferentes entradas (kick-up, tuck-up, straddle-up, press - más avanzado) y salidas seguras.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Escuchar al Cuerpo y Paciencia</h3>
+                <p class="warning-dark">El Handstand requiere paciencia, consistencia y mucha práctica. El progreso no es lineal. Escucha a tu cuerpo: si sientes dolor (especialmente en muñecas, codos u hombros), descansa, evalúa tu técnica y asegúrate de estar calentando adecuadamente.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el Handstand:</h4>
+                <ul>
+                    <li><strong>Músculos Primarios (Soporte y Empuje):</strong>
+                        <ul>
+                            <li><strong>Deltoides (Anterior y Medial):</strong> Principal motor para la flexión y abducción del hombro, sosteniendo el peso del cuerpo.</li>
+                            <li><strong>Tríceps Braquial:</strong> Extiende el codo, crucial para mantener los brazos bloqueados.</li>
+                            <li><strong>Trapecio (Porciones Superior y Media):</strong> Eleva y rota hacia arriba las escápulas.</li>
+                            <li><strong>Serratus Anterior:</strong> Protrae y rota hacia arriba la escápula, esencial para "empujar" y estabilizar los hombros.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Músculos del Core (Estabilizadores del Tronco):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal, Oblicuos (Interno y Externo), Transverso del Abdomen:</strong> Mantienen la rigidez del torso, previenen la hiperextensión lumbar ("banana back") y contribuyen a la línea recta.</li>
+                            <li><strong>Erectores Espinales:</strong> Trabajan isométricamente para estabilizar la columna en conjunción con los abdominales.</li>
+                            <li><strong>Glúteos (Mayor, Medio, Menor):</strong> Ayudan a mantener la extensión de la cadera y la retroversión pélvica.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Músculos Estabilizadores y de Ajuste Fino:</strong>
+                        <ul>
+                            <li><strong>Músculos del Manguito Rotador:</strong> Estabilizan la articulación del hombro.</li>
+                            <li><strong>Músculos del Antebrazo (Flexores y Extensores de la Muñeca y Dedos):</strong> Cruciales para el agarre, la distribución del peso en las manos y los microajustes para el equilibrio.</li>
+                            <li><strong>Pectoral Mayor (Porción Clavicular):</strong> Asiste en la flexión del hombro.</li>
+                            <li><strong>Cuádriceps e Isquiotibiales:</strong> Mantienen las piernas extendidas y juntas, contribuyendo a la línea general.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Chest-to-Wall Handstand:</strong> Al menos 30-60 segundos con buena forma (línea recta, hombros activos).</li>
+                    <li><strong>Pike Push-ups:</strong> 10-15 repeticiones con buena forma y rango de movimiento.</li>
+                    <li><strong>Hollow Body Hold:</strong> 30-60 segundos manteniendo la zona lumbar pegada al suelo.</li>
+                    <li><strong>Movilidad de Muñecas:</strong> Capacidad de extender la muñeca a 90 grados sin dolor.</li>
+                    <li><strong>Movilidad de Hombros:</strong> Capacidad de alcanzar 180 grados de flexión de hombro (brazos junto a las orejas) sin compensación lumbar.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Banana Back (Hiperextensión Lumbar):</strong>
+                        <p><em>Causa:</em> Core débil, falta de activación de glúteos, intento de encontrar equilibrio compensando con la espalda, hombros no suficientemente abiertos.
+                        <em>Corrección:</em> Fortalecer el core (hollow body, PPT). Practicar Chest-to-Wall HS enfocándose en apretar glúteos y llevar el pubis hacia el ombligo. Mejorar la apertura de hombros.</p>
+                    </li>
+                    <li><strong>Brazos Flexionados:</strong>
+                        <p><em>Causa:</em> Falta de fuerza en tríceps y hombros, o hábito de no bloquear los codos.
+                        <em>Corrección:</em> Fortalecer tríceps y hombros (pike push-ups, dips). Practicar activamente el bloqueo de codos en progresiones más fáciles y en el suelo (ej. plancha alta).</p>
+                    </li>
+                    <li><strong>Hombros "Hundidos" (Escápulas no Elevadas/Protruidas):</strong>
+                        <p><em>Causa:</em> Falta de fuerza o conciencia en el serratus anterior y trapecio superior; no "empujar" activamente el suelo.
+                        <em>Corrección:</em> Practicar "scapular push-ups" y elevaciones escapulares. En el HS, pensar en "alejar el suelo" o "crecer alto" a través de los hombros.</p>
+                    </li>
+                    <li><strong>Mirada Incorrecta / Posición de la Cabeza:</strong>
+                        <p><em>Causa:</em> Mirar demasiado a las manos puede llevar a una extensión excesiva del cuello y contribuir a la banana back. Mirar demasiado hacia el pecho puede dificultar el equilibrio.
+                        <em>Corrección:</em> Practicar con la cabeza en posición neutra (orejas entre los bíceps), mirando a un punto en el suelo entre las manos o ligeramente por delante.</p>
+                    </li>
+                    <li><strong>Excesiva Dependencia de la Pared:</strong>
+                        <p><em>Causa:</em> Miedo a caer, falta de práctica en equilibrio libre.
+                        <em>Corrección:</em> Reducir gradualmente el apoyo de la pared. Practicar kick-ups con menos fuerza para no golpear la pared. Aprender salidas seguras (bail-outs) como la pirueta o la rueda lateral.</p>
+                    </li>
+                     <li><strong>Dedos Pasivos:</strong>
+                        <p><em>Causa:</em> No utilizar activamente los dedos para el equilibrio.
+                        <em>Corrección:</em> Practicar el "agarre del suelo" con los dedos, presionándolos para corregir pequeños desequilibrios hacia adelante (presionar con yemas) o hacia atrás (presionar con base de la palma).</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. Importancia de la Elevación y Protracción Escapular:</h4>
+                <p>La elevación (encoger los hombros hacia las orejas) y una ligera protracción (llevar los omóplatos alrededor de la caja torácica, como en la parte alta de una flexión) son vitales. Esto estabiliza la cintura escapular, permite una transferencia de fuerza más eficiente desde el suelo a través del cuerpo y protege las articulaciones del hombro. Es la base de un "empuje" fuerte y activo.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> Son la base. Realizar calentamientos específicos (círculos, estiramientos de flexores y extensores), y fortalecerlas gradualmente. Considerar el uso de paralelas (parallettes) si las muñecas son un punto débil o si hay dolor, ya que mantienen la muñeca en posición neutra.</li>
+                    <li><strong>Hombros:</strong> Además de la fuerza, la movilidad es clave. Trabajar la flexión completa del hombro y la rotación externa. Ejercicios como dislocaciones de hombro con banda, wall slides, y YTWLs son beneficiosos.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Periodización:</h4>
+                <ul>
+                    <li><strong>Práctica de Habilidad (Equilibrio):</strong> Puede hacerse con alta frecuencia (incluso diariamente) en sesiones cortas, ya que es neurológicamente demandante pero no tanto muscularmente (para holds cortos).</li>
+                    <li><strong>Entrenamiento de Fuerza:</strong> 2-3 veces por semana para ejercicios como HSPU, pike push-ups, o holds de máxima duración contra la pared.</li>
+                    <li>Incluir semanas de descarga (deload) cada 4-8 semanas para permitir la recuperación y evitar el sobreentrenamiento, especialmente de las muñecas y hombros.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de la Pared como Herramienta (No como Muleta):</h4>
+                <p>La pared es una excelente herramienta para:</p>
+                <ul>
+                    <li><strong>Alinear el Cuerpo:</strong> El Chest-to-Wall HS es ideal para sentir la línea recta y la activación muscular correcta.</li>
+                    <li><strong>Desarrollar Resistencia:</strong> Permite acumular tiempo en inversión sin la complejidad del equilibrio.</li>
+                    <li><strong>Practicar Entradas:</strong> El Back-to-Wall HS ayuda a calibrar la fuerza del kick-up.</li>
+                    <li><strong>Objetivo:</strong> Usar la pared para construir las bases, y luego reducir gradualmente su uso a medida que mejora el equilibrio y la confianza en el handstand libre.</li>
+                </ul>
+                <p class="tip-dark"><strong>Aprender a Caer (Bail Out):</strong> Antes de practicar libremente, aprende a salir de forma segura. Las opciones comunes son la pirueta (girar el cuerpo y caer de pie) o una rueda lateral. Esto reduce el miedo a caer y previene lesiones.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
