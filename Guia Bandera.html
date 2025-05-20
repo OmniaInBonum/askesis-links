@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para la Bandera Humana</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en la Bandera Humana (Human Flag), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/humanflag.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-humanflag" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-humanflag" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-flag mr-3 text-askesis-orange"></i>Guía de Apoyo para la Bandera Humana</h1>
+        <p class="guide-subtitle">Principios, Progresiones y Claves para Dominar este Desafiante Elemento de Fuerza.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DE LA HUMAN FLAG</h2>
+
+            <div>
+                <h3>A. Definición y Origen</h3>
+                <p>La Bandera Humana (Human Flag) es una espectacular demostración de fuerza y control corporal, popularizada en la calistenia, el street workout, el pole dance y las artes circenses. Consiste en sujetar un poste vertical (o estructura similar) con ambas manos y mantener el cuerpo completamente horizontal y lateral al poste, flotando paralelo al suelo, con el cuerpo formando una línea recta desde la cabeza hasta los pies.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Comprender la biomecánica es vital para un entrenamiento efectivo y para entender la enorme dificultad del ejercicio.</p>
+                <ul>
+                    <li><strong>Sistema de Palancas y Fuerzas Opositoras:</strong>
+                        <ul>
+                            <li><strong>Puntos de Apoyo:</strong> Las manos en el poste. La mano superior generalmente tira, mientras que la mano inferior empuja.</li>
+                            <li><strong>Fuerza de Torsión/Cizallamiento:</strong> El cuerpo intenta rotar hacia abajo debido a la gravedad. Esta fuerza debe ser contrarrestada por una inmensa activación de la musculatura lateral del core y los estabilizadores de hombro.</li>
+                            <li><strong>Mano Superior (Tracción):</strong> Actúa como un gancho, tirando del poste para elevar la parte superior del cuerpo.</li>
+                            <li><strong>Mano Inferior (Empuje):</strong> Empuja contra el poste para alejar la parte inferior del cuerpo y crear el contrapeso necesario.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Impacto de la Anchura del Agarre y Proporciones:</strong>
+                        <ul>
+                            <li>Un agarre más ancho generalmente proporciona más palanca, pero requiere más fuerza y estabilidad en los hombros.</li>
+                            <li>Personas con un torso y piernas más largas tendrán una palanca de resistencia mayor, haciendo el ejercicio más difícil.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Tipo de Agarre y Anchura:</strong>
+                        <ul>
+                            <li><strong>Mano Superior:</strong> Generalmente agarre pronado (overhand grip).</li>
+                            <li><strong>Mano Inferior:</strong> Puede ser supino (underhand grip), neutro (si la estructura lo permite) o incluso pronado (más difícil para la muñeca). El agarre supino suele ser el más común para la mano de empuje.</li>
+                            <li><strong>Anchura:</strong> Usualmente más ancho que los hombros. La distancia óptima varía, pero un buen punto de partida es agarrar el poste de manera que los brazos formen un ángulo cercano a 90 grados entre sí al intentar la bandera, o de forma que el brazo inferior quede casi vertical al poste.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Acción de Hombros y Escápulas: </strong>
+                        <ul>
+                            <li><strong>Mano Superior (Tracción):</strong> El hombro está en aducción y extensión. La escápula debe estar deprimida y retraída (empujada hacia abajo y hacia la columna).</li>
+                            <li><strong>Mano Inferior (Empuje):</strong> El hombro está en abducción y flexión. La escápula debe estar protraída y ligeramente elevada (empujando activamente lejos del poste). Esto es <strong>fundamental</strong> para la estabilidad.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación del Core Lateral y Cadera:</strong>
+                        <ul>
+                            <li><strong>Core Lateral (Oblicuos, QL):</strong> Una contracción masiva de los músculos laterales del torso (especialmente del lado superior del cuerpo, más cercano al poste) es crucial para levantar y mantener las caderas y piernas en línea horizontal.</li>
+                            <li><strong>Glúteos (Medio y Menor):</strong> Ayudan en la abducción y estabilización de la cadera.</li>
+                            <li><strong>Alineación:</strong> El cuerpo debe estar en un plano lateral al poste, evitando la torsión o "banana" hacia adelante o atrás.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos Extendidos:</strong> Ambos brazos deben estar lo más rectos posible. El brazo inferior especialmente debe estar bloqueado para un empuje eficiente.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA LA HUMAN FLAG</h2>
+            <p>Dominar cada progresión es vital para construir la fuerza unilateral y la coordinación requeridas.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Fundamentales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Tracción Unilateral:</strong> Dominadas con agarre ancho, dominadas de arquero (archer pull-ups), intentos de dominada a una mano.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Empuje Unilateral:</strong> Flexiones de arquero (archer push-ups), flexiones a una mano, fondos en pica (pike push-ups), handstand push-ups (HSPU) o sus progresiones.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Fuerza del Core Lateral:</strong> Planchas laterales (con elevación de cadera o pierna), human flag "negatives" (bajadas controladas), windshield wipers, dragon flags.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Support Holds en Poste (Pies en el Suelo):</strong> Sujetar el poste en la posición de bandera, pies en el suelo, cuerpo vertical, y practicar la sensación de "empujar y tirar" simultáneamente. Inclinar el cuerpo gradualmente.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Isométricas (Holds):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Chamber Hold / Vertical Flag (Bandera Vertical):</strong></p>
+                    <p>Desde un agarre firme, saltar o elevar las piernas para que el cuerpo quede vertical contra el poste, con las rodillas hacia el pecho o piernas extendidas. Aprender el push-pull.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Tuck Human Flag (Bandera Agrupada):</strong></p>
+                    <p>Intentar llevar las caderas a la altura de los hombros, manteniendo las rodillas lo más cerca posible del pecho. La espalda puede estar ligeramente redondeada.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Advanced Tuck Human Flag (Bandera Agrupada Avanzada):</strong></p>
+                    <p>Alejar las rodillas del pecho, formando un ángulo de aproximadamente 90 grados entre el torso y los muslos, y entre los muslos y las tibias.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Straddle Human Flag (Bandera con Piernas Abiertas):</strong></p>
+                    <p>Extender ambas piernas y abrirlas hacia los lados (en straddle). Cuanto más cerradas estén las piernas, más difícil será. Es un paso significativo hacia la bandera completa.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. One-Leg Extended Human Flag (Bandera a una Pierna Extendida):</strong></p>
+                    <p>Una pierna completamente extendida en línea con el torso, mientras la otra permanece flexionada (tuck) o también extendida pero en una posición que facilite (menos común como progresión directa a full).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Full Human Flag (Bandera Humana Completa):</strong></p>
+                    <p>El cuerpo completamente recto y horizontal, desde la cabeza hasta los pies, con las piernas juntas y extendidas, lateral al poste. La forma final del ejercicio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">La calidad supera la cantidad. Entrena con <strong>máxima intención y forma perfecta</strong>. Aguanta la progresión actual el mayor tiempo posible con buena forma. Filmarse es muy útil para detectar fallos en la alineación. <strong>Entrena ambos lados</strong> para evitar desequilibrios.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Ejercicios de Core Anti-Lateral Flexión:</strong> Maleta carry (suitcase carry), planchas laterales con peso, press Pallof lateral.</li>
+                    <li><strong>Empuje de Hombro:</strong> Overhead Press (con barra o mancuernas), Handstand Push-ups.</li>
+                    <li><strong>Tracción de Espalda:</strong> Dominadas lastradas, remos.</li>
+                    <li><strong>Clutch Flag / Side Lever (en el suelo):</strong> Aunque diferente, ayuda con la fuerza lateral del core.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Escuchar al Cuerpo y Paciencia</h3>
+                <p class="warning-dark">La Human Flag es una habilidad de élite que ejerce una tensión considerable sobre los hombros, codos y muñecas (especialmente la muñeca del brazo inferior). Progresa lentamente, no te saltes pasos, y asegúrate de que tus articulaciones estén bien acondicionadas. El descanso es crucial. <strong>Si sientes dolor agudo, detente y evalúa.</strong></p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en la Human Flag:</h4>
+                <ul>
+                    <li><strong>Brazo Superior (Mano de Tracción):</strong>
+                        <ul>
+                            <li><strong>Latissimus Dorsi (Dorsal Ancho):</strong> Motor principal para la aducción y extensión del hombro ("tirar" del poste hacia abajo y hacia el cuerpo).</li>
+                            <li><strong>Teres Major y Menor, Infraespinoso:</strong> Asisten en la acción del dorsal y la estabilización del hombro.</li>
+                            <li><strong>Bíceps Braquial, Braquial, Braquiorradial:</strong> Flexión del codo y agarre.</li>
+                            <li><strong>Romboides, Trapecio (Medio e Inferior):</strong> Retracción y depresión escapular.</li>
+                            <li><strong>Deltoides Posterior:</strong> Extensión horizontal del hombro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazo Inferior (Mano de Empuje):</strong>
+                        <ul>
+                            <li><strong>Deltoides (Anterior y Medial):</strong> Abducción y flexión del hombro ("empujar" el cuerpo lejos del poste).</li>
+                            <li><strong>Tríceps Braquial:</strong> Extensión del codo, crucial para mantener el brazo bloqueado.</li>
+                            <li><strong>Pectoralis Major (Porción Clavicular y Esternal):</strong> Aducción horizontal y flexión del hombro.</li>
+                            <li><strong>Serratus Anterior:</strong> Protracción y rotación ascendente de la escápula, estabilizando el hombro contra el poste.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core (Especialmente Músculos Laterales):</strong>
+                        <ul>
+                            <li><strong>Oblicuos (Interno y Externo), especialmente del lado superior:</strong> Flexión lateral del tronco, crucial para levantar y mantener las caderas.</li>
+                            <li><strong>Quadratus Lumborum (QL), especialmente del lado superior:</strong> Elevación de la cadera y estabilización lateral de la columna.</li>
+                            <li><strong>Transverso del Abdomen, Recto Abdominal, Erectores Espinales:</strong> Mantienen la rigidez y la línea del torso.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Caderas y Piernas (Estabilizadores):</strong>
+                        <ul>
+                            <li><strong>Glúteo Medio y Menor (especialmente del lado superior):</strong> Abducción y estabilización de la cadera para evitar que las piernas caigan.</li>
+                            <li><strong>Aductores (del lado inferior):</strong> Pueden ayudar a "apretar" las piernas hacia la línea media.</li>
+                            <li><strong>Cuádriceps e Isquiotibiales:</strong> Para mantener las piernas extendidas.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Dominadas (Pull-ups):</strong> 15-20 repeticiones estrictas. Capacidad para realizar algunas dominadas de arquero o agarre muy ancho.</li>
+                    <li><strong>Fondos (Dips) / Pike Push-ups / HSPU contra la pared:</strong> 20-25 dips o 5-10 HSPU contra la pared con buena forma.</li>
+                    <li><strong>Dragon Flags / Hanging Leg Raises a la barra:</strong> Varias repeticiones estrictas.</li>
+                    <li><strong>Plancha Lateral (Side Plank):</strong> Mantener al menos 60-90 segundos por lado con forma perfecta y cadera elevada.</li>
+                    <li><strong>Fuerza de Agarre Sólida.</strong></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Caída de Cadera (Hip Sag / "Banana" Lateral):</strong>
+                        <p><em>Causa:</em> Insuficiente fuerza en los oblicuos y QL del lado superior, o fatiga.
+                        <em>Corrección:</em> Fortalecer el core lateral con ejercicios específicos (ver arriba). Enfocarse en "elevar la cadera" activamente durante los intentos. Trabajar en progresiones más fáciles.</p>
+                    </li>
+                    <li><strong>Colapso del Brazo Inferior (Codo Doblado o Hombro Inestable):</strong>
+                        <p><em>Causa:</em> Falta de fuerza de empuje en el hombro y tríceps del brazo inferior, o inestabilidad escapular.
+                        <em>Corrección:</em> Fortalecer el empuje (HSPU, OHP, flexiones a una mano asistidas). Practicar la protracción activa de la escápula en support holds en el poste.</p>
+                    </li>
+                     <li><strong>Colapso del Brazo Superior (Hombro se Aleja del Poste):</strong>
+                        <p><em>Causa:</em> Falta de fuerza de tracción para mantener el cuerpo pegado al poste en la parte superior.
+                        <em>Corrección:</em> Fortalecer dorsales y bíceps (dominadas de arquero, dominadas a una mano negativas).</p>
+                    </li>
+                    <li><strong>Rotación del Cuerpo (Pecho hacia arriba o hacia abajo):</strong>
+                        <p><em>Causa:</em> Desequilibrio entre el empuje y la tracción, o activación asimétrica del core.
+                        <em>Corrección:</em> Practicar la alineación en progresiones más fáciles. Visualizar mantener el cuerpo en un solo plano, como si estuviera entre dos paredes.</p>
+                    </li>
+                    <li><strong>No Entrenar Ambos Lados por Igual:</strong>
+                        <p><em>Causa:</em> Preferencia por el lado dominante.
+                        <em>Corrección:</em> <strong>Disciplina para entrenar el lado no dominante con igual o mayor volumen/intensidad.</strong> Es crucial para el desarrollo equilibrado y la prevención de lesiones.</p>
+                    </li>
+                    <li><strong>Agarre Demasiado Estrecho o Ancho:</strong>
+                        <p><em>Causa:</em> Falta de experimentación para encontrar la anchura óptima.
+                        <em>Corrección:</em> Probar diferentes anchuras. Un agarre ligeramente más ancho que los hombros (con el brazo inferior casi vertical y el superior en ángulo) suele ser un buen punto de partida. La mano inferior suele estar a la altura de la cintura/cadera, la superior a la altura de la cabeza/hombro.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Importancia del "Push-Pull" (Empuje-Tracción) Simultáneo:</h4>
+                <p>Este es el corazón de la Human Flag. La mano superior tira del poste hacia abajo y hacia el cuerpo (aducción y extensión del hombro), mientras que la mano inferior empuja el cuerpo lejos del poste (abducción y flexión del hombro). Estas fuerzas opuestas crean la torsión y el soporte necesarios para mantener el cuerpo horizontal. Practicar esta sensación de "partir el poste" es fundamental desde las primeras progresiones.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Hombros:</strong> Requieren una increíble fuerza y estabilidad en múltiples planos. Incorporar ejercicios para el manguito rotador, y asegurar una buena movilidad y fuerza tanto en empuje como en tracción.</li>
+                    <li><strong>Muñecas:</strong> La muñeca inferior (especialmente en agarre supino) está bajo una tensión considerable. Fortalecer los flexores y extensores de la muñeca y realizar una adecuada preparación.</li>
+                    <li><strong>Codos:</strong> Pueden sufrir estrés, especialmente si hay desequilibrios de fuerza o técnica. El "codo de golfista" o "codo de tenista" son riesgos si no se progresa con cuidado.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Periodización:</h4>
+                <ul>
+                    <li>La Human Flag es un ejercicio de alta intensidad. Para intentos de hold máximos o progresiones difíciles, 2-3 sesiones por semana pueden ser suficientes, permitiendo una recuperación adecuada.</li>
+                    <li>Los ejercicios accesorios y de acondicionamiento pueden realizarse con más frecuencia.</li>
+                    <li>Siempre incluir un calentamiento completo, enfocándose en hombros, muñecas y core. Incluir semanas de descarga es vital.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de Asistencia y Progresiones Intermedias:</h4>
+                <ul>
+                    <li><strong>Asistencia con los Pies:</strong> Practicar la patada inicial (kick-up) o saltar a la posición, usando los pies para tocar ligeramente un objeto (caja, pared baja) para aligerar la carga y encontrar la alineación.</li>
+                    <li><strong>Bandas de Resistencia:</strong> Una banda colgada del poste y pasada por las caderas/piernas puede ayudar a aligerar el peso corporal y permitir practicar la forma con progresiones más avanzadas.</li>
+                    <li><strong>Negativas:</strong> Saltar a la posición de bandera (o una progresión) y bajar lo más lentamente posible, manteniendo la forma.</li>
+                    <li><strong>Intentos Dinámicos (Flag Kicks):</strong> Desde una posición vertical o ligeramente inclinada, patear hacia la posición de bandera y tratar de aguantar brevemente. Ayuda a desarrollar la explosividad y coordinación.</li>
+                </ul>
+                <p class="tip-dark"><strong>Consejo sobre el poste:</strong> Un poste con buen agarre es fundamental. Si es resbaladizo, la dificultad aumenta drásticamente. Asegúrate de que el poste sea estable y esté bien anclado.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
