@@ -1,1 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para la Planche</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en la Planche, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        /* Nueva sección Hero para la Guía */
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.85)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/portada%20straddle%20plan.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; /* Altura ajustable para la sección hero de la guía */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; /* Padding generoso */
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; /* Ligeramente más grande para el hero */
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; /* Menos padding inferior para el hero */
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { /* Contenedor para el resto del contenido de la guía */
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { /* Estilo para las secciones de contenido dentro de guide-content-container */
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange);
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green);
+        }
+        .guide-section h3 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green);
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange);
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-book-reader mr-3 text-askesis-orange"></i>Guía de Apoyo para la Planche</h1>
+        <p class="guide-subtitle">Principios, Progresiones y Consejos Clave para Conquistar este Elemento Avanzado.</p>
+    </section>
+
+    <div class="guide-content-container"> <div class="guide-section">
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DE LA PLANCHE</h2>
+
+            <div>
+                <h3>A. Definición y Origen</h3>
+                <p>La planche es un elemento de fuerza estático originado en la gimnasia artística. Consiste en mantener el cuerpo completamente horizontal al suelo, paralelo a este, soportado únicamente por las manos, con los brazos totalmente extendidos y bloqueados.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Entender la biomecánica es clave para comprender por qué la planche puede ser más fácil o difícil para diferentes personas.</p>
+                <ul>
+                    <li><strong>Sistema de Palancas:</strong> El cuerpo humano actúa como un sistema de palancas.
+                        <ul>
+                            <li><strong>Punto de Apoyo (Fulcro):</strong> Las manos en el suelo/paralelas.</li>
+                            <li><strong>Resistencia:</strong> El peso del cuerpo, especialmente la gravedad tirando de las piernas y el torso hacia abajo.</li>
+                            <li><strong>Fuerza:</strong> Generada por la musculatura del tren superior (hombros, pecho, brazos) y la inclinación del cuerpo hacia adelante (lean).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Impacto de las Proporciones Corporales:</strong>
+                        <ul>
+                            <li>Personas con piernas más largas o pesadas tendrán una mayor resistencia que vencer.</li>
+                            <li>Esto requiere una mayor inclinación hacia adelante y/o una fuerza muscular superior en el tren superior.</li>
+                            <li>Personas más pequeñas y ligeras suelen tener una ventaja inicial debido a una menor palanca de resistencia.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="tip-dark">
+                    <p><strong>Nota:</strong> Ser alto o pesado no imposibilita lograr la planche, pero generalmente requiere un mayor desarrollo de fuerza específica y más tiempo de entrenamiento.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Posiciones de Manos:</strong>
+                        <ul>
+                            <li><strong>Pronación (dedos adelante):</strong> Permite mayor inclinación, pero puede ser exigente para las muñecas.</li>
+                            <li><strong>Supinación (dedos atrás):</strong> Involucra más bíceps y deltoides, pero es más difícil de mantener el equilibrio y la postura.</li>
+                            <li><strong>Neutral/Radial (dedos hacia los lados):</strong> <strong>La más recomendada.</strong> Ofrece un buen equilibrio entre capacidad de inclinación, comodidad para las muñecas y permite ajustes mediante abducción/aducción de la muñeca.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Protacción Escapular:</strong>
+                        <ul>
+                            <li>Movimiento crucial: separar las escápulas (omóplatos) y empujar los hombros hacia adelante, creando una ligera curvatura en la parte superior de la espalda.</li>
+                            <li><strong>Evitar:</strong> La elevación escapular excesiva (encoger los hombros hacia las orejas) combinada con flexión de hombros, lo que puede llevar a una "espalda de banana" (hiperextensión lumbar).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación Abdominal:</strong>
+                        <ul>
+                            <li><strong>Opción 1: Abdomen plano y contraído:</strong> Mantener el core tenso y la espalda relativamente recta (evitando la hiperextensión).</li>
+                            <li><strong>Opción 2: Depresión abdominal (Hollow body):</strong> Meter el abdomen hacia adentro y arriba, creando una ligera flexión lumbar. Puede ayudar a ganar más inclinación y facilitar la elevación de la cadera.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>II. PROGRESIONES HACIA LA FULL PLANCHE</h2>
+            <p>Se recomienda iniciar en paralelas por la facilidad del agarre.</p>
+
+            <div>
+                <h3>A. Fuerza de Empuje Inicial (Test)</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Tuck Planche en Paralelas (Ejercicio de empuje):</strong> Colgarse de las paralelas y realizar un empuje explosivo hacia arriba, elevando el cuerpo. Sirve para evaluar la fuerza básica de empuje escapular.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Isométricas (Holds)</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Rodillas a Codos (Ranita):</strong></p>
+                    <p>Desde una inclinación inicial ("limp planche"), llevar las rodillas a apoyarse encima de los codos. El enfoque principal es acostumbrarse al bloqueo total de codos.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Tuck Avanzado (Rodillas entre Brazos):</strong></p>
+                    <p>Similar a la ranita, pero las rodillas se mantienen entre los brazos, sin tocar los codos. Requiere mayor empuje de la protracción escapular y empezar a elevar la cadera para que las piernas se separen del cuerpo. El objetivo es formar una "L" entre el tronco y los muslos.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Planche a una Pierna (One Leg Planche):</strong></p>
+                    <p>Desde la posición de Tuck Avanzado, extender una pierna completamente, manteniendo la otra recogida cerca del pecho. Practicar con ambas piernas.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>4. Straddle Planche:</strong></p>
+                    <p>Con las piernas separadas y extendidas. Iniciar desde la "limp planche" (inclinación de hombros adelante) e intentar alejar y elevar las piernas. Es crucial el movimiento de elevación de la cadera, no solo la apertura de piernas. El cuerpo debe estar lo más paralelo al suelo posible.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Full Planche:</strong></p>
+                    <p>Con las piernas juntas y extendidas. Intentar desde la "limp planche". Al principio, es común que la cadera quede más alta que los hombros y pies, formando una especie de "triángulo".</p>
+                    <div class="tip-dark">
+                        <p><strong>Corrección de cadera alta:</strong> Usar un espejo o grabarse para visualizar la postura. Enfocarse activamente en bajar la cadera para alinearla con hombros y pies, logrando una línea corporal recta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <div class="tip-dark">
+                    <p>El consejo principal es <strong>resistir la planche al máximo esfuerzo</strong> en cada intento, aguantando hasta el último segundo posible, incluso cuando la forma empiece a fallar ligeramente. El cuerpo se adaptará progresivamente a este estrés y el límite de tiempo se irá superando.</p>
+                </div>
+            </div>
+            <div>
+                <h3>B. Escuchar al Cuerpo</h3>
+                <div class="warning-dark">
+                    <p>No todos los días son óptimos para entrenar planche. Si un día sientes que no tienes fuerza o la técnica no sale, es mejor descansar o enfocarse en ejercicios complementarios. No se recomienda entrenar planche intensamente todos los días para permitir la recuperación y evitar lesiones.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>IV. INFORMACIÓN ADICIONAL (INVESTIGACIÓN COMPLEMENTARIA)</h2>
+
+            <div>
+                <h4>A. Músculos Principales Involucrados en la Planche:</h4>
+                <ul>
+                    <li><strong>Hombros (Deltoides):</strong> Especialmente el deltoides anterior, es fundamental para la flexión y el soporte.</li>
+                    <li><strong>Pecho (Pectorales):</strong> Principalmente la porción clavicular, asiste en la flexión del hombro.</li>
+                    <li><strong>Brazos:</strong>
+                        <ul>
+                            <li><strong>Tríceps:</strong> Esenciales para mantener los codos bloqueados.</li>
+                            <li><strong>Bíceps:</strong> Contribuyen a la estabilización del codo y, en agarre supino, a la fuerza.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Espalda y Escápulas:</strong>
+                        <ul>
+                            <li><strong>Serrato Anterior:</strong> Clave para la protacción escapular.</li>
+                            <li><strong>Trapecios (especialmente superior y medio):</strong> Estabilizan las escápulas.</li>
+                            <li><strong>Músculos del Manguito Rotador:</strong> Estabilización del hombro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core (Abdominales y Lumbares):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal, Oblicuos, Transverso del Abdomen:</strong> Para mantener la horizontalidad del torso y evitar la hiperextensión lumbar.</li>
+                            <li><strong>Erectores Espinales:</strong> Ayudan a mantener la espalda recta.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Glúteos e Isquiotibiales:</strong> Para mantener las piernas extendidas y alineadas con el cuerpo.</li>
+                    <li><strong>Antebrazos y Muñecas:</strong> Soportan gran parte del peso y requieren considerable fuerza y flexibilidad.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Comunes Sugeridos:</h4>
+                <ul>
+                    <li>Dominar un buen número de fondos en paralelas (dips) con peso corporal completo.</li>
+                    <li>Tener una parada de manos (handstand) sólida y estable (al menos 30-60 segundos).</li>
+                    <li>Poder realizar pseudo planche push-ups con buena forma y una inclinación significativa.</li>
+                    <li>Tener un L-sit o V-sit competente para demostrar fuerza de core y compresión.</li>
+                    <li>Buena movilidad y fuerza en las muñecas, capaces de soportar el peso del cuerpo en extensión.</li>
+                    <li>Fuerza y control escapular, especialmente en protacción y depresión.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes y Cómo Evitarlos:</h4>
+                <ul>
+                    <li><strong>Brazos flexionados:</strong> Indica falta de fuerza en tríceps o falta de conciencia del bloqueo. Enfocarse en el bloqueo activo y en progresiones donde se pueda mantener.</li>
+                    <li><strong>Inclinación insuficiente (lean):</strong> Miedo a caerse o falta de fuerza en hombros. Progresar gradualmente el lean en progresiones más fáciles (ej. tuck planche lean).</li>
+                    <li><strong>"Banana back" (hiperextensión lumbar):</strong> Falta de activación del core (especialmente transverso y recto abdominal) y/o protracción escapular incorrecta (demasiada elevación sin protracción). Fortalecer el core con ejercicios como hollow body holds y practicar la protacción correcta.</li>
+                    <li><strong>Cadera caída (hip sag):</strong> Falta de fuerza en el core y glúteos para mantener la línea. Fortalecer específicamente estas áreas y enfocarse en la retroversión pélvica.</li>
+                    <li><strong>Elevación escapular en lugar de protacción:</strong> Confundir el movimiento de encoger los hombros hacia las orejas con el de separarlos y empujarlos hacia adelante. Practicar la protacción aislada, como en flexiones escapulares.</li>
+                    <li><strong>Descuidar la preparación de muñecas:</strong> Puede llevar a dolor y lesiones. Incluir calentamiento, movilidad (círculos, flexión, extensión) y fortalecimiento específico para las muñecas.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. Importancia del "Lean" (Inclinación Hacia Adelante):</h4>
+                <p>El "lean" es fundamental en la planche. Consiste en inclinar el torso y los hombros hacia adelante, por delante de las manos. Esto desplaza el centro de gravedad del cuerpo sobre la base de apoyo (las manos), haciendo posible levantar las piernas del suelo. Cuanto más se inclina uno, teóricamente más "fácil" es levantar las piernas (porque el contrapeso es mayor), pero mayor es la demanda de fuerza sobre los hombros y la estabilidad escapular.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> Son un punto crítico y vulnerable. Es esencial realizar:
+                        <ul>
+                            <li>Calentamiento específico antes de cada sesión.</li>
+                            <li>Ejercicios de movilidad: círculos de muñeca, flexión y extensión palmar y dorsal (con y sin apoyo).</li>
+                            <li>Ejercicios de fortalecimiento: flexiones sobre nudillos o yemas (con cuidado), curls de muñeca con peso ligero, rotaciones.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codos:</strong> El bloqueo constante puede estresar los tendones. El trabajo progresivo y ejercicios como las pseudo planche push-ups ayudan a acondicionarlos.</li>
+                    <li><strong>Hombros:</strong> Mantener una buena salud del manguito rotador con ejercicios específicos (rotaciones externas/internas, face pulls) es crucial para la estabilidad y prevención de lesiones.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Recuperación:</h4>
+                <ul>
+                    <li>La planche es un movimiento muy demandante para el sistema nervioso central y las articulaciones.</li>
+                    <li>Entrenarlo <strong>2-3 veces por semana</strong> suele ser suficiente para la mayoría, permitiendo una recuperación adecuada.</li>
+                    <li>Alternar días de entrenamiento de planche con días de descanso o de entrenamiento de otros grupos musculares/habilidades menos intensivas.</li>
+                    <li>Priorizar la <strong>calidad sobre la cantidad</strong>. Es mejor realizar pocas series y repeticiones (o segundos de hold) con buena forma que muchas con mala técnica.</li>
+                    <li>Asegurar un sueño adecuado y una nutrición óptima son fundamentales para la recuperación muscular y tendinosa.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Rol de la Flexibilidad y Movilidad:</h4>
+                <ul>
+                    <li><strong>Movilidad de Hombros:</strong> Esencial para alcanzar el "lean" necesario y mantener una buena protacción sin compensaciones.</li>
+                    <li><strong>Movilidad de Muñecas:</strong> Crucial para soportar el peso del cuerpo en una posición extendida.</li>
+                    <li><strong>Flexibilidad en Isquiotibiales y Cadera:</strong> Puede ayudar en la estética y facilidad de la straddle planche y full planche para mantener una buena línea y evitar que las piernas "pesen" más por acortamientos.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>H. Visualización y Conexión Mente-Músculo:</h4>
+                <ul>
+                    <li>Antes de intentar una progresión, visualizarse realizándola correctamente puede mejorar la ejecución.</li>
+                    <li>Desarrollar una fuerte conexión mente-músculo ayuda a activar conscientemente los músculos correctos (ej. "apretar glúteos", "empujar el suelo", "separar escápulas").</li>
+                    <li>Usar un espejo o grabarse es invaluable para la retroalimentación visual y la corrección técnica.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
 
