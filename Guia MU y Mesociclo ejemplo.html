@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Muscle-Up Estricto</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Muscle-Up Estricto, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/Muscle%20up.jpeg') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        .mesocycle-plan-dark { /* Adaptado para tema oscuro */
+            background-color: var(--askesis-dark); 
+            border: 1px solid var(--askesis-border); 
+            padding: 1.5rem; 
+            border-radius: 6px; 
+            margin-top: 1.5rem; 
+        }
+        .mesocycle-plan-dark h4 { 
+            color: var(--askesis-green);
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+        }
+        .mesocycle-plan-dark table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 1rem; 
+            font-size: 0.9em;
+        }
+        .mesocycle-plan-dark th, .mesocycle-plan-dark td { 
+            border: 1px solid var(--askesis-border); 
+            padding: 0.75rem; 
+            text-align: left; 
+            color: var(--askesis-light-gray);
+        }
+        .mesocycle-plan-dark th { 
+            background-color: var(--askesis-gray); 
+            color: var(--askesis-text-white);
+            font-weight: 600;
+        }
+        .mesocycle-plan-dark td ul {
+            padding-left: 15px; /* Menor padding para listas en tablas */
+            margin-bottom: 0;
+        }
+        .mesocycle-plan-dark td li {
+            margin-bottom: 0.25rem;
+            font-size: 0.85em;
+        }
+
+
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-muscleup" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-muscleup" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-dumbbell mr-3 text-askesis-orange"></i>Guía de Apoyo para el Muscle-Up Estricto</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Claves para Dominar este Movimiento Emblemático.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL MUSCLE-UP ESTRICTO</h2>
+
+            <div>
+                <h3>A. Definición y Filosofía</h3>
+                <p>El Muscle-Up Estricto en barra es un movimiento compuesto avanzado de calistenia que combina una fase de tracción (pull-up), una fase de transición y una fase de empuje (dip). Se realiza sin kipping, balanceo (swing) o uso de impulso de las piernas. El objetivo es una transición suave y controlada sobre la barra, demostrando fuerza pura y coordinación. Es un referente de la fuerza relativa y el control corporal en calistenia.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial del Movimiento</h3>
+                <p>El Muscle-Up Estricto se divide en tres fases principales:</p>
+                <ul>
+                    <li><strong>1. La Tracción (Pull):</strong>
+                        <ul>
+                            <li>Se requiere una dominada <strong>explosiva y alta</strong>. El objetivo es llevar el pecho (o incluso el esternón/abdomen bajo) lo más cerca posible de la barra, y lo más alto posible.</li>
+                            <li>Implica una fuerte aducción y extensión del hombro, y flexión del codo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. La Transición:</strong>
+                        <ul>
+                            <li>Es la parte más técnica y a menudo la más difícil. Implica rotar las muñecas y hombros sobre la barra, pasando de una posición de tracción a una de empuje.</li>
+                            <li>Requiere fuerza de antebrazos (especialmente con false grip), deltoides anteriores, pectorales y una importante coordinación para "sacar los codos" y llevar el torso por encima de la barra. El core juega un papel vital en mantener el cuerpo compacto.</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. El Empuje (Push/Dip):</strong>
+                        <ul>
+                            <li>Una vez que el pecho está sobre la barra y las manos están en posición de soportar el peso, se realiza un fondo en barra (straight bar dip) hasta la extensión completa de los brazos.</li>
+                            <li>Implica extensión del codo y aducción/flexión horizontal del hombro.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>El "False Grip" (Agarre Falso) en Barra:</strong>
+                        <ul>
+                            <li><strong>Esencial para el muscle-up estricto en barra.</strong> Consiste en colocar la muñeca (la base del pulgar y la parte carnosa de la palma) sobre la barra, en lugar de solo los dedos. Esto crea una mejor palanca para la transición, permitiendo que las muñecas ya estén parcialmente por encima de la barra al final de la tracción.</li>
+                            <li>Requiere acondicionamiento de muñecas y antebrazos.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Anchura del Agarre:</strong>
+                        <ul>
+                            <li>Generalmente a la anchura de los hombros o ligeramente más ancho. Un agarre muy estrecho puede dificultar la transición, y uno muy ancho puede ser ineficiente para el dip.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Explosividad en la Tracción:</strong>
+                        <ul>
+                            <li>La velocidad y la altura de la dominada son cruciales. No se trata solo de fuerza, sino de aplicarla rápidamente.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Trayectoria del Cuerpo y Codos:</strong>
+                        <ul>
+                            <li>En la tracción, pensar en tirar "hacia arriba y ligeramente hacia atrás" (como si quisieras rozar la barra con el pecho bajo).</li>
+                            <li>Durante la transición, los codos deben pasar de estar por debajo de la barra a estar por detrás y luego por encima, manteniéndose relativamente cerca del cuerpo para evitar el "chicken winging" (un codo pasa antes que el otro).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Activación del Core:</strong>
+                         <ul>
+                            <li>Un core fuerte previene el arqueo excesivo y ayuda a mantener una línea corporal compacta y eficiente durante todo el movimiento.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL MUSCLE-UP ESTRICTO</h2>
+            <p>Construir una base sólida en cada componente es fundamental.</p>
+
+            <div>
+                <h3>A. Preparación y Fuerza Fundamental:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Dominadas Estrictas (Pull-ups):</strong> Apuntar a 10-15 repeticiones con el pecho tocando la barra. Trabajar el false grip en dominadas normales.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fondos en Barra Recta (Straight Bar Dips):</strong> Apuntar a 10-15 repeticiones profundas y controladas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Dominadas Explosivas Altas (High Explosive Pull-ups):</strong> El objetivo es llevar el esternón o incluso el ombligo a la barra. Utilizar false grip.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Acondicionamiento del False Grip:</strong> Cuelgues en false grip, remo en false grip, flexiones de muñeca.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas para la Transición:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Muscle-Up Negativo:</strong></p>
+                    <p>Empezar desde la posición de soporte (arriba de la barra), y bajar lo más lentamente posible, controlando la fase del dip y especialmente la transición de vuelta a la posición de colgado. Usar false grip.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Muscle-Up Asistido con Bandas:</strong></p>
+                    <p>Colocar una banda de resistencia en la barra y pisarla o colocarla bajo las caderas. Esto reduce el peso corporal y ayuda a aprender el patrón motor. Disminuir la asistencia de la banda gradualmente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Muscle-Up desde Barra Baja (o "Baby Muscle-Up"):</strong></p>
+                    <p>Utilizar una barra a la altura del pecho o cintura, con los pies en el suelo. Esto permite practicar la mecánica de la transición con menos peso corporal. Empujar ligeramente con los pies si es necesario, reduciendo gradualmente la ayuda.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Muscle-Up con Salto Mínimo (Jumping Muscle-Up):</strong></p>
+                    <p>Desde el suelo o una caja, realizar un pequeño salto para ayudar en la fase de tracción e iniciar la transición. El objetivo es reducir la altura del salto progresivamente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Intentos de Muscle-Up Estricto:</strong></p>
+                    <p>Una vez que las progresiones anteriores son sólidas, empezar a intentar el muscle-up completo desde colgado. Filmarse es muy útil.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Claves para la Explosividad</h3>
+                <p class="tip-dark">Para la fase de tracción, no pienses solo en "tirar hacia arriba", sino en "tirar rápido y agresivamente". La velocidad con la que te acercas a la barra es fundamental para tener el impulso necesario (controlado, no kipping) para iniciar la transición.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento de Eslabones Débiles</h3>
+                <ul>
+                    <li><strong>Si la tracción es débil:</strong> Más dominadas explosivas, dominadas con lastre (con false grip).</li>
+                    <li><strong>Si la transición falla:</strong> Muscle-up negativos, asistidos con banda, desde barra baja. Mucho trabajo de false grip.</li>
+                    <li><strong>Si el dip es débil:</strong> Más fondos en barra recta, fondos con lastre.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Consistencia, Paciencia y Técnica</h3>
+                <p class="warning-dark">El Muscle-Up Estricto es un hito técnico y de fuerza. Requiere mucha práctica deliberada y paciencia. No te desanimes si lleva tiempo. <strong>La calidad de cada repetición es más importante que la cantidad.</strong> Evita formar malos hábitos (como el "chicken wing") que luego son difíciles de corregir.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el Muscle-Up Estricto:</h4>
+                <ul>
+                    <li><strong>Fase de Tracción (Pull):</strong>
+                        <ul>
+                            <li><strong>Latissimus Dorsi (Dorsal Ancho):</strong> Motor principal.</li>
+                            <li><strong>Bíceps Braquial, Braquial, Braquiorradial:</strong> Flexión del codo.</li>
+                            <li><strong>Trapecio (Medio e Inferior), Romboides:</strong> Retracción y depresión escapular.</li>
+                            <li><strong>Deltoides Posterior:</strong> Extensión del hombro.</li>
+                            <li><strong>Músculos del Antebrazo:</strong> Fuerza de agarre (especialmente con false grip).</li>
+                            <li><strong>Pectoral Mayor (Porción Esternocostal):</strong> Asistencia en la aducción del brazo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fase de Transición:</strong>
+                        <ul>
+                            <li><strong>Antebrazos (Flexores y Rotadores de Muñeca):</strong> Mantener el false grip y rotar sobre la barra.</li>
+                            <li><strong>Deltoides Anterior y Medial:</strong> Empuje inicial y elevación de hombros.</li>
+                            <li><strong>Pectoral Mayor (Superior y General):</strong> Ayuda a traer el cuerpo sobre la barra.</li>
+                            <li><strong>Tríceps Braquial (Cabeza Larga):</strong> Ayuda en la extensión del hombro e inicio de extensión del codo.</li>
+                            <li><strong>Manguito Rotador:</strong> Estabilización del hombro durante el movimiento complejo.</li>
+                            <li><strong>Core (Recto Abdominal, Oblicuos):</strong> Mantener el cuerpo compacto y evitar el balanceo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fase de Empuje (Dip):</strong>
+                        <ul>
+                            <li><strong>Tríceps Braquial:</strong> Principal extensor del codo.</li>
+                            <li><strong>Pectoral Mayor (Especialmente porción inferior/esternal):</strong> Aducción del brazo y empuje.</li>
+                            <li><strong>Deltoides Anterior:</strong> Flexión del hombro y empuje.</li>
+                            <li><strong>Serrato Anterior, Trapecio Inferior:</strong> Depresión escapular y estabilización.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables) para Barra:</h4>
+                <ul>
+                    <li><strong>Dominadas (Pull-ups) con False Grip:</strong> Al menos 8-12 repeticiones limpias llevando el pecho a la barra. Algunos recomiendan poder hacer pull-ups hasta el esternón o cintura.</li>
+                    <li><strong>Fondos en Barra Recta (Straight Bar Dips):</strong> Al menos 10-15 repeticiones profundas y controladas.</li>
+                    <li><strong>Dominadas Explosivas:</strong> Capacidad de traccionar con velocidad llevando el pecho bien alto, idealmente tocando con el esternón bajo/abdomen.</li>
+                    <li><strong>Acondicionamiento de Muñecas:</strong> Ser capaz de mantener un false grip cómodo durante varios segundos y en varias repeticiones de dominadas.</li>
+                    <li><strong>Buen Nivel de Core:</strong> Poder mantener un hollow body hold y tener buen control pélvico.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Kipping o Balanceo Excesivo:</strong>
+                        <p><em>Causa:</em> Falta de fuerza de tracción explosiva o intento de compensar.
+                        <em>Corrección:</em> Fortalecer las dominadas estrictas y explosivas. Practicar colgado con core activo para minimizar el balanceo.</p>
+                    </li>
+                    <li><strong>"Chicken Wing" (Un codo pasa antes que el otro en la transición):</strong>
+                        <p><em>Causa:</em> Falta de fuerza o coordinación simétrica en la transición. Un lado es más débil o la técnica no es pareja.
+                        <em>Corrección:</em> Trabajar negativos de forma muy controlada, asegurándose que ambos codos se mueven a la vez. Muscle-ups desde barra baja prestando atención a la simetría. Fortalecer el lado más débil con ejercicios unilaterales si es necesario.</p>
+                    </li>
+                    <li><strong>No Utilizar o Perder el False Grip:</strong>
+                        <p><em>Causa:</em> Muñecas débiles, falta de costumbre, o no entender su importancia.
+                        <em>Corrección:</em> Acondicionar específicamente el false grip (cuelgues, remos en false grip). Empezar cada intento asegurando un buen false grip.</p>
+                    </li>
+                    <li><strong>Quedarse Atascado Bajo la Barra (Sin poder iniciar la transición):</strong>
+                        <p><em>Causa:</em> Tracción no suficientemente alta o explosiva; transición no iniciada correctamente (no "meter la cabeza y el pecho").
+                        <em>Corrección:</em> Mejorar la altura y explosividad de las dominadas. Practicar activamente el movimiento de "rodear" la barra con la cabeza y el pecho después de la tracción máxima.</p>
+                    </li>
+                    <li><strong>Codos Demasiado Abiertos en la Transición o el Dip:</strong>
+                        <p><em>Causa:</em> Debilidad en los músculos que mantienen los codos cerca; mala técnica.
+                        <em>Corrección:</em> Concentrarse en mantener los codos cerca del torso durante toda la transición y el dip. Fortalecer tríceps y pecho.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Verdad sobre el "False Grip":</h4>
+                <p>Para el <strong>muscle-up estricto en BARRA</strong>, el false grip es casi universalmente considerado necesario por la mayoría de los atletas de calistenia. Permite que la muñeca ya esté posicionada sobre la barra al final de la fase de tracción, facilitando enormemente la rotación y la transición. En <strong>ANILLAS</strong>, el false grip es también muy útil pero puede ser ligeramente diferente, y algunos atletas logran muscle-ups estrictos en anillas sin un false grip pronunciado debido a la movilidad de las anillas. Para la barra, es un cambio de juego. Acostumbrarse a él toma tiempo y puede ser incómodo al principio.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> El false grip pone una tensión significativa. Calentamientos específicos (círculos, flexión/extensión), estiramientos suaves, y fortalecimiento gradual son cruciales.</li>
+                    <li><strong>Codos:</strong> Pueden sufrir estrés por la transición y el dip. Evitar sobreentrenamiento y escuchar al cuerpo. Fortalecer bíceps y tríceps de forma equilibrada.</li>
+                    <li><strong>Hombros:</strong> La transición es un movimiento complejo para el hombro. Buena movilidad, calentamiento del manguito rotador y fortalecimiento general son importantes.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 id="mesocycle">V. EJEMPLO DE MESOCICLO (1 MES) PARA PRINCIPIANTE CON BASE</h2>
+                <p>Este mesociclo asume que el atleta puede realizar unas 5-8 dominadas estrictas (sin false grip), 8-10 fondos en paralelas (o barra recta si ya los tiene) y tiene algo de experiencia con el entrenamiento de calistenia.</p>
+                <p class="tip-dark"><strong>Objetivo del Mesociclo:</strong> Mejorar significativamente los componentes del muscle-up, lograr las primeras progresiones avanzadas (negativos, asistidos) y potencialmente el primer muscle-up si la base es sólida.</p>
+
+                <div class="mesocycle-plan-dark">
+                    <h4>Plan de Entrenamiento Semanal (Repetir durante 4 semanas con ajustes)</h4>
+                    <p><strong>Frecuencia:</strong> 3 días de fuerza/habilidad por semana. Otros días: descanso activo (movilidad, cardio ligero) o descanso completo.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Semana</th>
+                                <th>Día 1: Enfoque Tracción + Transición Ligera</th>
+                                <th>Día 2: Enfoque Empuje + Transición Ligera</th>
+                                <th>Día 3: Habilidad Muscle-Up + Componentes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Semana 1</strong><br>(Fundación)</td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento (incl. movilidad muñecas/hombros)</li>
+                                        <li>2. Dominadas con False Grip Asistidas o Negativos de False Grip: 3x3-5 reps</li>
+                                        <li>3. Dominadas Explosivas (intentar pecho a barra): 4x3-5 reps</li>
+                                        <li>4. Remos en Barra Baja (con False Grip si es posible): 3x8-10 reps</li>
+                                        <li>5. Hollow Body Holds: 3x20-30 seg</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                   <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Fondos en Barra Recta (o paralelas si aún no hay barra recta): 4x5-8 reps (profundos)</li>
+                                        <li>3. Fondos Negativos en Barra (enf. transición del MU): 3x3-5 reps (bajar MU lento)</li>
+                                        <li>4. Flexiones Pica / Declinadas: 3x8-12 reps</li>
+                                        <li>5. L-Sit Tucks o Elevaciones de Rodillas Colgado: 3x8-12 reps</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Muscle-Up desde Barra Baja (con asistencia pies): 3x3-5 reps (enf. técnica transición)</li>
+                                        <li>3. Dominadas Explosivas Altas (buscando altura): 3x AMRAP-2 (sin fallo total)</li>
+                                        <li>4. Fondos en Barra Recta: 3xAMRAP-2</li>
+                                        <li>5. Estiramientos y movilidad</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semana 2</strong><br>(Incremento)</td>
+                                <td>
+                                    <em>(Intentar aumentar reps/calidad o reducir asistencia en false grip)</em>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Dominadas con False Grip (intentar sin asistencia): 3x2-4 reps</li>
+                                        <li>3. Dominadas Explosivas (intentar esternón a barra): 4x3-5 reps</li>
+                                        <li>4. Remos en Barra Baja (con False Grip): 3x8-12 reps</li>
+                                        <li>5. Hollow Body Rocks: 3x15-20</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <em>(Intentar aumentar reps/profundidad en dips)</em>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Fondos en Barra Recta: 4x6-10 reps</li>
+                                        <li>3. Muscle-Up Negativos (desde arriba): 3x2-4 reps (lo más lento posible en transición)</li>
+                                        <li>4. Flexiones Pica / Declinadas: 3x10-15 reps</li>
+                                        <li>5. L-Sit Tucks (intentar extender una pierna): 3x8-12 reps</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Muscle-Up con Banda de Asistencia (ligera): 3-4x1-3 reps</li>
+                                        <li>(O seguir con Barra Baja si banda no es opción/demasiado difícil)</li>
+                                        <li>3. Dominadas Explosivas (máxima altura): 3x3-5 reps</li>
+                                        <li>4. Fondos en Barra Recta (con pausa abajo): 3x5-8 reps</li>
+                                        <li>5. Estiramientos</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semana 3</strong><br>(Pico)</td>
+                                 <td>
+                                    <em>(Máximo esfuerzo en calidad de false grip y altura de pull-up)</em>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Dominadas con False Grip: 3x3-5 reps (mejor forma posible)</li>
+                                        <li>3. Dominadas Explosivas (intentar ombligo a barra): 4x2-4 reps</li>
+                                        <li>4. Remos en Barra Baja (False Grip, explosivos): 3x6-8 reps</li>
+                                        <li>5. Dragon Flag Negatives (o Tuck Planche Leans): 3x3-5 reps</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <em>(Buscar más fuerza en dips y control en negativos)</em>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Fondos en Barra Recta (intentar añadir lastre ligero si es posible): 3x5-8 reps</li>
+                                        <li>3. Muscle-Up Negativos: 4x1-3 reps (énfasis en la transición perfecta)</li>
+                                        <li>4. Pike Push-ups (pies elevados): 3x5-8 reps</li>
+                                        <li>5. L-Sit (intentar ambas piernas extendidas): 3x5-10 seg holds</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Muscle-Up Intentos (con/sin banda ligera según progreso): 5-8 intentos totales</li>
+                                        <li>(Si no hay MU, hacer negativos o la progresión más cercana)</li>
+                                        <li>3. Dominadas (Pecho a barra, False Grip): 2xAMRAP</li>
+                                        <li>4. Fondos en Barra Recta: 2xAMRAP</li>
+                                        <li>5. Estiramientos</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semana 4</strong><br>(Descarga/Test)</td>
+                               <td>
+                                   <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Dominadas con False Grip: 2x3 reps (ligeras)</li>
+                                        <li>3. Dominadas Explosivas: 2x3 reps (ligeras)</li>
+                                        <li>4. Remos Ligeros: 2x8 reps</li>
+                                        <li>5. Movilidad General</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento</li>
+                                        <li>2. Fondos en Barra Recta: 2x5 reps (ligeros)</li>
+                                        <li>3. Muscle-Up Negativos muy ligeros: 2x2 reps (enf. técnica)</li>
+                                        <li>4. Flexiones: 2x10 reps</li>
+                                        <li>5. Movilidad</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>1. Calentamiento Extenso</li>
+                                        <li>2. <strong>TEST: Intentos de Muscle-Up Estricto.</strong></li>
+                                        <li>Máximo 5-6 intentos serios. Filmarse.</li>
+                                        <li>3. Si se consigue MU: Celebrar. Luego hacer algunos componentes ligeros.</li>
+                                        <li>4. Si no: Analizar video. Volver a la progresión más desafiante. No desanimarse.</li>
+                                        <li>5. Enfriamiento completo.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="tip-dark"><strong>Notas para el Mesociclo:</strong></p>
+                    <ul>
+                        <li><strong>Calentamiento:</strong> Siempre incluir rotaciones articulares, jumping jacks, scapular pull-ups, band pull-aparts, movilidad de muñecas y hombros (ej. dislocaciones con banda).</li>
+                        <li><strong>Progresión:</strong> Si un ejercicio es demasiado fácil, aumenta las repeticiones, la calidad, reduce la asistencia (banda más fina, menos ayuda de pies) o añade una pausa. Si es demasiado difícil, regresa a una progresión anterior o reduce reps/sets.</li>
+                        <li><strong>Forma sobre Cantidad:</strong> Siempre. Un MU feo no es el objetivo aquí.</li>
+                        <li><strong>Descanso entre series:</strong> 2-3 minutos para ejercicios de fuerza/habilidad principales. 1-1.5 min para accesorios.</li>
+                        <li><strong>Escucha a tu Cuerpo:</strong> Especialmente muñecas, codos y hombros. Si hay dolor, detente. Descansa. El sobreentrenamiento es el enemigo del progreso.</li>
+                        <li><strong>Nutrición e Hidratación:</strong> Apoya tu entrenamiento con una buena dieta y suficiente agua.</li>
+                        <li><strong>Consistencia:</strong> Es la clave. Cumple con los entrenamientos programados.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
