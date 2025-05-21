@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Pistol Squat</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Pistol Squat (Sentadilla a una Pierna), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/pistosquat.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-pistol" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-pistol" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-shoe-prints mr-3 text-askesis-orange"></i>Guía de Apoyo para el Pistol Squat</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Claves para la Sentadilla a Una Pierna.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL PISTOL SQUAT</h2>
+
+            <div>
+                <h3>A. Definición y Beneficios</h3>
+                <p>El Pistol Squat, o sentadilla a una pierna, es un ejercicio de fuerza unilateral avanzado que implica bajar hasta una posición de sentadilla profunda sobre una pierna, mientras la otra pierna se mantiene extendida hacia adelante, paralela al suelo. Es un testamento de fuerza, equilibrio, movilidad y control corporal. Los beneficios incluyen el desarrollo de la fuerza de las piernas de forma independiente, mejora del equilibrio, aumento de la movilidad de cadera, rodilla y tobillo, y la identificación/corrección de desequilibrios musculares.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Entender la mecánica es crucial para la ejecución correcta y la prevención de lesiones.</p>
+                <ul>
+                    <li><strong>Movimiento Unilateral:</strong> Todo el peso corporal se soporta y controla con una sola pierna.</li>
+                    <li><strong>Rango de Movimiento Profundo:</strong> Requiere una flexión completa de la rodilla y la cadera de la pierna de apoyo (el isquiotibial cubre el gemelo).</li>
+                    <li><strong>Equilibrio:</strong> El centro de masa debe mantenerse sobre la base de apoyo (el pie). Esto a menudo requiere inclinar ligeramente el torso hacia adelante y/o usar los brazos como contrapeso.</li>
+                    <li><strong>Alineación de la Rodilla:</strong> La rodilla de la pierna de apoyo debe seguir la línea de los dedos del pie, evitando el colapso hacia adentro (valgo de rodilla).</li>
+                    <li><strong>Movilidad del Tobillo (Dorsiflexión):</strong> Crucial para permitir que la rodilla avance sobre el pie sin levantar el talón.</li>
+                    <li><strong>Movilidad de la Cadera:</strong> Necesaria para la flexión profunda y para mantener la pierna no activa extendida.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Control Excéntrico y Concéntrico:</strong> Bajar (excéntrico) de forma controlada es tan importante como subir (concéntrico).</li>
+                    <li>
+                        <strong>Mantener el Talón Apoyado:</strong> El talón del pie de apoyo debe permanecer firmemente en el suelo durante todo el movimiento.</li>
+                    <li>
+                        <strong>Pierna No Activa Extendida:</strong> La pierna que no trabaja debe mantenerse recta y preferiblemente paralela al suelo, o lo más alto posible. Los flexores de cadera de esta pierna trabajan intensamente.</li>
+                    <li>
+                        <strong>Activación del Core:</strong> Un core fuerte ayuda a estabilizar el torso y mantener el equilibrio.</li>
+                    <li>
+                        <strong>Uso de los Brazos:</strong> Extender los brazos hacia adelante puede ayudar como contrapeso y mejorar el equilibrio.</li>
+                    <li><strong>Distribución del Peso en el Pie:</strong> Distribuir el peso por todo el pie de apoyo (trípode: base del dedo gordo, base del meñique y talón).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL PISTOL SQUAT</h2>
+            <p>Es fundamental abordar la fuerza, el equilibrio y la movilidad simultáneamente.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Fundamentales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Sentadillas a Dos Piernas Profundas (Ass-to-Grass Squats):</strong> Para construir la base de fuerza y movilidad en la sentadilla. Asegurarse de que los talones no se levanten.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Movilidad de Tobillo:</strong> Estiramientos de gemelos y sóleo, ejercicios de movilidad para la dorsiflexión (ej. rodilla a la pared).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Movilidad y Fuerza de Cadera:</strong> Estiramientos de isquiotibiales, flexores de cadera y glúteos. Elevaciones de pierna extendida (para flexores de cadera).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Equilibrio a una Pierna:</strong> Simplemente pararse sobre una pierna, progresando a cerrar los ojos o realizar pequeños movimientos.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas del Pistol Squat:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Pistol Squat Asistido con Soporte (Assisted Pistol Squat):</strong></p>
+                    <p>Usar un poste, TRX, anillas, marco de puerta o una silla para ayudar a mantener el equilibrio y/o reducir la carga al bajar y subir. Reducir la asistencia gradualmente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Pistol Squat a un Banco/Caja (Box Pistol Squat):</strong></p>
+                    <p>Realizar el movimiento hasta sentarse en una superficie elevada (banco, silla, pila de libros). Disminuir gradualmente la altura de la superficie hasta que se alcance la profundidad completa.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Pistol Squat Negativo (Negative Pistol Squat):</strong></p>
+                    <p>Bajar de forma muy lenta y controlada (5-10 segundos) hasta el fondo, y luego usar ambas piernas o asistencia para volver a subir. Construye fuerza excéntrica.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Rolling Pistol Squat (Pistol Squat con Impulso de Rodada):</strong></p>
+                    <p>Desde sentado, rodar hacia atrás sobre la espalda y luego hacia adelante usando el impulso para levantarse sobre una pierna en la posición de pistol. Ayuda con la parte concéntrica.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>5. Pistol Squat con Talón Elevado (Elevated Heel Pistol Squat):</strong></p>
+                    <p>Colocar una pequeña elevación (disco delgado, libro) bajo el talón del pie de apoyo. Esto reduce la demanda de dorsiflexión del tobillo. Reducir la elevación progresivamente.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>6. Pistol Squat con Contrapeso (Counterbalance Pistol Squat):</strong></p>
+                    <p>Sostener una pesa ligera (2-5 kg) con los brazos extendidos hacia adelante para ayudar con el equilibrio. Reducir el peso del contrapeso gradualmente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>7. Full Pistol Squat (Pistol Squat Completo):</strong></p>
+                    <p>Ejecución sin asistencia, con rango completo, buen control y equilibrio, talón pegado al suelo y la pierna libre extendida.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Claves para el Equilibrio y la Profundidad</h3>
+                <p class="tip-dark">Empuja activamente el pie de apoyo contra el suelo, agarrándolo con los dedos. Mira a un punto fijo delante de ti para ayudar con el equilibrio. Intenta "sentarte hacia atrás y abajo", no solo "bajar". La extensión de la pierna libre hacia adelante y los brazos también como contrapeso son cruciales.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Zancadas (Lunges) y sus Variaciones:</strong> Zancada reversa, búlgara.</li>
+                    <li><strong>Step-ups a una Pierna (sobre un banco alto):</strong> Enfocándose en empujar solo con la pierna de arriba.</li>
+                    <li><strong>Sentadillas Isométricas en el Fondo (Deep Squat Holds):</strong> Con dos piernas, para mejorar la comodidad en la posición profunda.</li>
+                    <li><strong>Fuerza de Flexores de Cadera:</strong> Hanging Leg Raises, L-Sit (o sus progresiones).</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Paciencia, Movilidad y Escucha Activa</h3>
+                <p class="warning-dark">El Pistol Squat puede ser frustrante. Los limitantes pueden ser la fuerza, el equilibrio, la movilidad o una combinación. Sé honesto sobre tu eslabón más débil. Presta especial atención a cualquier dolor en las rodillas o caderas y no lo fuerces. <strong>La movilidad es tan importante como la fuerza.</strong></p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el Pistol Squat:</h4>
+                <ul>
+                    <li><strong>Pierna de Apoyo:</strong>
+                        <ul>
+                            <li><strong>Cuádriceps (Vasto Medial, Vasto Lateral, Vasto Intermedio, Recto Femoral):</strong> Principal extensor de la rodilla.</li>
+                            <li><strong>Glúteos (Mayor, Medio, Menor):</strong> Extensores de la cadera, abductores y estabilizadores. El Glúteo Mayor es clave para subir desde el fondo. El Glúteo Medio y Menor son cruciales para la estabilidad de la cadera y evitar que la rodilla colapse hacia adentro.</li>
+                            <li><strong>Isquiotibiales (Bíceps Femoral, Semitendinoso, Semimembranoso):</strong> Asisten en la extensión de la cadera y estabilizan la rodilla.</li>
+                            <li><strong>Aductores (Mayor, Largo, Corto):</strong> Ayudan en la estabilización y aducción.</li>
+                            <li><strong>Músculos del Gemelo y Sóleo (Tríceps Sural):</strong> Estabilizadores del tobillo y flexión plantar.</li>
+                            <li><strong>Tibial Anterior:</strong> Ayuda en la dorsiflexión del tobillo y estabilidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pierna Extendida (No Activa):</strong>
+                        <ul>
+                            <li><strong>Flexores de Cadera (Psoas Ilíaco, Recto Femoral, Sartorio, TFL):</strong> Mantienen la pierna elevada y extendida.</li>
+                            <li><strong>Cuádriceps:</strong> Mantienen la rodilla de esta pierna extendida.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core y Torso (Estabilizadores):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal, Oblicuos, Transverso del Abdomen:</strong> Mantienen la rigidez del torso y ayudan al equilibrio.</li>
+                            <li><strong>Erectores Espinales:</strong> Mantienen una postura neutral de la espalda, evitando el redondeo excesivo.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Sentadillas a Dos Piernas Profundas:</strong> 20+ repeticiones con buena forma y talones en el suelo.</li>
+                    <li><strong>Zancadas (Lunges):</strong> 10-15 repeticiones por pierna con buen control.</li>
+                    <li><strong>Buen Equilibrio a una Pierna:</strong> Mantener por 30-60 segundos.</li>
+                    <li><strong>Movilidad del Tobillo (Dorsiflexión):</strong> Rodilla capaz de pasar los dedos del pie significativamente mientras el talón está en el suelo. Test: rodilla a la pared con el pie a 10-12 cm de distancia.</li>
+                    <li><strong>Flexibilidad de Isquiotibiales:</strong> Poder tocarse los pies (o casi) sentado con piernas rectas.</li>
+                    <li><strong>Fuerza Básica de Flexores de Cadera:</strong> Poder mantener la pierna extendida a 90 grados sentado por unos segundos.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Levantar el Talón del Pie de Apoyo:</strong>
+                        <p><em>Causa:</em> Limitada movilidad del tobillo (dorsiflexión), o intentar compensar la falta de equilibrio/fuerza.
+                        <em>Corrección:</em> Trabajar intensamente la movilidad del tobillo. Usar temporalmente una elevación bajo el talón. Enfocarse en "sentarse hacia atrás".</p>
+                    </li>
+                    <li><strong>Colapso de la Rodilla hacia Adentro (Valgo de Rodilla):</strong>
+                        <p><em>Causa:</em> Glúteo medio débil, falta de control neuromuscular, pronación excesiva del pie.
+                        <em>Corrección:</em> Fortalecer glúteo medio (ej. clamshells, side leg raises, band walks). Enfocarse en "empujar la rodilla hacia afuera" para alinearla con los dedos del pie. Considerar el uso de calzado más estable o pies descalzos.</p>
+                    </li>
+                    <li><strong>Perder el Equilibrio (Caerse hacia atrás o los lados):</strong>
+                        <p><em>Causa:</em> Falta de equilibrio, core débil, contrapeso insuficiente, no "agarrar" el suelo con el pie.
+                        <em>Corrección:</em> Practicar las progresiones asistidas. Usar contrapeso con los brazos o una pesa ligera. Fortalecer el core. Enfocarse en la distribución del peso en el pie y la mirada fija.</p>
+                    </li>
+                    <li><strong>Pierna Extendida Cae o se Dobla:</strong>
+                        <p><em>Causa:</em> Flexores de cadera o cuádriceps de la pierna extendida débiles; isquiotibiales "cortos" en esa pierna.
+                        <em>Corrección:</em> Fortalecer flexores de cadera (L-sit, leg raises). Estirar isquiotibiales. Simplemente practicar el mantener la pierna extendida.</p>
+                    </li>
+                    <li><strong>Excesivo Redondeo de la Espalda Baja (Butt Wink):</strong>
+                        <p><em>Causa:</em> Limitaciones en la movilidad de cadera (flexión profunda), isquiotibiales tensos, intento de alcanzar profundidad compensando.
+                        <em>Corrección:</em> Mejorar la movilidad de cadera y flexibilidad de isquiotibiales. Enfocarse en mantener el pecho relativamente erguido. Aceptar un rango menor con buena forma es mejor que forzar con mala forma.</p>
+                    </li>
+                     <li><strong>No Alcanzar la Profundidad Completa (Isquiotibial sobre Gemelo):</strong>
+                        <p><em>Causa:</em> Falta de fuerza en el rango final, miedo, movilidad restringida (tobillo o cadera).
+                        <em>Corrección:</em> Pistol Squats a caja, disminuyendo la altura. Negativos lentos. Trabajar específicamente la movilidad necesaria.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Interconexión de Movilidad, Fuerza y Equilibrio:</h4>
+                <p>El Pistol Squat es un maestro en revelar dónde se encuentran tus debilidades. A diferencia de muchos ejercicios de fuerza bilateral, aquí no puedes esconderte. Si la movilidad del tobillo es pobre, será casi imposible mantener el talón abajo y la rodilla alineada. Si la fuerza del glúteo medio es deficiente, la rodilla colapsará. Si el equilibrio es malo, te caerás. Trabaja estos tres aspectos de forma holística.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Rodillas:</strong> Aunque el Pistol Squat puede fortalecer las rodillas si se hace correctamente, una mala técnica (valgo, exceso de fuerza sobre los dedos) puede estresarlas. Progresar con cuidado. Asegurar un buen calentamiento.</li>
+                    <li><strong>Tobillos:</strong> La dorsiflexión es clave. Realizar calentamientos específicos de tobillo y trabajo de movilidad regular.</li>
+                    <li><strong>Caderas:</strong> Requieren buena movilidad en flexión y fuerza en estabilización. Calentamientos y estiramientos para los flexores, extensores y rotadores.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Periodización:</h4>
+                <ul>
+                    <li>Como un ejercicio de fuerza, los Pistol Squats o sus progresiones cercanas pueden entrenarse 2-3 veces por semana, permitiendo recuperación.</li>
+                    <li>El trabajo de movilidad específico puede hacerse con más frecuencia, incluso diariamente en sesiones cortas.</li>
+                    <li>Incluir variedad en el entrenamiento de piernas (sentadillas a dos piernas, zancadas) para un desarrollo completo.</li>
+                    <li>Escuchar las señales del cuerpo, especialmente de las rodillas.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Variaciones y Herramientas Útiles:</h4>
+                <ul>
+                    <li><strong>Pistol Squat con Salto (Jumping Pistol Squat):</strong> Una vez dominado el básico, añadir un componente pliométrico.</li>
+                    <li><strong>Pistol Squat sobre Superficie Inestable (ej. Bosu):</strong> Para un desafío mayor de equilibrio y estabilización (avanzado).</li>
+                    <li><strong>Uso de Zapatos de Halterofilia:</strong> El talón elevado de estos zapatos puede ayudar si la movilidad del tobillo es un factor muy limitante, aunque el objetivo debería ser mejorar la movilidad para no depender de ellos.</li>
+                    <li><strong>TRX o Anillas Bajas:</strong> Excelentes herramientas para asistencia graduada, permitiendo quitar peso progresivamente.</li>
+                </ul>
+                <p class="tip-dark"><strong>Empieza Descalzo o con Calzado Minimalista:</strong> Esto te ayuda a sentir mejor el suelo, mejorar la propiocepción del pie y la activación de sus músculos intrínsecos, lo cual es beneficioso para el equilibrio y la estabilidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
