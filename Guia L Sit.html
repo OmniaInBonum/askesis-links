@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el L-Sit</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el L-Sit, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/l%20sit.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-lsit" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-lsit" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-angle-double-right mr-3 text-askesis-orange"></i>Guía de Apoyo para el L-Sit</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Claves para Dominar este Pilar de la Fuerza del Core.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL L-SIT</h2>
+
+            <div>
+                <h3>A. Definición y Contexto</h3>
+                <p>El L-Sit es un ejercicio isométrico de fuerza fundamental en la calistenia, gimnasia y yoga. Se realiza sosteniendo el cuerpo con los brazos rectos (en el suelo, paralelas, anillas o P-bars), con las piernas extendidas horizontalmente frente al cuerpo, formando una "L" con el torso. Es una excelente prueba de fuerza de compresión del core, fuerza de los flexores de la cadera y fuerza de soporte de los hombros y tríceps.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>Comprender la mecánica es clave para un entrenamiento eficiente.</p>
+                <ul>
+                    <li><strong>Base de Soporte:</strong> Las manos. Requiere empujar activamente hacia abajo.</li>
+                    <li><strong>Centro de Gravedad:</strong> Al elevar las piernas, el centro de gravedad se desplaza hacia adelante. El core y los hombros trabajan para gestionar este cambio y mantener el equilibrio y la altura.</li>
+                    <li><strong>Fuerza de Compresión del Core:</strong> Los abdominales y flexores de la cadera trabajan intensamente para levantar y mantener las piernas paralelas al suelo.</li>
+                    <li><strong>Depresión Escapular:</strong> Empujar los hombros hacia abajo (lejos de las orejas) es crucial para crear espacio y activar los músculos correctos (trapecio inferior, serrato anterior).</li>
+                    <li><strong>Brazos Bloqueados:</strong> Los tríceps trabajan para mantener los codos extendidos y soportar el peso del cuerpo.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Posición de las Manos y Superficie:</strong>
+                        <ul>
+                            <li><strong>Suelo:</strong> El más desafiante debido a la menor altura disponible. Requiere mayor compresión y depresión escapular.</li>
+                            <li><strong>Paralelas (P-bars, parallettes) o Bloques:</strong> Elevan el cuerpo, dando más espacio para las piernas y facilitando el aprendizaje inicial.</li>
+                            <li><strong>Anillas:</strong> Añaden un componente de inestabilidad, requiriendo mayor control.</li>
+                            <li>Las manos suelen estar a la anchura de los hombros, dedos apuntando hacia adelante o ligeramente hacia los lados.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Depresión y Ligera Protracción Escapular:</strong>
+                        <ul>
+                            <li><strong>¡Fundamental!</strong> Empujar activamente los hombros hacia abajo y ligeramente hacia adelante, alejándolos de las orejas ("hombros orgullosos"). Esto crea espacio para que la cadera y las piernas se eleven y evita "hundirse" en los hombros.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación Intensa del Core y Flexores de Cadera:</strong>
+                        <ul>
+                            <li>El recto abdominal, los oblicuos y especialmente los flexores de la cadera (psoas, ilíaco, recto femoral) deben contraerse fuertemente para elevar las piernas a 90 grados y mantenerlas rectas.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Piernas Rectas y Juntas:</strong> Rodillas completamente extendidas y tobillos en punta (o flexionados, según preferencia, pero las piernas rectas).</li>
+                    <li><strong>Brazos Bloqueados:</strong> Codos totalmente extendidos.</li>
+                    <li><strong>Mirada:</strong> Generalmente al frente o ligeramente hacia abajo y adelante.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL L-SIT</h2>
+            <p>Dominar cada paso construye la fuerza y la técnica necesarias.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Fundamentales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Core:</strong> Hollow body holds/rocks, planchas, elevaciones de piernas colgado (Hanging Knee/Leg Raises).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fuerza de Empuje de Hombros y Tríceps:</strong> Fondos en paralelas (Dips), flexiones (Push-ups), Support Hold en paralelas (mantenerse con brazos rectos).</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Movilidad y Fuerza de Flexores de Cadera:</strong> Elevaciones de piernas sentado (Seated Leg Lifts - una pierna a la vez, o ambas), pike pulses (pulsos de piernas en posición de pica).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Depresión Escapular:</strong> Scapular Dips/Shrugs en paralelas (manteniendo brazos rectos, solo mover escápulas arriba y abajo).</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas del L-Sit (Idealmente en Paralelas o Bloques al inicio):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Support Hold (Soporte):</strong></p>
+                    <p>En paralelas o bloques, simplemente sostener el cuerpo con los brazos rectos y hombros deprimidos, pies sin tocar el suelo.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Tuck L-Sit (L-Sit Agrupado):</strong></p>
+                    <p>Desde el support hold, llevar ambas rodillas hacia el pecho lo más alto posible, manteniendo la depresión escapular. La espalda puede estar ligeramente redondeada.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Advanced Tuck L-Sit / Tuck L-Sit con un Pie Apoyado:</strong></p>
+                    <p>Desde el Tuck L-Sit, intentar bajar ligeramente las rodillas para que los muslos se acerquen a estar paralelos al suelo. Alternativamente, apoyar los dedos de un pie ligeramente en el suelo mientras se mantienen las caderas altas y la otra rodilla al pecho.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. One-Leg Extended L-Sit (L-Sit con una Pierna Extendida):</strong></p>
+                    <p>Desde el Tuck L-Sit, extender una pierna completamente recta, paralela al suelo. La otra rodilla permanece cerca del pecho. Alternar piernas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>5. L-Sit Negatives / Brief Holds (Negativos de L-Sit / Aguantadas Breves):</strong></p>
+                    <p>Intentar extender ambas piernas al L-Sit completo por unos segundos y luego volver al tuck, o bajar lentamente desde una posición más alta (si se inicia con impulso controlado, solo para la forma). Enfocarse en la calidad.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Full L-Sit (L-Sit Completo):</strong></p>
+                    <p>Desde el support hold, elevar ambas piernas extendidas hasta que estén paralelas al suelo (o ligeramente más arriba), manteniendo la depresión escapular y los brazos bloqueados. Aguantar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">La clave es la práctica consistente con buena forma. Trabaja con "sets" de aguante, tratando de mantener la forma perfecta el mayor tiempo posible. La depresión escapular ("empujar hacia abajo") y apretar el core son vitales. La respiración controlada también ayuda.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Elevaciones de Piernas Colgado (hasta la barra si es posible):</strong> Para fuerza de core y flexores de cadera.</li>
+                    <li><strong>Seated Pike Compressions / Leg Lifts:</strong> Sentado en el suelo, levantar las piernas (una o ambas) sin usar las manos.</li>
+                    <li><strong>Fondos y Support Holds:</strong> Para la fuerza de los hombros y tríceps.</li>
+                    <li><strong>Trabajo en el Suelo:</strong> Una vez que se domina en paralelas, transferir la habilidad al suelo es un nuevo desafío.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Paciencia, Flexibilidad y Conciencia Corporal</h3>
+                <p class="warning-dark">Aunque parece simple, el L-Sit exige mucho. Sé paciente. Una buena flexibilidad en los isquiotibiales ayuda a mantener las piernas rectas, pero la fuerza de los flexores de cadera y del core es primordial. Concéntrate en la sensación de "empujar el suelo/paralelas lejos" y "comprimir el abdomen".</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el L-Sit:</h4>
+                <ul>
+                    <li><strong>Core (Fuerza de Compresión y Estabilización):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal:</strong> Contracción potente para flexionar el tronco y mantener la posición de "L".</li>
+                            <li><strong>Oblicuos (Interno y Externo):</strong> Ayudan en la compresión y estabilización lateral.</li>
+                            <li><strong>Transverso del Abdomen:</strong> Estabiliza la columna y comprime el abdomen.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Flexores de Cadera (Elevación de Piernas):</strong>
+                        <ul>
+                            <li><strong>Psoas Ilíaco (Iliopsoas):</strong> Principal motor para la flexión de la cadera.</li>
+                            <li><strong>Recto Femoral (parte del cuádriceps):</strong> Asiste en la flexión de la cadera y extensión de la rodilla.</li>
+                            <li><strong>Tensor Fasciae Latae (TFL), Sartorio, Pectíneo:</strong> Músculos sinérgicos en la flexión de cadera.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hombros y Espalda Superior (Soporte y Depresión):</strong>
+                        <ul>
+                            <li><strong>Tríceps Braquial:</strong> Mantiene los codos extendidos.</li>
+                            <li><strong>Deltoides Anterior:</strong> Ayuda a estabilizar el hombro y en la flexión.</li>
+                            <li><strong>Trapecio (Porciones Inferior y Media):</strong> Crucial para la depresión escapular.</li>
+                            <li><strong>Serrato Anterior:</strong> Ayuda en la protracción y depresión escapular, estabilizando la escápula contra la caja torácica.</li>
+                            <li><strong>Pectoral Mayor (Porción Inferior):</strong> Asiste en la depresión del hombro.</li>
+                            <li><strong>Latissimus Dorsi (Dorsal Ancho):</strong> Aunque principalmente un extensor, contribuye a la depresión del hombro.</li>
+                        </ul>
+                    </li>
+                     <li><strong>Músculos de las Piernas:</strong>
+                        <ul>
+                            <li><strong>Cuádriceps:</strong> Mantienen las rodillas extendidas.</li>
+                            <li><strong>Tibial Anterior (opcional):</strong> Si se flexionan los tobillos (dorsiflexión).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Support Hold en Paralelas/Anillas:</strong> Mantener 30-60 segundos con hombros deprimidos.</li>
+                    <li><strong>Fondos en Paralelas (Dips):</strong> 10-15 repeticiones con buen rango y forma.</li>
+                    <li><strong>Elevaciones de Rodillas Colgado (Hanging Knee Raises):</strong> 15-20 repeticiones controladas.</li>
+                    <li><strong>Hollow Body Hold:</strong> 30-60 segundos con buena forma (espalda baja pegada al suelo).</li>
+                    <li><strong>Flexibilidad Decente en Isquiotibiales:</strong> Poder tocarse los pies sentado con piernas rectas o casi. No es estrictamente necesario para empezar, pero ayuda.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Hombros Encogidos (Elevados hacia las Orejas):</strong>
+                        <p><em>Causa:</em> Falta de fuerza o conciencia en los depresores escapulares (trapecio inferior, serrato).
+                        <em>Corrección:</em> Practicar scapular dips/shrugs. Enfocarse activamente en "empujar el suelo/paralelas hacia abajo y lejos". Pensar en "alargar el cuello".</p>
+                    </li>
+                    <li><strong>Rodillas Flexionadas o Piernas Caídas:</strong>
+                        <p><em>Causa:</em> Insuficiente fuerza en los flexores de la cadera y/o cuádriceps; core débil; isquiotibiales "cortos" pueden hacer que parezca más difícil.
+                        <em>Corrección:</em> Trabajar progresiones como Tuck L-Sit y One-Leg L-Sit. Fortalecer flexores de cadera (seated leg lifts) y cuádriceps. Estirar isquiotibiales.</p>
+                    </li>
+                    <li><strong>Hundirse entre los Hombros / Perder la Depresión:</strong>
+                        <p><em>Causa:</em> Fatiga; falta de fuerza o resistencia en los depresores escapulares y tríceps.
+                        <em>Corrección:</em> Mejorar el Support Hold. Enfocarse en mantener el "empuje hacia abajo" durante todo el hold. Acortar la duración del L-Sit hasta poder mantener la forma.</p>
+                    </li>
+                     <li><strong>Espalda Excesivamente Redondeada (más allá del Tuck L-Sit):</strong>
+                        <p><em>Causa:</em> Intento de compensar la falta de compresión abdominal o flexibilidad de isquiotibiales.
+                        <em>Corrección:</em> Mejorar la fuerza de compresión del core. Una ligera redondez puede estar bien, pero evitar una "bola". Trabajar en la flexibilidad.</p>
+                    </li>
+                    <li><strong>Uso de Impulso para Elevar las Piernas:</strong>
+                        <p><em>Causa:</em> Falta de fuerza para un levantamiento controlado.
+                        <em>Corrección:</em> Trabajar desde el Tuck L-Sit extendiendo las piernas lentamente. Evitar balanceos.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Clave: Depresión Escapular y Compresión Activa</h4>
+                <p>Estos dos elementos son cruciales. <strong>Depresión escapular</strong> (empujar los hombros hacia abajo y lejos de las orejas) crea el espacio físico necesario para levantar las caderas y piernas, especialmente en el suelo. La <strong>compresión activa</strong> (contraer fuertemente abdominales y flexores de cadera) es lo que eleva y mantiene las piernas. Ambas acciones deben ser conscientes y constantes durante todo el hold.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> Especialmente si se realiza en el suelo, las muñecas están bajo una extensión considerable. Calentamiento adecuado (círculos, estiramientos de flexores/extensores) y fortalecimiento gradual. El uso de paralelas puede aliviar el estrés en las muñecas.</li>
+                    <li><strong>Hombros:</strong> Aunque no es un movimiento de rango extremo, la estabilidad y fuerza de soporte son importantes. Mantener una buena salud del manguito rotador.</li>
+                    <li><strong>Codos:</strong> Deben estar bloqueados. Si hay tendencia a la hiperextensión, tener cuidado y fortalecer tríceps y bíceps de forma equilibrada.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Estructuración:</h4>
+                <ul>
+                    <li>El L-Sit y sus progresiones pueden entrenarse con relativa frecuencia, ya que la recuperación es más rápida que en movimientos de máxima intensidad. 3-5 veces por semana es viable para muchos.</li>
+                    <li>Incorporar L-Sit al principio de la sesión de core/fuerza cuando se está fresco.</li>
+                    <li>Se puede trabajar en "sets" de aguante (ej. 3-5 sets de X segundos) o como parte de un circuito.</li>
+                    <li>Incrementar gradualmente el tiempo total bajo tensión por sesión.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de Paralelas, Bloques o Dedos:</h4>
+                <p>Iniciar el L-Sit en una superficie elevada (paralelas, bloques de yoga, incluso libros firmes o usando los nudillos/dedos en lugar de la palma completa si la flexibilidad de muñeca es un problema en el suelo) es altamente recomendado.</p>
+                <ul>
+                    <li><strong>Mayor Espacio:</strong> Permite concentrarse en la forma y la fuerza sin que la altura del suelo sea un limitante inmediato.</li>
+                    <li><strong>Transición Gradual:</strong> Una vez que se domina en una altura, se puede pasar a una superficie más baja hasta llegar al suelo.</li>
+                    <li>El L-Sit en el suelo requiere la mayor cantidad de depresión escapular y compresión.</li>
+                </ul>
+                <p class="tip-dark"><strong>Mental Cues:</strong> Piensa en "empujar el suelo (o las paralelas) hacia abajo y lejos", "tirar de las rodillas hacia el pecho y luego extenderlas", "mostrar el pecho orgulloso", "crecer alto desde los hombros".</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
