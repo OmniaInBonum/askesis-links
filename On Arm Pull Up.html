@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para la Dominada a Una Mano (OAPU)</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en la Dominada a Una Mano (OAPU), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/Muscle%20up.jpeg') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        .guide-section .quote { 
+            font-style: italic; 
+            color: var(--askesis-light-gray); 
+            border-left: 3px solid var(--askesis-green); 
+            padding-left: 10px; 
+            margin: 1rem 0;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+
+        .mesocycle-plan-dark { 
+            background-color: var(--askesis-dark); 
+            border: 1px solid var(--askesis-border); 
+            padding: 1.5rem; 
+            border-radius: 6px; 
+            margin-top: 1.5rem; 
+        }
+        .mesocycle-plan-dark h4 { 
+            color: var(--askesis-green);
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+        }
+        .mesocycle-plan-dark table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 1rem; 
+            font-size: 0.9em;
+        }
+        .mesocycle-plan-dark th, .mesocycle-plan-dark td { 
+            border: 1px solid var(--askesis-border); 
+            padding: 0.75rem; 
+            text-align: left; 
+            color: var(--askesis-light-gray);
+        }
+        .mesocycle-plan-dark th { 
+            background-color: var(--askesis-gray); 
+            color: var(--askesis-text-white);
+            font-weight: 600;
+        }
+        .mesocycle-plan-dark td ul {
+            padding-left: 15px; 
+            margin-bottom: 0;
+        }
+        .mesocycle-plan-dark td li {
+            margin-bottom: 0.25rem;
+            font-size: 0.85em;
+        }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-oapu" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-oapu" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-fist-raised mr-3 text-askesis-orange"></i>Guía de Apoyo para la Dominada a Una Mano (OAPU)</h1>
+        <p class="guide-subtitle">Principios, Prerrequisitos y Progresiones para Conquistar este Desafío de Fuerza Unilateral.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN: LA CIMA DE LA FUERZA DE TRACCIÓN UNILATERAL</h2>
+
+            <div>
+                <h3>A. Definición y Prestigio</h3>
+                <p>La Dominada a Una Mano (OAPU) es uno de los ejercicios de peso corporal más emblemáticos y desafiantes, un verdadero testimonio de la fuerza de tracción unilateral. Consiste en realizar una dominada completa, desde un brazo completamente extendido (codo bloqueado) hasta que la barbilla supera la barra, utilizando únicamente la fuerza de un brazo. La mano libre no debe tocar la barra, el cuerpo ni el brazo de trabajo. Una OAPU estricta se realiza con el mínimo balanceo y un control total del movimiento, especialmente en la fase excéntrica.</p>
+                <p class="quote">"La OAPU no es simplemente una dominada con un brazo; es una reorganización completa de cómo el cuerpo genera y controla la fuerza de tracción bajo una carga unilateral masiva."</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Profunda: Más que Fuerza Bruta</h3>
+                <p>La OAPU impone demandas biomecánicas únicas:</p>
+                <ul>
+                    <li><strong>Carga Asimétrica Extrema:</strong> Todo el peso corporal es manejado por un solo lado del sistema de tracción. Esto requiere no solo fuerza inmensa en el brazo de trabajo, sino también una capacidad sobresaliente de los estabilizadores del tronco para prevenir la rotación.</li>
+                    <li><strong>Componente Rotacional y Anti-Rotacional:</strong> El cuerpo naturalmente querrá rotar hacia el lado del brazo libre. Los oblicuos, cuadrado lumbar, y otros músculos del core del lado opuesto trabajan isométricamente de forma intensa para mantener el torso "cuadrado" a la barra o, como mínimo, controlar la rotación.</li>
+                    <li><strong>Cambio en el Patrón de Activación Escapular:</strong> La escápula del brazo de trabajo debe deprimirse y retraerse potentemente. La escápula del lado libre a menudo se eleva y rota para ayudar a compensar y mantener el equilibrio.</li>
+                    <li><strong>Incremento de la Implicación del Brazo:</strong> Mientras que en una dominada a dos manos los dorsales son los principales motores, en la OAPU, los músculos del brazo (bíceps, braquial, braquiorradial) y el dorsal del lado de trabajo deben trabajar a una capacidad mucho mayor.</li>
+                    <li><strong>Fase de Bloqueo (Lock-off) Crítica:</strong> La fuerza isométrica en diferentes puntos del rango, especialmente en la parte superior (lock-off) con el codo flexionado a 90 grados o menos, es crucial.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Indispensables para el Entrenamiento de la OAPU</h3>
+                <ol>
+                    <li>
+                        <strong>Agarre y Posición de la Mano:</strong>
+                        <ul>
+                            <li><strong>Pronado (Overhand):</strong> Es el agarre estándar para la OAPU de calistenia.</li>
+                            <li><strong>Neutro/Paralelo:</strong> Puede ser ligeramente más fácil para algunos debido a la biomecánica del brazo.</li>
+                            <li><strong>Supino (Underhand - OACU):</strong> La Dominada a Una Mano con Agarre Supino (OACU o One-Arm Chin-up) implica más al bíceps y cambia la mecánica. Es una habilidad diferente pero igualmente impresionante. Generalmente se considera que la OACU es "más fácil" de lograr primero que la OAPU pronada, aunque esto es subjetivo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Control Escapular Unilateral Activo:</strong> Ser capaz de deprimir y retraer la escápula del brazo de trabajo bajo carga, mientras se gestiona la posición de la otra escápula.</li>
+                    <li><strong>Gestión de la Rotación Corporal:</strong> El core debe ser increíblemente fuerte para resistir la torsión natural. Esto incluye los oblicuos, cuadrado lumbar y rotadores profundos de la columna.</li>
+                    <li><strong>Fuerza Extrema en el Dorsal, Bíceps y Antebrazo del Lado de Trabajo.</strong></li>
+                    <li><strong>Paciencia y Consistencia Absolutas:</strong> El camino hacia la OAPU es largo y está lleno de mesetas.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PRERREQUISITOS ESTRICTOS: LA BASE INDISPENSABLE</h2>
+            <p>Intentar la OAPU sin una base sólida es una receta para la frustración y posibles lesiones. No te saltes este paso crucial.</p>
+
+            <div>
+                <h3>A. Dominadas Bilaterales con Lastre Pesado:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Dominadas Estrictas con Lastre (Weighted Pull-ups):</strong> Debes ser capaz de realizar al menos 1-3 repeticiones con un lastre significativo. Una guía común es ser capaz de hacer una dominada con <strong>+60-75% de tu peso corporal</strong> como mínimo. Algunos dirían incluso +90% para asegurar que la fuerza base está ahí. La forma debe ser impecable: rango completo, sin kipping.</p>
+                    <p class="tip-dark"><strong>Por qué:</strong> Esto asegura que tus músculos de tracción primarios (dorsales, bíceps, etc.) tienen la capacidad de fuerza bruta necesaria antes de intentar manejar todo tu peso con un solo brazo.</p>
+                </div>
+            </div>
+             <div>
+                <h3>B. Dominadas de Arquero/Escritor (Archer/Typewriter Pull-ups) Avanzadas:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Dominadas de Arquero con Brazo Asistente Totalmente Extendido:</strong> Realizar múltiples repeticiones (5+) por lado donde el brazo "asistente" está completamente recto y lo más lejos posible, ofreciendo mínima ayuda. El brazo de trabajo debe realizar casi toda la tracción.</p>
+                    <p class="tip-dark"><strong>Por qué:</strong> Introducen la carga unilateral de forma gradual y enseñan al cuerpo a estabilizarse contra la rotación y a activar la musculatura del brazo de trabajo de manera más aislada.</p>
+                </div>
+            </div>
+            <div>
+                <h3>C. Control Escapular y Fuerza Isométrica:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Aguante en la Parte Superior de la Dominada (Chin-over-bar Hold):</strong> Poder aguantar la posición superior de la dominada con dos brazos por 30-60 segundos.</p>
+                    <p><strong>Scapular Pull-ups:</strong> Para la conciencia y fuerza escapular.</p>
+                     <p><strong>Aguantes Asistidos a Una Mano:</strong> Poder aguantar en la parte superior con una mano, usando la otra para un ligero apoyo (ej. agarrando la muñeca del brazo de trabajo) durante varios segundos.</p>
+                    <p class="tip-dark"><strong>Por qué:</strong> La OAPU no es solo concéntrica; requiere un control isométrico brutal, especialmente en la parte superior y en la transición.</p>
+                </div>
+            </div>
+             <div>
+                <h3>D. Salud Articular y Prevención:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Codos y Hombros Sanos:</strong> No debes tener dolores preexistentes que se agraven con el entrenamiento de tracción. El entrenamiento de OAPU puede ser muy estresante para los tendones del codo (epicondilitis/epitrocleitis) y la articulación del hombro.</p>
+                    <p class="tip-dark"><strong>Por qué:</strong> La carga intensa y asimétrica puede exacerbar problemas subyacentes. La prehabilitación (ejercicios para manguito rotador, fortalecimiento de antebrazos) es crucial.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. PROGRESIONES ESPECÍFICAS HACIA LA OAPU</h2>
+            <p>Estas progresiones son clave. Domina cada una antes de intentar la siguiente. La paciencia es tu mayor aliado.</p>
+
+            <div>
+                <div class="progression-item-dark">
+                    <p><strong>1. Dominadas Asistidas con Dedos (Finger-Assisted Pull-ups):</strong></p>
+                    <p>Realiza la dominada con un brazo, mientras la mano asistente usa progresivamente menos dedos de la otra mano sobre la barra para ayudar (ej. empezar con 3 dedos, luego 2, luego 1 dedo). Mantén la mano asistente cerca de la mano de trabajo.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Dominadas con Toalla/Cuerda (Towel/Rope-Assisted Pull-ups):</strong></p>
+                    <p>Un brazo realiza la dominada. La otra mano agarra una toalla o cuerda colgada de la barra. La mano que agarra la toalla se coloca progresivamente más abajo, haciendo que aporte menos ayuda.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Dominadas a una Mano Excéntricas (Negativas de OAPU):</strong></p>
+                    <p>Súbete a la posición superior de la dominada (barbilla sobre la barra) usando dos brazos, luego suelta un brazo y baja lo más lentamente posible (objetivo: 5-10 segundos o más). <strong>Esta es una de las progresiones más importantes.</strong> Enfócate en controlar la rotación.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Dominadas a una Mano con Contrapeso Ligero (Counterweight OAPU):</strong></p>
+                    <p>Utiliza un sistema de poleas o bandas de resistencia ancladas al suelo para quitar una pequeña cantidad de tu peso corporal. Reduce el contrapeso gradualmente.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Dominadas a una Mano con Agarre Mixto Asimétrico (Mixed Grip OAPU Prep):</strong></p>
+                    <p>Un brazo en agarre pronado (o el deseado para la OAPU). La mano de asistencia agarra la muñeca del brazo de trabajo o se coloca en un agarre inferior/lateral en la barra, ofreciendo ayuda. Transfiere gradualmente más peso al brazo principal.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Intentos de OAPU desde Diferentes Rangos (Partial OAPUs):</strong></p>
+                    <p>Practicar la tracción desde el bloqueo a 90 grados hasta arriba, o desde el punto muerto inferior hasta un bloqueo a 90 grados. Esto ayuda a fortalecer puntos débiles específicos.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>7. Intentos de OAPU Completa (Full OAPU Attempts):</strong></p>
+                    <p>Cuando las negativas son muy controladas y los métodos asistidos están muy avanzados, empezar a intentar la OAPU concéntrica completa. No te desanimes si fallas muchas veces; es parte del proceso.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. FORTALECIMIENTO Y ACCESORIOS CLAVE</h2>
+
+            <div>
+                <h3>A. Dorsales y Espalda</h3>
+                <ul>
+                    <li><strong>Dominadas con Lastre Pesado (varios agarres):</strong> Continuar con esto.</li>
+                    <li><strong>Remos a Una Mano Pesados (con Mancuerna, Polea):</strong> Para fuerza unilateral de tracción y anti-rotación.</li>
+                </ul>
+                <h3>B. Bíceps y Antebrazos</h3>
+                <ul>
+                    <li><strong>Curls Concentrados, Hammer Curls, Reverse Curls (pesados):</strong> El bíceps y braquial son cruciales.</li>
+                    <li><strong>Trabajo de Agarre (Grip Work):</strong> Cuelgues a una mano, towel hangs.</li>
+                </ul>
+                <h3>C. Core y Estabilizadores</h3>
+                <ul>
+                    <li><strong>Dragon Flags, Front Lever Raises, Windshield Wipers:</strong> Para la fuerza del core anterior y oblicuos.</li>
+                    <li><strong>Press Pallof, Woodchoppers (con cable o banda):</strong> Para fuerza anti-rotacional específica.</li>
+                    <li><strong>Planchas Laterales con Peso/Elevaciones de Cadera:</strong> Para el cuadrado lumbar y oblicuos.</li>
+                </ul>
+                <h3>D. Estabilización Escapular</h3>
+                <ul>
+                    <li><strong>Face Pulls, Band Pull-Aparts, YTWLs:</strong> Para la salud del hombro y el equilibrio muscular alrededor de la escápula.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>V. CONSIDERACIONES DE ENTRENAMIENTO Y PERIODIZACIÓN</h2>
+
+            <div>
+                <h3>A. Frecuencia e Intensidad</h3>
+                <p>El entrenamiento para la OAPU es de <strong>alta intensidad</strong>. Esto significa que la frecuencia directa de intentos de OAPU o negativas pesadas debe ser limitada para permitir la recuperación.</p>
+                <ul>
+                    <li><strong>Entrenamiento específico de OAPU (negativas, intentos asistidos pesados):</strong> 1-2 veces por semana como máximo por brazo.</li>
+                    <li><strong>Ejercicios de fuerza base (dominadas con lastre, remos):</strong> Pueden hacerse 1-2 veces adicionales, enfocándose en volumen o diferente intensidad.</li>
+                </ul>
+                <h3>B. Volumen y Progresión</h3>
+                <p>El volumen total de trabajo específico para OAPU debe ser bajo a moderado. Pocas series de muy alta calidad son mejores que muchas series de calidad decreciente.</p>
+                <ul>
+                    <li><strong>Ejemplo para negativas de OAPU:</strong> 3-5 series de 1-3 repeticiones por brazo, con bajadas de 5+ segundos.</li>
+                    <li>Progresa incrementando la lentitud de la negativa, reduciendo la asistencia, o intentando fases concéntricas más largas.</li>
+                </ul>
+                <h3>C. Descanso y Recuperación</h3>
+                <p>El descanso adecuado es VITAL. El tejido conectivo (tendones, ligamentos) se adapta más lentamente que los músculos.</p>
+                <ul>
+                    <li>Al menos 48-72 horas de descanso entre sesiones intensas de OAPU para el mismo brazo.</li>
+                    <li>Prestar atención al sueño, la nutrición y la gestión del estrés.</li>
+                </ul>
+                <h3>D. Periodización Simple (Lineal o Undulante)</h3>
+                <p>No necesitas un plan excesivamente complejo, pero sí alguna estructura.</p>
+                <ul>
+                    <li><strong>Fase de Acumulación (Fuerza Base):</strong> Mayor volumen de dominadas con lastre, dominadas de arquero, y trabajo de core. (4-8 semanas)</li>
+                    <li><strong>Fase de Intensificación (Específica OAPU):</strong> Reducir el volumen de lastre, enfocarse en negativas de OAPU, intentos asistidos, y fortalecimiento de eslabones débiles. (4-8 semanas)</li>
+                    <li><strong>Fase de Pico/Testeo:</strong> Intentos de OAPU completa después de un ligero deload. (1-2 semanas)</li>
+                    <li>Alternativamente, una periodización ondulante semanal: un día pesado específico de OAPU, un día de volumen de tracción bilateral, un día de accesorios/prehab.</li>
+                </ul>
+            </div>
+        </div>
+
+         <div class="guide-section"> 
+            <h2>VI. EL FACTOR MENTAL Y SUPERACIÓN DE MESETAS</h2>
+            <div>
+                <h3>A. Paciencia y Persistencia</h3>
+                <p class="quote">"La OAPU es un maratón, no un sprint. Prepárate para un viaje largo y desafiante."</p>
+                <p>La frustración es común. Habrá semanas o meses donde el progreso parezca estancado. Mantén la fe en el proceso, sigue entrenando de forma inteligente y no te rindas. Filmar tus intentos puede revelar pequeños progresos que no sientes.</p>
+                <h3>B. Rompiendo Mesetas (Plateaus)</h3>
+                <ul>
+                    <li><strong>Cambia el Estímulo:</strong> Si las negativas no progresan, enfócate en mejorar tus dominadas con lastre por un tiempo, o prueba un método de asistencia diferente.</li>
+                    <li><strong>Trabaja Puntos Débiles Específicos (Sticking Points):</strong> Si siempre fallas en el mismo punto, practica isométricos en ese rango (con asistencia o solo la fase excéntrica a través de ese punto).</li>
+                    <li><strong>Deload Estratégico:</strong> A veces, una semana de entrenamiento de menor intensidad o descanso completo puede permitir que el cuerpo se recupere y supere una meseta.</li>
+                    <li><strong>Revisa tu Forma:</strong> Un pequeño error técnico (como perder la tensión escapular o rotar demasiado pronto) puede frenar el progreso.</li>
+                    <li><strong>Gana Fuerza General:</strong> A veces, alejarse un poco del objetivo específico y simplemente volverse más fuerte en general (ej. con sentadillas y peso muerto si los haces, o más fuerza en empujes) puede tener un efecto de transferencia positivo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>VII. PREVENCIÓN DE LESIONES Y SALUD ARTICULAR A LARGO PLAZO</h2>
+            <div>
+                <h4>A. Calentamiento Exhaustivo:</h4>
+                <p>Antes de cada sesión de OAPU: movilidad articular general, activación escapular (band pull-aparts, dislocaciones con banda, scapular pull-ups), algunas dominadas ligeras y progresiones menos intensas.</p>
+                <h4>B. Equilibrio Muscular:</h4>
+                <p>No descuides los músculos antagonistas (empuje horizontal y vertical, como flexiones y pino) ni la salud de los hombros (trabajo de manguito rotador, face pulls).</p>
+                <h4>C. Escucha Activa de tu Cuerpo:</h4>
+                <p class="warning-dark"><strong>El dolor agudo NO es bueno.</strong> Distingue entre la fatiga muscular y el dolor articular/tendinoso. Si sientes un dolor punzante, especialmente en codos o hombros, detente, descansa y evalúa. Entrenar con dolor es una forma rápida de desarrollar lesiones crónicas.</p>
+                <h4>D. Técnica Impecable:</h4>
+                <p>Una mala técnica bajo cargas tan altas es muy peligrosa. Prioriza siempre la forma sobre el intento de lograr la repetición a toda costa.</p>
+            </div>
+            <div>
+                <h4>E. Movilidad de Muñeca y Hombro:</h4>
+                <p>Aunque la OAPU es principalmente fuerza, una buena movilidad en muñecas y hombros permite una mecánica más eficiente y reduce el riesgo de compensaciones.</p>
+            </div>
+        </div>
+         <div class="guide-section"> 
+            <h2>VIII. VARIACIONES AVANZADAS Y MÁS ALLÁ (BREVE MENCIÓN)</h2>
+            <p>Una vez que dominas la OAPU estricta, existen otros desafíos:</p>
+            <ul>
+                <li><strong>OAPU con Peso Adicional:</strong> Añadir lastre a tu OAPU.</li>
+                <li><strong>OAPU en Anillas:</strong> Incrementa enormemente la inestabilidad y la demanda de control.</li>
+                <li><strong>Hefesto (Back Lever Pull-out to OAPU / Muscle-up a un Brazo):</strong> Un movimiento extremadamente avanzado que combina un back lever con una transición a muscle-up a un brazo.</li>
+            </ul>
+            <p class="tip-dark">La maestría en la OAPU básica es un logro monumental. Disfruta el proceso y el resultado de tu arduo trabajo.</p>
+        </div>
+        
+        <div class="guide-section mesocycle-plan-dark"> <h2>V. EJEMPLO DE MESOCICLO (1 MES) PARA PRINCIPIANTE CON BASE</h2>
+            <p>Este mesociclo asume que el atleta puede realizar unas 5-8 dominadas estrictas (sin false grip), 8-10 fondos en paralelas (o barra recta si ya los tiene) y tiene algo de experiencia con el entrenamiento de calistenia.</p>
+            <p class="tip-dark"><strong>Objetivo del Mesociclo:</strong> Mejorar significativamente los componentes del muscle-up, lograr las primeras progresiones avanzadas (negativos, asistidos) y potencialmente el primer muscle-up si la base es sólida.</p>
+
+            <div>
+                <h4>Plan de Entrenamiento Semanal (Repetir durante 4 semanas con ajustes)</h4>
+                <p><strong>Frecuencia:</strong> 3 días de fuerza/habilidad por semana. Otros días: descanso activo (movilidad, cardio ligero) o descanso completo.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Semana</th>
+                            <th>Día 1: Enfoque Tracción + Transición Ligera</th>
+                            <th>Día 2: Enfoque Empuje + Transición Ligera</th>
+                            <th>Día 3: Habilidad Muscle-Up + Componentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Semana 1</strong><br>(Fundación)</td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento (incl. movilidad muñecas/hombros)</li>
+                                    <li>2. Dominadas con False Grip Asistidas o Negativos de False Grip: 3x3-5 reps</li>
+                                    <li>3. Dominadas Explosivas (intentar pecho a barra): 4x3-5 reps</li>
+                                    <li>4. Remos en Barra Baja (con False Grip si es posible): 3x8-10 reps</li>
+                                    <li>5. Hollow Body Holds: 3x20-30 seg</li>
+                                </ul>
+                            </td>
+                            <td>
+                               <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Fondos en Barra Recta (o paralelas si aún no hay barra recta): 4x5-8 reps (profundos)</li>
+                                    <li>3. Fondos Negativos en Barra (enf. transición del MU): 3x3-5 reps (bajar MU lento)</li>
+                                    <li>4. Flexiones Pica / Declinadas: 3x8-12 reps</li>
+                                    <li>5. L-Sit Tucks o Elevaciones de Rodillas Colgado: 3x8-12 reps</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Muscle-Up desde Barra Baja (con asistencia pies): 3x3-5 reps (enf. técnica transición)</li>
+                                    <li>3. Dominadas Explosivas Altas (buscando altura): 3x AMRAP-2 (sin fallo total)</li>
+                                    <li>4. Fondos en Barra Recta: 3xAMRAP-2</li>
+                                    <li>5. Estiramientos y movilidad</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semana 2</strong><br>(Incremento)</td>
+                            <td>
+                                <em>(Intentar aumentar reps/calidad o reducir asistencia en false grip)</em>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Dominadas con False Grip (intentar sin asistencia): 3x2-4 reps</li>
+                                    <li>3. Dominadas Explosivas (intentar esternón a barra): 4x3-5 reps</li>
+                                    <li>4. Remos en Barra Baja (con False Grip): 3x8-12 reps</li>
+                                    <li>5. Hollow Body Rocks: 3x15-20</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <em>(Intentar aumentar reps/profundidad en dips)</em>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Fondos en Barra Recta: 4x6-10 reps</li>
+                                    <li>3. Muscle-Up Negativos (desde arriba): 3x2-4 reps (lo más lento posible en transición)</li>
+                                    <li>4. Flexiones Pica / Declinadas: 3x10-15 reps</li>
+                                    <li>5. L-Sit Tucks (intentar extender una pierna): 3x8-12 reps</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Muscle-Up con Banda de Asistencia (ligera): 3-4x1-3 reps</li>
+                                    <li>(O seguir con Barra Baja si banda no es opción/demasiado difícil)</li>
+                                    <li>3. Dominadas Explosivas (máxima altura): 3x3-5 reps</li>
+                                    <li>4. Fondos en Barra Recta (con pausa abajo): 3x5-8 reps</li>
+                                    <li>5. Estiramientos</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semana 3</strong><br>(Pico)</td>
+                             <td>
+                                <em>(Máximo esfuerzo en calidad de false grip y altura de pull-up)</em>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Dominadas con False Grip: 3x3-5 reps (mejor forma posible)</li>
+                                    <li>3. Dominadas Explosivas (intentar ombligo a barra): 4x2-4 reps</li>
+                                    <li>4. Remos en Barra Baja (False Grip, explosivos): 3x6-8 reps</li>
+                                    <li>5. Dragon Flag Negatives (o Tuck Planche Leans): 3x3-5 reps</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <em>(Buscar más fuerza en dips y control en negativos)</em>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Fondos en Barra Recta (intentar añadir lastre ligero si es posible): 3x5-8 reps</li>
+                                    <li>3. Muscle-Up Negativos: 4x1-3 reps (énfasis en la transición perfecta)</li>
+                                    <li>4. Pike Push-ups (pies elevados): 3x5-8 reps</li>
+                                    <li>5. L-Sit (intentar ambas piernas extendidas): 3x5-10 seg holds</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Muscle-Up Intentos (con/sin banda ligera según progreso): 5-8 intentos totales</li>
+                                    <li>(Si no hay MU, hacer negativos o la progresión más cercana)</li>
+                                    <li>3. Dominadas (Pecho a barra, False Grip): 2xAMRAP</li>
+                                    <li>4. Fondos en Barra Recta: 2xAMRAP</li>
+                                    <li>5. Estiramientos</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semana 4</strong><br>(Descarga/Test)</td>
+                           <td>
+                               <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Dominadas con False Grip: 2x3 reps (ligeras)</li>
+                                    <li>3. Dominadas Explosivas: 2x3 reps (ligeras)</li>
+                                    <li>4. Remos Ligeros: 2x8 reps</li>
+                                    <li>5. Movilidad General</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento</li>
+                                    <li>2. Fondos en Barra Recta: 2x5 reps (ligeros)</li>
+                                    <li>3. Muscle-Up Negativos muy ligeros: 2x2 reps (enf. técnica)</li>
+                                    <li>4. Flexiones: 2x10 reps</li>
+                                    <li>5. Movilidad</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>1. Calentamiento Extenso</li>
+                                    <li>2. <strong>TEST: Intentos de Muscle-Up Estricto.</strong></li>
+                                    <li>Máximo 5-6 intentos serios. Filmarse.</li>
+                                    <li>3. Si se consigue MU: Celebrar. Luego hacer algunos componentes ligeros.</li>
+                                    <li>4. Si no: Analizar video. Volver a la progresión más desafiante. No desanimarse.</li>
+                                    <li>5. Enfriamiento completo.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="tip-dark"><strong>Notas para el Mesociclo:</strong></p>
+                <ul>
+                    <li><strong>Calentamiento:</strong> Siempre incluir rotaciones articulares, jumping jacks, scapular pull-ups, band pull-aparts, movilidad de muñecas y hombros (ej. dislocaciones con banda).</li>
+                    <li><strong>Progresión:</strong> Si un ejercicio es demasiado fácil, aumenta las repeticiones, la calidad, reduce la asistencia (banda más fina, menos ayuda de pies) o añade una pausa. Si es demasiado difícil, regresa a una progresión anterior o reduce reps/sets.</li>
+                    <li><strong>Forma sobre Cantidad:</strong> Siempre. Un MU feo no es el objetivo aquí.</li>
+                    <li><strong>Descanso entre series:</strong> 2-3 minutos para ejercicios de fuerza/habilidad principales. 1-1.5 min para accesorios.</li>
+                    <li><strong>Escucha a tu Cuerpo:</strong> Especialmente muñecas, codos y hombros. Si hay dolor, detente. Descansa. El sobreentrenamiento es el enemigo del progreso.</li>
+                    <li><strong>Nutrición e Hidratación:</strong> Apoya tu entrenamiento con una buena dieta y suficiente agua.</li>
+                    <li><strong>Consistencia:</strong> Es la clave. Cumple con los entrenamientos programados.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
