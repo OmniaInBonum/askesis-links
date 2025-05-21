@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Handstand Push-up (HSPU)</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Handstand Push-up (HSPU), con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/handstandpushup.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        .guide-section .quote { 
+            font-style: italic; 
+            color: var(--askesis-light-gray); 
+            border-left: 3px solid var(--askesis-green); 
+            padding-left: 10px; 
+            margin: 1rem 0;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-hspu" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-hspu" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-weight-hanging mr-3 text-askesis-orange"></i>Guía de Apoyo para el Handstand Push-up (HSPU)</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Claves para la Flexión en Parada de Manos.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL HSPU</h2>
+
+            <div>
+                <h3>A. Definición y Propósito</h3>
+                <p>El Handstand Push-up (HSPU), o flexión en parada de manos, es un ejercicio avanzado de empuje vertical que se realiza mientras se está en una parada de manos. Consiste en bajar el cuerpo flexionando los codos hasta que la cabeza toque (o casi toque) el suelo, y luego empujar hacia arriba hasta volver a la posición de parada de manos con los brazos completamente extendidos. Es un indicador clave de la fuerza de los hombros, tríceps y la estabilidad del core en una posición invertida.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>El HSPU es principalmente un movimiento de empuje vertical contra la gravedad.</p>
+                <ul>
+                    <li><strong>Fase Excéntrica (Descenso):</strong> Flexión controlada de los codos y hombros, permitiendo que la cabeza baje hacia el suelo. El core estabiliza para mantener la línea corporal.</li>
+                    <li><strong>Fase Concéntrica (Ascenso):</strong> Extensión potente de los codos y hombros para empujar el cuerpo hacia arriba, lejos del suelo.</li>
+                    <li><strong>Posición de las Manos y Codos:</strong>
+                        <ul>
+                            <li>La anchura de las manos suele ser ligeramente más ancha que los hombros.</li>
+                            <li>Durante el descenso, los codos generalmente se mueven hacia adelante y/o ligeramente hacia los lados, formando una especie de "triángulo" con las manos y la cabeza en el punto más bajo (dependiendo de la técnica). Evitar que los codos se abran excesivamente hacia los lados (estilo "alas de pollo").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alineación Corporal:</strong> Idealmente, se mantiene una línea corporal recta o una ligera posición de "hollow body". Evitar la hiperextensión lumbar ("banana back").</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Estabilidad en Parada de Manos:</strong> Un handstand sólido contra la pared (chest-to-wall y back-to-wall) es un prerrequisito absoluto. La capacidad de mantener una parada de manos libre es beneficiosa pero no estrictamente necesaria para los HSPU asistidos por pared.</li>
+                    <li>
+                        <strong>Fuerza de Empuje Vertical:</strong> Proveniente de hombros (deltoides) y tríceps.</li>
+                    <li>
+                        <strong>Control del Core:</strong> Para mantener la alineación y prevenir el colapso o arqueo de la espalda, especialmente en las variantes libres o con menos apoyo.</li>
+                    <li>
+                        <strong>Posición Escapular:</strong> Elevación activa de los hombros (empujando el suelo lejos) en la posición superior. Durante el movimiento, las escápulas se retraerán y rotarán hacia abajo en la fase de descenso, y se protraerán y rotarán hacia arriba en la fase de ascenso.</li>
+                    <li><strong>Rango de Movimiento (ROM):</strong> Apuntar a un rango completo, donde la cabeza toca (o casi toca) el suelo y se vuelve a la extensión completa de los brazos.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL HANDSTAND PUSH-UP</h2>
+            <p>Construir la fuerza y el control de forma gradual es crucial.</p>
+
+            <div>
+                <h3>A. Preparación y Fuerza Fundamental:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Pike Push-ups (Flexiones en Pica):</strong> Pies en el suelo, caderas altas, formando una "V" invertida. Bajar la cabeza hacia el suelo entre las manos. Aumentar la dificultad elevando los pies en un banco o caja (Elevated Pike Push-ups).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Wall Walks (Caminatas por la Pared):</strong> Para fuerza de hombros y familiarización con la posición invertida y el apoyo de los brazos.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Handstand Holds contra la Pared:</strong> Mantener la parada de manos (pecho o espalda a la pared) por tiempo para desarrollar resistencia y estabilidad en los hombros (30-60 segundos).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Fondos (Dips):</strong> En paralelas o barra recta, para fuerza de tríceps y pecho.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas del HSPU (Generalmente contra la pared):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Negativos de HSPU contra la Pared (Eccentric HSPU):</strong></p>
+                    <p>Patear hacia la parada de manos contra la pared (espalda a la pared o pecho a la pared) y bajar lo más lentamente posible (5-10 segundos) hasta que la cabeza toque el suelo. Salir de la posición y repetir.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. HSPU con Rango de Movimiento Reducido (Partial ROM HSPU):</strong></p>
+                    <p>Colocar una pila de libros, colchonetas o bloques de yoga bajo la cabeza para reducir la distancia que se necesita bajar. Disminuir gradualmente la altura de la pila a medida que se gana fuerza.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. HSPU Asistido con Banda (Band-Assisted HSPU):</strong></p>
+                    <p>Menos común y más complicado de configurar, pero una banda puede usarse para aligerar el peso corporal. Requiere un anclaje alto y seguro.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Full HSPU contra la Pared (Wall HSPU):</strong></p>
+                    <p>Realizar el HSPU completo (cabeza al suelo) con la espalda o el pecho hacia la pared. La técnica de espalda a la pared (Back-to-Wall HSPU) suele ser la primera en lograrse. La de pecho a la pared (Chest-to-Wall HSPU) requiere una mejor línea y más control.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>5. HSPU Libres (Freestanding HSPU):</strong></p>
+                    <p>Realizar el HSPU sin el apoyo de la pared. Requiere un excelente equilibrio en parada de manos además de una gran fuerza. Suele empezarse con un "kick-up" a handstand y luego el descenso.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. HSPU con Déficit (Deficit HSPU):</strong></p>
+                    <p>Elevar las manos sobre paralelas, bloques o pesas para permitir que la cabeza baje más allá del nivel de las manos, aumentando el rango de movimiento y la dificultad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Trayectoria de los Codos y Posición de la Cabeza</h3>
+                <p class="tip-dark">En el punto más bajo, la cabeza y las manos suelen formar un triángulo. Intenta que los codos no se abran completamente a los lados, sino que se mantengan algo más cerca del cuerpo o apuntando ligeramente hacia adelante, dependiendo de tu estructura y comodidad. Evita "estrellar" la cabeza contra el suelo; el toque debe ser ligero.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Overhead Press (con barra o mancuernas):</strong> Transfiere bien a la fuerza de empuje vertical.</li>
+                    <li><strong>Triceps Extensions (con peso o peso corporal):</strong> Para aislar y fortalecer los tríceps.</li>
+                    <li><strong>Ejercicios de Estabilidad del Core:</strong> Hollow body holds, planchas.</li>
+                    <li><strong>Trabajo de Hombros Laterales y Posteriores:</strong> Para equilibrio muscular y salud del hombro (ej. elevaciones laterales, face pulls).</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Paciencia, Consistencia y Rango de Movimiento</h3>
+                <p class="warning-dark">Los HSPU son desafiantes. Prioriza la forma y el rango completo sobre el número de repeticiones. Unas pocas repeticiones bien hechas con rango completo son mucho más valiosas que muchas repeticiones parciales o mal ejecutadas. Protege tus hombros y cuello calentando adecuadamente.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el HSPU:</h4>
+                <ul>
+                    <li><strong>Motores Principales (Empuje):</strong>
+                        <ul>
+                            <li><strong>Deltoides (Anterior y Medial):</strong> Músculos principales para la abducción y flexión del hombro (empuje hacia arriba).</li>
+                            <li><strong>Tríceps Braquial:</strong> Extensor principal del codo.</li>
+                            <li><strong>Pectoral Mayor (Porción Clavicular/Superior):</strong> Asiste en la flexión y aducción del hombro.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estabilizadores y Sinergistas:</strong>
+                        <ul>
+                            <li><strong>Trapecio (Superior, Medio e Inferior):</strong> Controla el movimiento escapular (elevación, rotación ascendente, depresión).</li>
+                            <li><strong>Serrato Anterior:</strong> Ayuda en la protracción y rotación ascendente de la escápula, manteniendo la escápula contra la caja torácica.</li>
+                            <li><strong>Músculos del Manguito Rotador (Supraespinoso, Infraespinoso, Teres Menor, Subescapular):</strong> Estabilizan la articulación glenohumeral.</li>
+                            <li><strong>Core (Recto Abdominal, Oblicuos, Transverso Abdominal, Erectores Espinales):</strong> Estabilizan el tronco y mantienen la alineación corporal, previniendo el arqueo.</li>
+                            <li><strong>Músculos del Antebrazo:</strong> Para la fuerza de agarre y estabilización de la muñeca.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Pike Push-ups con Pies Elevados:</strong> 10-15 repeticiones con buena forma y la cabeza casi tocando el suelo.</li>
+                    <li><strong>Handstand contra la Pared:</strong> Sostener de 30 a 60 segundos con buena alineación y hombros activos.</li>
+                    <li><strong>Fondos (Dips):</strong> 15-20 repeticiones con rango completo.</li>
+                    <li><strong>Fuerza general de empuje horizontal:</strong> Un buen número de flexiones regulares (ej. 25+).</li>
+                    <li><strong>Buena movilidad de hombro y muñeca.</strong></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>"Banana Back" (Hiperextensión Lumbar Excesiva):</strong>
+                        <p><em>Causa:</em> Core débil, falta de conciencia corporal, intento de facilitar el empuje arqueando.
+                        <em>Corrección:</em> Fortalecer el core (hollow body, planchas). En el HS contra la pared, pensar en "llevar el ombligo hacia la columna" o apretar los glúteos. El Chest-to-Wall HSPU ayuda a corregir esto.</p>
+                    </li>
+                    <li><strong>Codos Excesivamente Abiertos ("Chicken Wings"):</strong>
+                        <p><em>Causa:</em> Debilidad en tríceps o deltoides, patrón de movimiento incorrecto.
+                        <em>Corrección:</em> Reducir la dificultad (ej. Pike Push-ups) y enfocarse en mantener los codos en una trayectoria más controlada (hacia adelante o en un ángulo de ~45 grados respecto al torso, no directamente a los lados). Fortalecer tríceps.</p>
+                    </li>
+                    <li><strong>Rango de Movimiento Incompleto (No Bajar Suficiente):</strong>
+                        <p><em>Causa:</em> Falta de fuerza en el rango completo, o simplemente no saber qué tan bajo ir.
+                        <em>Corrección:</em> Usar un objetivo para la cabeza (esterilla fina, toalla) para asegurar la profundidad. Trabajar negativos con rango completo. Utilizar la progresión de rango reducido y disminuir la altura progresivamente.</p>
+                    </li>
+                     <li><strong>No Empujar Verticalmente / Arquearse para "Salir":</strong>
+                        <p><em>Causa:</em> Intento de usar el pecho o un movimiento de "incline press" cuando la fuerza vertical falla.
+                        <em>Corrección:</em> Enfocarse en empujar directamente hacia arriba a través de los hombros. Mantener el core apretado. Filmarse para identificar la trayectoria.</p>
+                    </li>
+                    <li><strong>Cabeza Demasiado Adelante o Atrás de las Manos:</strong>
+                        <p><em>Causa:</em> Mal posicionamiento inicial o durante el movimiento.
+                        <em>Corrección:</em> En el fondo, la cabeza y las manos suelen formar un trípode. Asegurarse de que la cabeza no termine muy lejos delante o directamente entre las manos (esto último hace el empuje más de tríceps, y es una variación válida, pero no el HSPU estándar).</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Importancia de la Progresión de Pike Push-ups:</h4>
+                <p>Las Pike Push-ups, especialmente con los pies elevados, son la progresión MÁS importante para los HSPU. Permiten simular el ángulo de empuje vertical y desarrollar la fuerza específica en hombros y tríceps de una manera escalable. Cuanto más verticales estén las caderas (y más elevados los pies), más se parecerá a un HSPU.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> Bajo considerable presión. Calentamientos específicos (círculos, flexión/extensión) y estiramientos. Considerar el uso de paralelas pequeñas (parallettes) si las muñecas son un problema, ya que permiten un agarre neutro.</li>
+                    <li><strong>Hombros:</strong> El principal motor. Calentamiento completo, incluyendo movilidad y trabajo del manguito rotador. Evitar el "pinzamiento" manteniendo una buena técnica escapular.</li>
+                    <li><strong>Codos:</strong> También bajo estrés. Fortalecer tríceps y bíceps de forma equilibrada.</li>
+                    <li><strong>Cuello:</strong> Aunque no debe soportar peso, la cabeza toca el suelo. Fortalecer ligeramente el cuello y aprender a tocar suavemente.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Variaciones:</h4>
+                <ul>
+                    <li>El entrenamiento de HSPU puede ser intenso. Para progresiones difíciles, 2-3 veces por semana suele ser adecuado.</li>
+                    <li>Se pueden variar los tipos de HSPU: con pared (espalda/pecho), libres, con déficit, en paralelas, etc.</li>
+                    <li>Los días de HSPU pueden combinarse con otros ejercicios de empuje.</li>
+                    <li>Asegurar una recuperación adecuada.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Consideraciones de Seguridad al Entrenar HSPU:</h4>
+                <ul>
+                    <li><strong>Superficie:</strong> Utiliza una superficie que no resbale para las manos y una colchoneta fina o una toalla para la cabeza si te preocupa el impacto, pero no tan gruesa que reduzca significativamente el ROM.</li>
+                    <li><strong>Salida Segura (Bail Out):</strong> Aprende a salir de forma segura de un handstand contra la pared si fallas (ej. girando para caer de pie - pirueta). Para HSPU libres, saber rodar hacia adelante es útil.</li>
+                    <li><strong>Progresión Gradual:</strong> No intentes HSPU completos sin haber dominado las progresiones previas. El riesgo de lesión en hombros o cuello es real si se hace demasiado, demasiado pronto.</li>
+                </ul>
+                <p class="tip-dark"><strong>Respiración:</strong> Inhalar al bajar y exhalar con fuerza al empujar hacia arriba. Algunos prefieren una breve contención de la respiración (Valsalva) en el punto más difícil del ascenso para máxima tensión.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
