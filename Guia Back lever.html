@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Back Lever</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Back Lever, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/Backlever-1.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-backlever" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-backlever" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-undo-alt mr-3 text-askesis-orange"></i>Guía de Apoyo para el Back Lever</h1>
+        <p class="guide-subtitle">Principios, Progresiones y Claves para Dominar este Impresionante Ejercicio de Fuerza.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL BACK LEVER</h2>
+
+            <div>
+                <h3>A. Definición y Significado</h3>
+                <p>El Back Lever es un ejercicio isométrico avanzado de fuerza, originario de la gimnasia y muy popular en la calistenia. Consiste en mantener el cuerpo completamente horizontal, paralelo al suelo pero mirando hacia abajo, soportado únicamente por las manos agarradas a una barra (o anillas), con los brazos totalmente extendidos y el cuerpo formando una línea recta desde los hombros hasta los pies.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>La mecánica del Back Lever se centra en la fuerza de extensión del hombro y la estabilización del core.</p>
+                <ul>
+                    <li><strong>Sistema de Palancas:</strong>
+                        <ul>
+                            <li><strong>Punto de Apoyo (Fulcro):</strong> Las manos en la barra/anillas.</li>
+                            <li><strong>Resistencia:</strong> El peso de todo el cuerpo (torso, cadera, piernas) que la gravedad intenta tirar hacia abajo.</li>
+                            <li><strong>Fuerza:</strong> Generada principalmente por la musculatura del hombro (deltoides anterior y medial, pectorales), extensores del codo (tríceps), y una inmensa activación del core y extensores de la espalda para mantener la horizontalidad y evitar la "banana" (arqueo excesivo).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Posición Escapular:</strong> Fuerte protracción (separar los omóplatos) o una posición neutra-protactada, con los hombros empujando hacia arriba (relativo al cuerpo, o hacia adelante si se está horizontal) para crear una base sólida.</li>
+                    <li><strong>Importancia de los Brazos Rectos:</strong> Es un ejercicio de fuerza de brazo recto. Doblar los codos cambia drásticamente el ejercicio.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Tipo de Agarre y Anchura:</strong>
+                        <ul>
+                            <li><strong>Pronado (Overhand Grip):</strong> Es el agarre estándar y más común.</li>
+                            <li><strong>Supino (Underhand Grip):</strong> Aumenta la implicación del bíceps y puede ser más estresante para los codos y hombros. Usualmente más difícil.</li>
+                            <li><strong>Anillas:</strong> Permiten una rotación natural de las muñecas y hombros, pudiendo ser más cómodas para algunos.</li>
+                            <li><strong>Anchura:</strong> Generalmente a la anchura de los hombros o ligeramente más ancho.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Posición Escapular: </strong>
+                        <ul>
+                            <li><strong>Protracción y Depresión:</strong> Las escápulas deben estar activamente protraídas (separadas, "espalda redonda superior") y deprimidas (empujadas hacia abajo, alejadas de las orejas, aunque en la posición invertida del back lever, la depresión es relativa y se combina con la protracción). Esto crea una base sólida y activa la musculatura del pecho y hombros.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Activación del Core, Cadera y Espalda:</strong>
+                        <ul>
+                            <li><strong>Core Fuerte:</strong> Abdominales y oblicuos fuertemente contraídos para evitar el arqueo excesivo de la espalda baja (hiperextensión), un error común que rompe la línea horizontal.</li>
+                            <li><strong>Glúteos y Extensores de Cadera:</strong> Apretados para mantener la línea recta desde los hombros hasta los pies.</li>
+                            <li><strong>Músculos Erectores de la Columna:</strong> Trabajan para mantener la extensión de la espalda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos Totalmente Rectos:</strong> Los codos deben estar completamente bloqueados. Este es un punto crítico de la forma.</li>
+                    <li><strong>Posición de la Cabeza:</strong> Generalmente neutra o ligeramente mirando hacia abajo (en línea con el cuerpo).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL BACK LEVER</h2>
+            <p>Es crucial dominar cada progresión antes de pasar a la siguiente para construir la fuerza y la técnica necesarias.</p>
+
+            <div>
+                <h3>A. Preparación y Ejercicios Dinámicos Iniciales:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Skin the Cat / German Hang:</strong> Esencial para movilidad y acondicionamiento de hombros, y para familiarizarse con la posición invertida y el paso a través de los brazos.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Back Lever Raises / Lifts (Elevaciones a Back Lever):</strong> Desde colgado invertido (pies hacia la barra), bajar el cuerpo en la progresión actual (tuck, advanced tuck, etc.) hasta la posición horizontal y volver a subir. Excelente para fuerza específica.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Back Lever Negatives (Negativas):</strong> Entrar en la progresión actual (idealmente una ligeramente más fácil de la que se quiere conseguir) y bajar muy lentamente, manteniendo la forma. </p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Acondicionamiento de Codos y Hombros:</strong> Movilidad, fortalecimiento de bíceps y tríceps. Bicep curls, tricep extensions, face pulls.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Isométricas (Holds):</h3>
+                <div class="progression-item-dark">
+                    <p><strong>1. Tuck Back Lever:</strong></p>
+                    <p>Desde una posición colgada invertida (German Hang o Inverted Hang), llevar las rodillas lo más cerca posible del pecho y extender el cuerpo hasta que el torso quede paralelo al suelo, manteniendo la protracción escapular. </p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Advanced Tuck Back Lever:</strong></p>
+                    <p>Alejar las rodillas del pecho, formando un ángulo de aproximadamente 90 grados entre el torso y los muslos. La espalda debe estar paralela al suelo. Aumenta significativamente la palanca.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. One-Leg Back Lever (Back Lever a una Pierna):</strong></p>
+                    <p>Desde la posición de Advanced Tuck, extender una pierna completamente en línea con el torso, mientras la otra permanece flexionada (tuck). Practicar con ambas piernas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Straddle Back Lever (Back Lever con Piernas Abiertas):</strong></p>
+                    <p>Extender ambas piernas y abrirlas hacia los lados. Cuanto más cerradas estén las piernas, más difícil será. La cadera debe mantenerse nivelada.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>5. Half-Lay Back Lever (Back Lever con una pierna doblada o cuerpo ligeramente picado):</strong></p>
+                    <p>Una variación donde las piernas están juntas y rectas, pero el cuerpo no está perfectamente horizontal, sino con una ligera pica en la cadera, o una pierna puede estar ligeramente doblada para acortar la palanca.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>6. Full Back Lever (Back Lever Completo):</strong></p>
+                    <p>El cuerpo completamente recto y horizontal, desde los hombros hasta los pies, con las piernas juntas y extendidas. Es la forma final del ejercicio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. Aumentar el Tiempo de Aguante (Hold Time)</h3>
+                <p class="tip-dark">La clave es la calidad sobre la cantidad. Trabaja con <strong>máximo esfuerzo y forma perfecta</strong> en cada repetición de tu progresión actual. Mantén la tensión corporal total. Filmarse puede ayudar a identificar errores de forma.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y General</h3>
+                <ul>
+                    <li><strong>Dragon Flags:</strong> Excelente para la fuerza de anti-extensión del core y extensores de la espalda.</li>
+                    <li><strong>Front Lever y sus progresiones:</strong> Trabaja músculos antagonistas y contribuye a la fuerza general.</li>
+                    <li><strong>Handstand y Handstand Push-ups:</strong> Para fuerza de hombros y tríceps.</li>
+                    <li><strong>Trabajo de Bíceps y Tríceps:</strong> Los codos están bajo una tensión considerable. Bicep curls con agarre supino (para tendones) y extensiones de tríceps.</li>
+                    <li><strong>Ejercicios de Protracción Escapular:</strong> Planche leans, scapular push-ups.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Escuchar al Cuerpo, Paciencia y Codos</h3>
+                <p class="warning-dark">El Back Lever es un ejercicio avanzado que ejerce una tensión significativa, especialmente en los codos (tendones del bíceps y tríceps) y hombros. Sé paciente con tu progreso y <strong>NO te saltes progresiones</strong>. Si sientes dolor, especialmente en los codos o la parte frontal del hombro, descansa, reduce la intensidad y evalúa tu técnica y volumen.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el Back Lever:</h4>
+                <ul>
+                    <li><strong>Hombros (Motores Principales y Estabilizadores):</strong>
+                        <ul>
+                            <li><strong>Deltoides Anterior y Medial:</strong> Son cruciales para la extensión horizontal del hombro (o evitar la hiperextensión en esta posición) y soportar la carga.</li>
+                            <li><strong>Pectoral Mayor (Especialmente porción Clavicular y Esternal):</strong> Trabaja intensamente en la extensión y aducción del hombro desde una posición extendida.</li>
+                            <li><strong>Bíceps Braquial (especialmente cabeza larga):</strong> Aunque parezca contraintuitivo, el bíceps trabaja muy duro para estabilizar el hombro anteriormente y resistir la extensión del codo (prevenir hiperextensión) y la tensión de la posición extendida del brazo.</li>
+                            <li><strong>Músculos del Manguito Rotador:</strong> Vitales para estabilizar la articulación glenohumeral.</li>
+                            <li><strong>Serrato Anterior:</strong> Contribuye a la protracción escapular.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos:</strong>
+                        <ul>
+                            <li><strong>Tríceps Braquial:</strong> Mantiene los codos bloqueados. Esencial para la extensión del brazo.</li>
+                            <li><strong>Músculos del Antebrazo:</strong> Para la fuerza de agarre.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core y Espalda (Estabilizadores del Tronco):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal, Oblicuos, Transverso del Abdomen:</strong> Previenen la hiperextensión lumbar (sagging o "banana back").</li>
+                            <li><strong>Erectores Espinales:</strong> Mantienen la espalda recta y contribuyen a la línea horizontal.</li>
+                            <li><strong>Cuadrado Lumbar:</strong> Estabiliza la pelvis y la columna lumbar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Caderas y Piernas:</strong>
+                        <ul>
+                            <li><strong>Glúteos (Mayor, Medio, Menor) e Isquiotibiales:</strong> Mantienen la extensión de la cadera y las piernas alineadas con el cuerpo.</li>
+                            <li><strong>Cuádriceps:</strong> Para mantener las rodillas extendidas.</li>
+                            <li><strong>Aductores:</strong> Para mantener las piernas juntas.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Skin the Cat / German Hang:</strong> Ser capaz de realizar varias repeticiones controladas y aguantar el German Hang por 10-20 segundos.</li>
+                    <li><strong>Dragon Flag:</strong> Poder realizar algunas repeticiones con buena forma.</li>
+                    <li><strong>Dominadas y Fondos:</strong> Una base sólida (ej. 10+ pull-ups, 15+ dips).</li>
+                    <li><strong>Fuerza de Core Anti-Extensión:</strong> Buen Hollow Body Hold.</li>
+                    <li><strong>Acondicionamiento de Codos y Hombros:</strong> No tener dolor preexistente y tener buena movilidad.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Brazos Flexionados (Codos Doblados):</strong>
+                        <p><em>Causa:</em> Falta de fuerza en tríceps y estabilizadores del hombro; intento de acortar la palanca.
+                        <em>Corrección:</em> Regresar a progresiones más fáciles con enfoque absoluto en el bloqueo de codos. Fortalecer tríceps y practicar holds isométricos con brazos rectos en posiciones menos demandantes.</p>
+                    </li>
+                    <li><strong>Hiperextensión Lumbar ("Banana Back" / Arqueo):</strong>
+                        <p><em>Causa:</em> Core abdominal débil, especialmente los músculos anti-extensores; falta de activación de glúteos.
+                        <em>Corrección:</em> Fortalecer el core (dragon flags, hollow body holds, planchas). Enfocarse en la retroversión pélvica (apretar glúteos y meter la pelvis) durante las progresiones.</p>
+                    </li>
+                    <li><strong>Cadera Demasiado Alta (Piking):</strong>
+                        <p><em>Causa:</em> Músculos flexores de la cadera dominando sobre los extensores; intento de facilitar el ejercicio.
+                        <em>Corrección:</em> Concentrarse en apretar los glúteos y los isquiotibiales para extender la cadera. Visualizar una línea recta desde hombros a talones. Practicar la bajada desde una posición invertida.</p>
+                    </li>
+                    <li><strong>Escápulas Retraídas o Hombros "Colapsados":</strong>
+                        <p><em>Causa:</em> Falta de fuerza o conciencia en la protracción escapular; debilidad en pectorales y serrato anterior.
+                        <em>Corrección:</em> Practicar activamente la protracción en todas las progresiones (imaginar empujar la barra hacia arriba con la espalda). Trabajar en ejercicios de protracción como Planche Leans o scapular push-ups.</p>
+                    </li>
+                     <li><strong>Rotación del Cuerpo / Descenso Asimétrico:</strong>
+                        <p><em>Causa:</em> Desequilibrios de fuerza entre los lados del cuerpo.
+                        <em>Corrección:</em> Intentar filmar desde diferentes ángulos. Trabajar en la propiocepción y enfocarse en la activación simétrica. El trabajo en anillas puede ayudar a exponer y corregir esto.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Importancia de la PROTRACCIÓN Escapular (aunque menos que en Planche):</h4>
+                <p>Mientras que en la Planche la protracción es llevada al extremo, en el Back Lever una fuerte protracción (o al menos una posición neutra-activa sin retracción) es clave para la estabilidad del hombro y la activación correcta de los músculos del pecho y hombros. Evita "colgar" pasivamente de las articulaciones del hombro. El objetivo es crear una "plataforma" superior de la espalda sólida.</p>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento de Articulaciones: ¡Cuidado con los CODOS!</h4>
+                <ul>
+                    <li><strong>Codos:</strong> Esta es la articulación más vulnerable en el Back Lever, especialmente el tendón del bíceps distal y los tendones de los flexores del antebrazo (cara interna del codo). El estrés con agarre supino es aún mayor.
+                        <em>Prevención:</em> Progresión MUY lenta, calentamiento exhaustivo, fortalecimiento de bíceps (especialmente con agarre supino, tipo Zottman curls o reverse curls pueden ayudar) y tríceps, no ignorar el dolor.</li>
+                    <li><strong>Hombros:</strong> La parte anterior del hombro también está bajo mucha tensión. Mantener buena movilidad y fuerza en el manguito rotador.</li>
+                    <li><strong>Muñecas:</strong> Dependiendo del agarre, también pueden estresarse.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Periodización:</h4>
+                <ul>
+                    <li>El entrenamiento de Back Lever puro (holds máximos) debería realizarse 2-3 veces por semana, con suficiente descanso entre sesiones para la recuperación articular.</li>
+                    <li>Se puede complementar con ejercicios de asistencia y de fuerza general en otros días.</li>
+                    <li>Alternar con ejercicios de tracción (Front Lever, pull-ups) y empuje para un desarrollo equilibrado.</li>
+                    <li>Incorporar semanas de descarga o deload regularmente para evitar el sobreentrenamiento.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de Anillas vs. Barra:</h4>
+                <ul>
+                    <li><strong>Barra Fija:</strong> Ofrece una plataforma estable. Los agarres pronado y supino tienen diferentes implicaciones de estrés.</li>
+                    <li><strong>Anillas:</strong> Permiten que las muñecas y hombros roten a una posición más natural, lo que puede ser más cómodo para algunas personas y potencialmente reducir el estrés en los codos. Sin embargo, la inestabilidad de las anillas añade un desafío adicional. Muchos encuentran el Back Lever en anillas (con los brazos rotados para que las palmas miren hacia adentro o incluso hacia adelante) más accesible o menos doloroso para los codos que en barra con agarre fijo.</li>
+                </ul>
+                <p class="tip-dark"><strong>Entrada Segura:</strong> Aprende a entrar en las progresiones del Back Lever de forma controlada, usualmente desde un "skin the cat" o una posición invertida (inverted hang). Igualmente, practica cómo salir de forma segura (generalmente continuando la rotación hacia adelante o volviendo a una posición invertida).</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
