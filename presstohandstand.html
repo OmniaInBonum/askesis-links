@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Guía de Apoyo para el Press to Handstand</title>
+    <meta name="description" content="Guía de apoyo detallada para aprender y progresar en el Press to Handstand, con el estilo de Askesis.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background-color: var(--askesis-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-header {
+            background-color: var(--askesis-gray); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: var(--askesis-text-white);
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 0.25rem;
+            font-weight: 600; 
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem; 
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--askesis-orange);
+        }
+        
+        .guide-hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/presstohandstand.png') no-repeat center center;
+            background-size: cover;
+            color: var(--askesis-text-white);
+            min-height: 60vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem; 
+        }
+
+        .guide-hero-section .guide-main-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-text-white);
+            font-size: 2.8em; 
+            font-weight: 900;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 3px solid var(--askesis-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .guide-hero-section .guide-subtitle {
+            font-size: 1.2em; 
+            color: var(--askesis-light-gray);
+            margin-bottom: 0; 
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+
+        .guide-content-container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 25px;
+            background-color: var(--askesis-gray); 
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-section { 
+            background-color: var(--askesis-dark); 
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--askesis-border);
+        }
+        
+        .guide-section h2 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange); 
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--askesis-green); 
+        }
+        .guide-section h3 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-green); 
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+         .guide-section h4 { 
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-blue); 
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p, .guide-section li {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-bottom: 0.75rem;
+        }
+        .guide-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+         .guide-section ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+        }
+        .guide-section strong { 
+            color: var(--askesis-orange); 
+            font-weight: 600;
+        }
+        .guide-section .quote { 
+            font-style: italic; 
+            color: var(--askesis-light-gray); 
+            border-left: 3px solid var(--askesis-green); 
+            padding-left: 10px; 
+            margin: 1rem 0;
+        }
+        
+        .progression-item-dark { 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            margin-bottom: 1rem; 
+            background-color: var(--askesis-gray); 
+            border-radius: 4px; 
+        }
+        .progression-item-dark p { margin-bottom: 0.5rem; }
+
+        .tip-dark { 
+            background-color: rgba(0, 128, 55, 0.1); 
+            border-left: 4px solid var(--askesis-green); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .tip-dark p { color: var(--askesis-text-white); }
+
+        .warning-dark { 
+            background-color: rgba(245, 130, 7, 0.1); 
+            border-left: 4px solid var(--askesis-orange); 
+            padding: 1rem 1.25rem; 
+            border-radius: 4px; 
+            margin-top:0.75rem;
+            margin-bottom: 1rem;
+        }
+        .warning-dark p { color: var(--askesis-text-white); }
+        
+        footer {
+            background-color: #0A0A0A; 
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .footer-links a { color: var(--askesis-light-gray); margin: 0 0.75rem; transition: color 0.3s; font-weight: 500;}
+        footer .footer-links a:hover { color: var(--askesis-orange); }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">Askesis</a>
+            <nav class="hidden md:flex items-center">
+                <a href="#guide-hero-section-presstohs" class="nav-link">Inicio</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#programas-especificos" target="_blank" class="nav-link">Programas</a>
+                <a href="#" class="nav-link active">Guías</a>
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html#cta-final" target="_blank" class="nav-link">Contacto</a>
+            </nav>
+            </div>
+    </header>
+
+    <section id="guide-hero-section-presstohs" class="guide-hero-section">
+        <h1 class="guide-main-title"><i class="fas fa-level-up-alt mr-3 text-askesis-orange"></i>Guía de Apoyo para el Press to Handstand</h1>
+        <p class="guide-subtitle">Fundamentos, Progresiones y Claves para la Presión a Parada de Manos.</p>
+    </section>
+
+    <div class="guide-content-container"> 
+        <div class="guide-section"> 
+            <h2>I. INTRODUCCIÓN Y FUNDAMENTOS DEL PRESS TO HANDSTAND</h2>
+
+            <div>
+                <h3>A. Definición y Variaciones</h3>
+                <p>El Press to Handstand (Presión a Parada de Manos) es una transición avanzada donde el atleta se mueve desde una posición con los pies en el suelo (o elevados en L-Sit/Straddle-Sit) a una parada de manos, utilizando principalmente la fuerza de los hombros, la compresión del core y el equilibrio, sin saltar ni patear (kipping). Las variaciones comunes incluyen el Tuck Press, Pike Press y Straddle Press to Handstand.</p>
+            </div>
+
+            <div>
+                <h3>B. Biomecánica Esencial</h3>
+                <p>La clave es el desplazamiento controlado del centro de masa sobre la base de apoyo (las manos).</p>
+                <ul>
+                    <li><strong>Desplazamiento del Peso (Lean):</strong> Se requiere una inclinación significativa de los hombros hacia adelante, mucho más allá de las muñecas, para permitir que las caderas y luego las piernas se eleven.</li>
+                    <li><strong>Compresión del Core y Flexión de Cadera:</strong> Los abdominales y los flexores de la cadera trabajan intensamente para levantar las piernas del suelo y acercar las caderas a los hombros.</li>
+                    <li><strong>Fuerza de Empuje de Hombros:</strong> Los deltoides, tríceps y serrato anterior empujan activamente el suelo para elevar el cuerpo y controlar la ascensión.</li>
+                    <li><strong>Equilibrio Dinámico:</strong> Mantener el equilibrio durante toda la transición, que es inherentemente inestable.</li>
+                    <li><strong>Posición Escapular:</strong> Se pasa de una fuerte protracción y depresión al inicio (para levantar las caderas) a una elevación y ligera protracción en la parada de manos final.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>C. Elementos Clave para el Entrenamiento</h3>
+                <ol>
+                    <li>
+                        <strong>Handstand Sólido:</strong> Una parada de manos equilibrada y bien alineada (30-60 segundos libres o contra la pared con buena forma) es fundamental.</li>
+                    <li>
+                        <strong>Fuerza de Compresión del Core:</strong> L-Sits, V-Sits, Tuck Holds, y ejercicios de compresión en pike.</li>
+                    <li>
+                        <strong>Fuerza de Hombros:</strong> Handstand Push-ups (o progresiones como Pike Push-ups), Pseudo Planche Push-ups.</li>
+                    <li>
+                        <strong>Movilidad:</strong>
+                        <ul>
+                            <li><strong>Muñecas:</strong> Extensión adecuada para soportar el "lean".</li>
+                            <li><strong>Hombros:</strong> Flexión completa para la parada de manos.</li>
+                            <li><strong>Isquiotibiales y Cadera (para Pike y Straddle Press):</strong> Buena flexibilidad para permitir que las piernas pasen sin tocar el suelo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Control y Conciencia Corporal:</strong> Entender cómo apilar las articulaciones y desplazar el peso es crucial.</li>
+                    <li><strong>Paciencia y Progresión:</strong> No es una habilidad que se logra de la noche a la mañana.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>II. PROGRESIONES HACIA EL PRESS TO HANDSTAND</h2>
+            <p>Cada variación del Press (Tuck, Straddle, Pike) tiene sus propias progresiones específicas, pero algunas son comunes.</p>
+
+            <div>
+                <h3>A. Preparación y Fuerza Fundamental:</h3>
+                <div class="progression-item-dark">
+                    <p><strong>Pike Push-ups y Elevated Pike Push-ups:</strong> Para fuerza de hombros en un ángulo similar al press.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>L-Sit / Tuck Sit / Straddle L-Sit:</strong> Para fuerza de compresión del core y flexores de cadera. Aguantar estas posiciones en el suelo o en paralelas.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>Planche Leans y Pseudo Planche Push-ups:</strong> Para desarrollar la fuerza de "lean" en los hombros y el acondicionamiento de muñecas.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Trabajo de Movilidad Específico:</strong> Pancake stretches (para straddle), pike stretches, compresión activa en pike (levantar piernas en pike sentado).</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>Negativos de Handstand (Bajar a L-Sit/Pike/Straddle):</strong> Desde un handstand, bajar controladamente a la posición deseada. Construye fuerza excéntrica y enseña el camino.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>B. Progresiones Específicas (Empezar en Paralelas o Bloques puede ser más fácil):</h3>
+                <p>Nos enfocaremos en el <strong>Pike Press</strong> y <strong>Straddle Press</strong> como objetivos comunes, con el Tuck Press como base.</p>
+
+                <div class="progression-item-dark">
+                    <p><strong>1. Tuck Press (o "Frog Press"):</strong></p>
+                    <p>Desde una posición de cuclillas profundas con las manos en el suelo, inclinarse mucho hacia adelante, colocando las rodillas en la parte posterior de los tríceps (como en Crow Pose/Bakasana). Empujar hacia abajo y adelante con los hombros, levantando las caderas hasta que los pies dejen el suelo y se pueda presionar a un handstand agrupado (tuck handstand) y luego extender las piernas. Muchos comienzan con las rodillas fuera de los codos y luego las meten.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>2. Elevaciones de Cadera en Pike (Pike Hip Lifts / Pike Pulses):</strong></p>
+                    <p>Sentado en el suelo en posición de pica (piernas extendidas juntas), manos al lado de las caderas o ligeramente adelantadas. Empujar con las manos e intentar levantar las caderas del suelo, manteniendo las piernas rectas. Muy difícil, pero desarrolla la compresión y el empuje inicial.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>3. Straddle Press Negatives con Asistencia de Pared (Wall-Assisted Straddle Press Negatives):</strong></p>
+                    <p>En handstand de espaldas a la pared, abrir las piernas a un straddle y bajar lentamente, intentando mantener las caderas sobre los hombros y las piernas sin tocar la pared hasta el último momento.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>4. Press to Handstand con Pies Elevados (Elevated Pike/Straddle Press):</strong></p>
+                    <p>Colocar los pies en una caja, banco o escalón en posición de pike o straddle. Inclinarse hacia adelante, levantando las caderas sobre los hombros, y presionar hacia arriba. La elevación de los pies reduce la cantidad de "lean" y compresión necesarios inicialmente.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>5. Press to Handstand con Bandas de Asistencia:</strong></p>
+                    <p>Anclar una banda elástica en un punto alto y pasarla alrededor de la cintura/caderas. Esto ayuda a aligerar el peso y a sentir el movimiento de elevación de la cadera.</p>
+                </div>
+                 <div class="progression-item-dark">
+                    <p><strong>6. Intentos de Press Parcial (levantar solo los pies/caderas unos centímetros):</strong></p>
+                    <p>Desde una posición de pike o straddle en el suelo, inclinarse y empujar con toda la fuerza intentando que los pies o al menos las caderas "floten" por un instante. La idea es encontrar el punto de equilibrio y la activación.</p>
+                </div>
+                <div class="progression-item-dark">
+                    <p><strong>7. Straddle Press to Handstand / Pike Press to Handstand:</strong></p>
+                    <p>El movimiento completo desde el suelo. El Pike Press generalmente se considera más difícil debido a la mayor compresión y menor base de las piernas que el Straddle Press.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>III. MEJORA Y CONSEJOS ADICIONALES</h2>
+            <div>
+                <h3>A. La Sincronización del "Lean" y el Levantamiento de Cadera</h3>
+                <p class="tip-dark">El error más común es no inclinarse lo suficiente hacia adelante <em>antes</em> de intentar levantar las piernas. Los hombros deben estar muy por delante de las muñecas para que las caderas puedan subir. Piensa en "apilar" las caderas sobre los hombros y luego las piernas siguen.</p>
+            </div>
+            <div>
+                <h3>B. Fortalecimiento Específico y Movilidad Continua</h3>
+                <ul>
+                    <li><strong>Compresión Activa:</strong> Ejercicios donde activamente se trae el torso hacia las piernas o viceversa (ej. V-Ups, pike pulses sentado).</li>
+                    <li><strong>Movilidad de Muñeca y Hombro:</strong> Dedicar tiempo regular a estiramientos y ejercicios de movilidad para estas áreas.</li>
+                    <li><strong>Fuerza en el Rango Final del Empuje:</strong> Asegurarse de tener la fuerza para bloquear los codos completamente al final del press.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>C. Paciencia, Consistencia y Desglosar el Movimiento</h3>
+                <p class="warning-dark">El Press to Handstand puede llevar mucho tiempo, incluso años, en dominarse. Sé increíblemente paciente. Entrena los componentes por separado (fuerza, equilibrio, movilidad, compresión). Filmarse es muy útil para ver dónde falla la técnica.</p>
+            </div>
+        </div>
+
+        <div class="guide-section"> 
+            <h2>IV. INFORMACIÓN ADICIONAL PROFUNDIZADA</h2>
+
+            <div>
+                <h4>A. Músculos Detallados Involucrados en el Press to Handstand:</h4>
+                <ul>
+                    <li><strong>Hombros (Motores Principales):</strong>
+                        <ul>
+                            <li><strong>Deltoides (Anterior y Medial):</strong> Músculos clave para la flexión y abducción del hombro, proporcionando la fuerza de empuje hacia arriba y controlando el "lean".</li>
+                            <li><strong>Serrato Anterior:</strong> Protrae y rota hacia arriba la escápula, esencial para el "empuje" y la estabilidad de los hombros.</li>
+                            <li><strong>Trapecio (Superior, Medio e Inferior):</strong> Controla el movimiento escapular, especialmente la elevación y rotación hacia arriba.</li>
+                            <li><strong>Músculos del Manguito Rotador:</strong> Estabilizadores críticos de la articulación del hombro durante todo el movimiento.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Brazos:</strong>
+                        <ul>
+                            <li><strong>Tríceps Braquial:</strong> Extiende el codo para completar el empuje.</li>
+                            <li><strong>Pectoral Mayor (Porción Clavicular):</strong> Asiste en la flexión del hombro.</li>
+                            <li><strong>Bíceps Braquial:</strong> Actúa como estabilizador.</li>
+                            <li><strong>Músculos del Antebrazo:</strong> Para agarre y estabilización de la muñeca.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Core (Compresión y Elevación de Cadera):</strong>
+                        <ul>
+                            <li><strong>Recto Abdominal y Oblicuos:</strong> Para la flexión del tronco (compresión) y estabilización.</li>
+                            <li><strong>Transverso del Abdomen:</strong> Tensión intraabdominal y soporte.</li>
+                            <li><strong>Flexores de Cadera (Psoas Ilíaco, Recto Femoral, TFL, Sartorio):</strong> Elevan activamente las piernas y las acercan al torso (especialmente en Pike Press y para mantener el straddle).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Espalda y Cadera (Estabilización y Alineación):</strong>
+                        <ul>
+                            <li><strong>Erectores Espinales:</strong> Mantienen una columna relativamente neutra o ligeramente flexionada, trabajando en conjunto con el core.</li>
+                            <li><strong>Glúteos y Extensores de Cadera:</strong> Se activan al final para extender la cadera y alinear el cuerpo en el handstand.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>B. Prerrequisitos Sugeridos (Cuantificables):</h4>
+                <ul>
+                    <li><strong>Handstand Libre Consistente:</strong> 30-60 segundos con buena forma.</li>
+                    <li><strong>L-Sit o Tuck Sit:</strong> Mantener 20-30 segundos. Para Straddle Press, un Straddle-L es muy útil.</li>
+                    <li><strong>Pike Push-ups (Pies Elevados):</strong> Múltiples series de 5-10 repeticiones con buena forma.</li>
+                    <li><strong>Movilidad de Isquiotibiales:</strong> En posición de pica sentada, ser capaz de tocar los dedos de los pies o tener el torso cerca de las piernas. Para Straddle, buena apertura lateral.</li>
+                    <li><strong>Movilidad de Muñeca:</strong> Buena capacidad de extensión bajo carga (para el "lean").</li>
+                    <li><strong>Comprensión y práctica de Pseudo Planche Leans y Push-ups.</strong></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>C. Errores Comunes Detallados y Estrategias de Corrección:</h4>
+                <ul>
+                    <li><strong>Falta de "Lean" (Inclinación de Hombros):</strong>
+                        <p><em>Causa:</em> Miedo, falta de fuerza en los hombros para sostener la inclinación, o no entender la mecánica.
+                        <em>Corrección:</em> Practicar Planche Leans y Pseudo Planche Push-ups con énfasis en llevar los hombros muy por delante de las manos. Intentar con pies elevados para reducir la necesidad de "lean".</p>
+                    </li>
+                    <li><strong>Saltar o Patear con las Piernas ("Kipping"):</strong>
+                        <p><em>Causa:</em> Intentar compensar la falta de fuerza de compresión o de empuje de hombros.
+                        <em>Corrección:</em> Enfocarse en los negativos desde handstand. Trabajar la fuerza de compresión (L-Sit, pike pulses). Mantener los pies "pegajosos" al suelo hasta el último momento.</p>
+                    </li>
+                    <li><strong>No Poder Levantar las Caderas Suficiente:</strong>
+                        <p><em>Causa:</em> Falta de compresión del core y/o fuerza de empuje de hombros; "lean" insuficiente.
+                        <em>Corrección:</em> Trabajar ejercicios de compresión. Fortalecer Pike Push-ups. Asegurar un "lean" agresivo y activo.</p>
+                    </li>
+                    <li><strong>Piernas se Abren Demasiado Pronto o de Forma Descontrolada (Straddle Press):</strong>
+                        <p><em>Causa:</em> Movilidad insuficiente en aductores/isquiotibiales, o falta de control para mantener el straddle.
+                        <em>Corrección:</em> Mejorar la flexibilidad del "pancake" y "straddle". Practicar Straddle-L sits y levantamientos de piernas en straddle.</p>
+                    </li>
+                    <li><strong>Perder el Equilibrio Hacia Adelante o Atrás Durante el Press:</strong>
+                        <p><em>Causa:</em> Transición de peso no controlada; falta de ajuste fino con manos y hombros.
+                        <em>Corrección:</em> Practicar muchas repeticiones de progresiones más fáciles. Mejorar el tiempo de aguante en handstand. Trabajar los negativos muy lentamente.</p>
+                    </li>
+                     <li><strong>Muñecas Doloridas:</strong>
+                        <p><em>Causa:</em> Falta de acondicionamiento, movilidad insuficiente, "lean" excesivo sin la preparación adecuada.
+                        <em>Corrección:</em> Calentamiento y estiramientos específicos y consistentes para las muñecas. Usar paralelas si el dolor persiste en el suelo. Fortalecer antebrazos.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>D. La Diferencia y Dificultad entre Tuck, Straddle y Pike Press:</h4>
+                <ul>
+                    <li><strong>Tuck Press:</strong> Generalmente el más fácil para empezar ya que las rodillas pueden descansar en los codos (Frog/Crow Press) o las piernas están muy recogidas, reduciendo la palanca y la necesidad de compresión.</li>
+                    <li><strong>Straddle Press:</strong> Permite una base más ancha y puede ser más fácil que el Pike Press si se tiene buena movilidad en straddle, ya que las piernas pueden pasar "alrededor" del cuerpo.</li>
+                    <li><strong>Pike Press:</strong> A menudo considerado el más difícil de los tres (en suelo) porque requiere una enorme fuerza de compresión del core y flexores de cadera, además de buena flexibilidad de isquiotibiales, para mantener las piernas rectas y juntas mientras se elevan.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>E. Acondicionamiento Específico de Articulaciones y Movilidad:</h4>
+                <ul>
+                    <li><strong>Muñecas:</strong> Calentamientos extensos, estiramientos en flexión y extensión, rotaciones, wrist push-ups.</li>
+                    <li><strong>Hombros:</strong> Ejercicios de movilidad para la flexión completa (180 grados). Dislocaciones de hombro con banda, YTWLs.</li>
+                    <li><strong>Columna y Cadera:</strong> Estiramientos dinámicos y estáticos para la flexión de la columna (Cat-Cow), flexión de cadera (Pike, Pancake) y compresión activa.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>F. Frecuencia de Entrenamiento y Estructuración:</h4>
+                <ul>
+                    <li>La práctica técnica del Press (o sus progresiones cercanas) puede hacerse 2-4 veces por semana, dependiendo de la intensidad y recuperación.</li>
+                    <li>El entrenamiento de fuerza para los componentes (HSPU, L-Sit, movilidad) puede seguir una estructura de 2-3 veces por semana.</li>
+                    <li>Empezar las sesiones con trabajo de movilidad, luego práctica técnica del Press (cuando se está fresco), y después el entrenamiento de fuerza suplementario.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>G. Uso de Paralelas y Bloques:</h4>
+                <ul>
+                    <li><strong>Paralelas (o P-bars):</strong> Elevan el cuerpo, dando más espacio para que las piernas pasen, lo que puede hacer el Press (especialmente Pike y Straddle desde L-Sit) más accesible. También son más amigables para las muñecas.</li>
+                    <li><strong>Bloques de Yoga (bajo las manos):</strong> Similar a las paralelas, proporcionan altura adicional y pueden ayudar a entender el "lean" y el levantamiento de caderas.</li>
+                    <li>El objetivo final para muchos es el Press desde el suelo, que requiere la mayor cantidad de "lean" y compresión.</li>
+                </ul>
+                <p class="tip-dark"><strong>"Conectar" las Manos con las Caderas:</strong> Un "cue" mental útil es imaginar una cuerda invisible que tira de tus caderas directamente hacia arriba mientras tus manos empujan el suelo con fuerza. La cabeza suele bajar ligeramente y moverse hacia adelante durante el inicio del Press.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
