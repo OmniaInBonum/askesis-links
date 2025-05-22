@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askesis: Tu Centro de Herramientas de Entrenamiento</title>
+    <meta name="description" content="Colección de herramientas Askesis para optimizar tu entrenamiento: Calculadoras de 1RM, Carga, Nivel de Fuerza, TDEE y Zonas de Frecuencia Cardíaca.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'askesis-blue': '#005A9C',
+                        'askesis-green': '#008037',
+                        'askesis-orange': '#F58220',
+                        'askesis-dark': '#121212',
+                        'askesis-gray': '#1E1E1E',
+                        'askesis-light-gray': '#B3B3B3',
+                        'askesis-text-white': '#FFFFFF',
+                        'askesis-border': '#333333',
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --askesis-blue: #005A9C;
+            --askesis-green: #008037;
+            --askesis-orange: #F58220;
+            --askesis-dark: #121212;
+            --askesis-gray: #1E1E1E;
+            --askesis-light-gray: #B3B3B3;
+            --askesis-text-white: #FFFFFF;
+            --askesis-border: '#333333';
+        }
+
+        html { 
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', 'sans-serif';
+            color: var(--askesis-light-gray);
+            background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.8)), url('https://raw.githubusercontent.com/OmniaInBonum/askesis-links/main/rm.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-header {
+            background-color: rgba(30, 30, 30, 0.5); 
+            box-shadow: none; 
+            position: sticky; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .main-header .container {
+            justify-content: center;
+            padding: 1rem 1.5rem;
+        }
+        .main-header .container a.text-3xl { 
+             text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+        }
+
+        .content-wrapper { 
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 80px;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            max-width: 950px;
+            width: 90%;
+            margin: 0 auto;
+            flex-direction: column;
+            gap: 2rem; 
+        }
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding-top: 60px;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ----- TABS NAVIGATION STYLES ----- */
+        .tabs-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .tab-button {
+            background-color: var(--askesis-dark);
+            color: var(--askesis-light-gray);
+            padding: 12px 18px;
+            border: 1px solid var(--askesis-border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tab-button:hover {
+            background-color: var(--askesis-blue);
+            color: var(--askesis-text-white);
+            border-color: var(--askesis-blue);
+        }
+        .tab-button.active {
+            background-color: var(--askesis-orange);
+            color: var(--askesis-text-white);
+            border-color: var(--askesis-orange);
+            box-shadow: 0 3px 10px rgba(245, 130, 32, 0.4);
+            font-size: 0.95em;
+        }
+        .tab-button.active:hover {
+            background-color: var(--askesis-orange);
+            transform: none;
+        }
+        @media (max-width: 600px) {
+            .tab-button {
+                font-size: 0.75em;
+                padding: 10px 14px;
+                flex-basis: auto;
+                min-width: unset;
+            }
+            .tabs-navigation {
+                gap: 6px;
+            }
+        }
+        .tab-content {
+            display: none;
+            background-color: var(--askesis-gray);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--askesis-border);
+            padding: 30px;
+            width: 100%;
+        }
+        .tab-content.active-tab {
+            display: block;
+        }
+
+
+        .calc-title {
+            font-family: 'Roboto', sans-serif;
+            color: var(--askesis-orange);
+            font-size: 2.2em;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid var(--askesis-green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+        }
+
+        .calc-description {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--askesis-light-gray);
+            font-size: 1.1em;
+        }
+
+        .form-label {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--askesis-text-white);
+            display: block;
+            text-align: left;
+            width: 100%;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: var(--askesis-dark);
+            border: 1px solid var(--askesis-border);
+            border-radius: 5px;
+            color: var(--askesis-text-white);
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: var(--askesis-orange);
+        }
+
+        .cta-button {
+            background-color: var(--askesis-orange);
+            color: var(--askesis-text-white);
+            padding: 0.8rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(245, 130, 32, 0.4);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            width: auto;
+            margin-top: 25px;
+        }
+        .cta-button:hover {
+            background-color: #E07017;
+            transform: translateY(-2px);
+        }
+
+        .result-output {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--askesis-orange);
+            padding: 15px;
+            background-color: rgba(245, 130, 32, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--askesis-orange);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        .result-output.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+        .result-output.error {
+            border-color: var(--askesis-orange);
+            color: var(--askesis-text-white);
+            background-color: rgba(245, 130, 32, 0.15);
+        }
+        .result-output.success {
+            border-color: var(--askesis-green);
+            color: var(--askesis-green);
+            background-color: rgba(0, 128, 55, 0.15);
+            text-align: left;
+        }
+
+        /* ----- ESTILOS ESPECÍFICOS DE LAS HERRAMIENTAS ----- */
+
+        /* Carga Óptima */
+        .result-table ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .result-table li {
+            background-color: var(--askesis-dark);
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border: 1px solid var(--askesis-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+            color: var(--askesis-light-gray);
+        }
+        .result-table li strong {
+            color: var(--askesis-text-white);
+        }
+        .result-table li span {
+            color: var(--askesis-orange);
+        }
+        .result-table .guidance {
+            font-size: 0.9em;
+            color: var(--askesis-blue);
+            margin-top: 5px;
+            font-style: italic;
+            border-top: 1px dotted var(--askesis-border);
+            padding-top: 5px;
+        }
+        
+        /* Nivel de Fuerza */
+        .strength-level-details {
+            font-size: 0.95em;
+            color: var(--askesis-light-gray);
+            margin-top: 10px;
+            text-align: center;
+        }
+        .strength-level-details strong {
+            color: var(--askesis-text-white);
+        }
+        .level-text {
+            font-size: 1.8em;
+            color: var(--askesis-orange);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        
+        /* TDEE y Macronutrientes */
+        .form-radio-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 20px;
+        }
+        .form-radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--askesis-light-gray);
+            font-weight: 400;
+        }
+        .form-radio-group input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: var(--askesis-dark);
+            border: 2px solid var(--askesis-border);
+            border-radius: 50%;
+            outline: none;
+            transition: border-color 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+        .form-radio-group input[type="radio"]:checked {
+            background-color: var(--askesis-orange);
+            border-color: var(--askesis-orange);
+        }
+        .macro-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .macro-table th, .macro-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--askesis-border);
+            color: var(--askesis-light-gray);
+        }
+        .macro-table th {
+            background-color: var(--askesis-dark);
+            color: var(--askesis-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .macro-table td span {
+            color: var(--askesis-text-white);
+        }
+
+
+        /* Zonas de Frecuencia Cardíaca */
+        .zone-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .zone-table th, .zone-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--askesis-border);
+            color: var(--askesis-light-gray);
+        }
+        .zone-table th {
+            background-color: var(--askesis-dark);
+            color: var(--askesis-green);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .zone-table td strong {
+            color: var(--askesis-text-white);
+        }
+        .zone-table td span {
+            color: var(--askesis-orange);
+        }
+        
+        /* FOOTER ESTILOS */
+        footer {
+            background-color: rgba(10, 10, 10, 0.5);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            color: var(--askesis-light-gray);
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--askesis-border);
+        }
+        footer .footer-logo a { 
+            font-family: 'Roboto', sans-family;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--askesis-text-white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        footer .footer-tagline { font-size: 0.9rem; color: #888888; margin-bottom: 2rem;}
+        footer .coach-info-footer { margin-bottom: 1rem; }
+        footer .social-links-footer a { color: var(--askesis-light-gray); transition: color 0.3s, transform 0.3s; margin: 0 0.75rem; display: inline-block; }
+        footer .social-links-footer a:hover { color: var(--askesis-orange); transform: scale(1.2); }
+        footer .social-links-footer i { font-size: 1.5rem; }
+        footer .copyright-footer { font-size: 0.875rem; color: #888888; margin-top: 2.5rem; border-top: 1px solid var(--askesis-border); padding-top: 1.5rem;}
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container mx-auto flex items-center justify-center p-4">
+            <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank" class="text-3xl font-black text-askesis-text-white uppercase tracking-wider font-roboto">
+                <i class="fas fa-arrow-alt-circle-right mr-3 text-askesis-orange"></i>Askesis
+            </a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="tabs-navigation">
+            <button class="tab-button active" data-tab="rm-calc-tab"><i class="fas fa-calculator mr-2"></i>1RM</button>
+            <button class="tab-button" data-tab="load-calc-tab"><i class="fas fa-bullseye mr-2"></i>Carga Óptima</button>
+            <button class="tab-button" data-tab="strength-level-tab"><i class="fas fa-medal mr-2"></i>Fuerza</button>
+            <button class="tab-button" data-tab="tdee-macro-tab"><i class="fas fa-utensils mr-2"></i>Nutrición</button>
+            <button class="tab-button" data-tab="hr-zones-tab"><i class="fas fa-heartbeat mr-2"></i>Zonas FC</button>
+        </div>
+
+        <!-- CALCULADORA DE MÁXIMO DE REPETICIONES (1RM) -->
+        <div id="rm-calc-tab" class="tab-content active-tab">
+            <h1 class="calc-title">
+                <i class="fas fa-calculator mr-3 text-askesis-green"></i>Calculadora de 1RM
+            </h1>
+            <p class="calc-description">
+                Estima tu máximo de una repetición (1RM) basándote en el peso que puedes levantar para un número determinado de repeticiones.
+            </p>
+            <form id="rm-calc-form" class="flex flex-col items-center">
+                <label for="weight-1rm" class="form-label">Peso Levantado (kg):</label>
+                <input type="number" id="weight-1rm" class="form-input" required step="0.5">
+
+                <label for="reps-1rm" class="form-label">Número de Repeticiones:</label>
+                <input type="number" id="reps-1rm" class="form-input" required min="1" max="15">
+
+                <button type="submit" class="cta-button">
+                    Calcular 1RM
+                </button>
+            </form>
+            <div id="rm-result-output" class="result-output mt-4"></div>
+        </div>
+
+        <!-- CALCULADORA DE PORCENTAJES DE 1RM / CARGA ÓPTIMA -->
+        <div id="load-calc-tab" class="tab-content">
+            <h1 class="calc-title">
+                <i class="fas fa-bullseye mr-3 text-askesis-green"></i>Calculadora de Carga Óptima
+            </h1>
+            <p class="calc-description">
+                Introduce tu 1RM estimado y obtén los pesos recomendados para diferentes intensidades de entrenamiento, planifica tu progreso.
+            </p>
+            <form id="rm-percentages-form" class="flex flex-col items-center">
+                <label for="one-rm" class="form-label">Tu 1RM Estimado (kg):</label>
+                <input type="number" id="one-rm" class="form-input" required step="0.5" min="1">
+
+                <button type="submit" class="cta-button">
+                    Calcular Cargas
+                </button>
+            </form>
+            <div id="rm-percentages-result-output" class="result-output mt-4"></div>
+        </div>
+
+        <!-- ESTIMADOR DE NIVEL DE FUERZA -->
+        <div id="strength-level-tab" class="tab-content">
+            <h1 class="calc-title">
+                <i class="fas fa-medal mr-3 text-askesis-green"></i>Estimador de Nivel de Fuerza
+            </h1>
+            <p class="calc-description">
+                Introduce tus mejores marcas en ejercicios básicos para estimar tu nivel de fuerza según estándares de calistenia.
+            </p>
+            <form id="strength-level-form" class="flex flex-col items-center">
+                <label for="bodyweight" class="form-label">Tu Peso Corporal (kg):</label>
+                <input type="number" id="bodyweight" class="form-input" required step="0.5" min="1">
+
+                <label for="pushups" class="form-label">Máx. Flexiones (Reps):</label>
+                <input type="number" id="pushups" class="form-input" required min="0">
+
+                <label for="pullups" class="form-label">Máx. Dominadas (Reps):</label>
+                <input type="number" id="pullups" class="form-input" required min="0">
+
+                <label for="dips" class="form-label">Máx. Dips (Reps):</label>
+                <input type="number" id="dips" class="form-input" required min="0">
+
+                <label for="lsit-hold" class="form-label">Aguante L-Sit (Segundos):</label>
+                <input type="number" id="lsit-hold" class="form-input" required min="0">
+
+                <button type="submit" class="cta-button">
+                    Evaluar Nivel
+                </button>
+            </form>
+            <div id="strength-level-result-output" class="result-output mt-4"></div>
+        </div>
+
+        <!-- CALCULADORA DE TDEE Y MACRONUTRIENTES -->
+        <div id="tdee-macro-tab" class="tab-content">
+            <h1 class="calc-title">
+                <i class="fas fa-utensils mr-3 text-askesis-green"></i>TDEE y Macronutrientes
+            </h1>
+            <p class="calc-description">
+                Calcula tu Gasto Calórico Diario Total (TDEE) y obtén una distribución de macronutrientes recomendada para tus objetivos.
+            </p>
+            <form id="tdee-macro-form" class="flex flex-col items-center">
+                <label for="age-tdee" class="form-label">Edad (años):</label>
+                <input type="number" id="age-tdee" class="form-input" required min="1">
+
+                <label class="form-label">Sexo:</label>
+                <div class="form-radio-group w-full">
+                    <label>
+                        <input type="radio" name="gender-tdee" value="male" required> Hombre
+                    </label>
+                    <label>
+                        <input type="radio" name="gender-tdee" value="female"> Mujer
+                    </label>
+                </div>
+
+                <label for="height-tdee" class="form-label">Altura (cm):</label>
+                <input type="number" id="height-tdee" class="form-input" required min="50">
+
+                <label for="weight-tdee" class="form-label">Peso (kg):</label>
+                <input type="number" id="weight-tdee" class="form-input" required min="1">
+
+                <label for="activity-level-tdee" class="form-label">Nivel de Actividad:</label>
+                <select id="activity-level-tdee" class="form-input" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="1.2">Sedentario (poco o ningún ejercicio)</option>
+                    <option value="1.375">Ejercicio ligero (1-3 días/semana)</option>
+                    <option value="1.55">Ejercicio moderado (3-5 días/semana)</option>
+                    <option value="1.725">Ejercicio fuerte (6-7 días/semana)</option>
+                    <option value="1.9">Ejercicio muy fuerte (dos veces al día, entrenamientos intensos)</option>
+                </select>
+
+                <label for="goal-tdee" class="form-label">Objetivo:</label>
+                <select id="goal-tdee" class="form-input" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="maintain">Mantener Peso</option>
+                    <option value="bulk">Ganar Músculo (Volumen)</option>
+                    <option value="cut">Perder Grasa (Definición)</option>
+                </select>
+
+                <button type="submit" class="cta-button">
+                    Calcular Nutrientes
+                </button>
+            </form>
+            <div id="tdee-macro-result-output" class="result-output mt-4"></div>
+        </div>
+
+        <!-- ZONAS DE FRECUENCIA CARDÍACA -->
+        <div id="hr-zones-tab" class="tab-content">
+            <h1 class="calc-title">
+                <i class="fas fa-heartbeat mr-3 text-askesis-green"></i>Zonas de Frecuencia Cardíaca
+            </h1>
+            <p class="calc-description">
+                Calcula tus zonas de frecuencia cardíaca objetivo para optimizar tu entrenamiento cardiovascular.
+            </p>
+            <form id="hr-zones-form" class="flex flex-col items-center">
+                <label for="age-hr" class="form-label">Tu Edad (años):</label>
+                <input type="number" id="age-hr" class="form-input" required min="10">
+
+                <label for="resting-hr" class="form-label">Frecuencia Cardíaca en Reposo (BPM):</label>
+                <input type="number" id="resting-hr" class="form-input" required min="30">
+
+                <button type="submit" class="cta-button">
+                    Calcular Zonas
+                </button>
+            </form>
+            <div id="hr-zones-result-output" class="result-output mt-4"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container mx-auto">
+            <div class="footer-logo">
+                <a href="https://omniainbonum.github.io/web-test/test%20web.html" target="_blank">Askesis</a>
+            </div>
+            <p class="footer-tagline">Ciencia Aplicada al Movimiento.</p>
+            <div class="coach-info-footer mb-6">
+                 <p class="text-lg font-semibold text-askesis-text-white">Luis Patricio Ruiz Ruiz</p>
+                 <p class="text-sm">Técnico Deportivo, Esp. Entrenamiento, Musculación y Prescripción de Ejercicio Físico</p>
+            </div>
+            <div class="social-links-footer flex justify-center space-x-6 mb-8">
+                 <a href="mailto:luistdu111@gmail.com?subject=Consulta%20desde%20la%20web%20Askesis" target="_blank" title="Enviar Email"><i class="fas fa-envelope"></i></a>
+                 <a href="https://wa.me/56975401150?text=Hola%20Askesis%2C%20tengo%20una%20consulta." target="_blank" title="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.instagram.com/askesis111" target="_blank" title="Ver Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com/@OmniaInBonum111" target="_blank" title="Ver YouTube"> <i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright-footer">© <span id="currentYearFooter"></span> Askesis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // General page scripts (footer year)
+            const yearSpan = document.getElementById('currentYearFooter');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            // --- TABS NAVIGATION LOGIC ---
+            const tabButtons = document.querySelectorAll('.tabs-navigation .tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active-tab'));
+
+                    button.classList.add('active');
+
+                    const targetTabId = button.dataset.tab;
+                    document.getElementById(targetTabId).classList.add('active-tab');
+                });
+            });
+
+            // Trigger click on the first tab button to activate the first tab on load
+            if (tabButtons.length > 0) {
+                tabButtons[0].click(); 
+            }
+
+            // --- Herramienta: Calculadora de Máximo de Repeticiones (1RM) ---
+            const rmCalcForm = document.getElementById('rm-calc-form');
+            const weight1rmInput = document.getElementById('weight-1rm');
+            const reps1rmInput = document.getElementById('reps-1rm');
+            const rmResultOutput = document.getElementById('rm-result-output');
+
+            rmCalcForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const weight = parseFloat(weight1rmInput.value);
+                const reps = parseInt(reps1rmInput.value);
+
+                if (isNaN(weight) || weight <= 0 || isNaN(reps) || reps < 1 || reps > 15) { 
+                    rmResultOutput.innerText = 'Por favor, ingrese un peso válido (>0kg) y repeticiones entre 1 y 15 para la estimación del 1RM.';
+                    rmResultOutput.className = 'result-output visible error';
+                    return;
+                }
+
+                // Fórmula de Epley: 1RM = w * (1 + r / 30)
+                const rm = weight * (1 + reps / 30);
+                rmResultOutput.innerText = `Su máximo estimado de una repetición (1RM) es: ${rm.toFixed(2)} kg`;
+                rmResultOutput.className = 'result-output visible success';
+            });
+
+            // --- Herramienta: Calculadora de Porcentajes de 1RM / Carga de Entrenamiento ---
+            const rmPercentagesForm = document.getElementById('rm-percentages-form');
+            const oneRmInput = document.getElementById('one-rm');
+            const rmPercentagesResultOutput = document.getElementById('rm-percentages-result-output');
+
+            rmPercentagesForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const oneRm = parseFloat(oneRmInput.value);
+
+                if (isNaN(oneRm) || oneRm <= 0) {
+                    rmPercentagesResultOutput.innerHTML = 'Por favor, introduce un valor válido y positivo para tu 1RM.';
+                    rmPercentagesResultOutput.className = 'result-output visible error';
+                    return;
+                }
+
+                const percentages = [
+                    { percent: 95, reps: "1-2", purpose: "Fuerza Máxima" },
+                    { percent: 90, reps: "1-3", purpose: "Fuerza Máxima, Potencia" },
+                    { percent: 85, reps: "3-5", purpose: "Fuerza, Hipertrofia" },
+                    { percent: 80, reps: "4-6", purpose: "Fuerza, Hipertrofia" },
+                    { percent: 75, reps: "6-10", purpose: "Hipertrofia, Fuerza-Resistencia" },
+                    { percent: 70, reps: "8-12", purpose: "Hipertrofia, Resistencia Muscular" },
+                    { percent: 65, reps: "10-15", purpose: "Resistencia Muscular, Técnica" }
+                ];
+                let resultsHtml = `<p class="font-bold mb-3">Aquí tienes tus cargas recomendadas y su enfoque de entrenamiento:</p><ul>`;
+                
+                percentages.forEach(data => {
+                    const weight = oneRm * (data.percent / 100);
+                    resultsHtml += `
+                        <li>
+                            <strong>${data.percent}% de 1RM:</strong> <span>${weight.toFixed(2)} kg</span>
+                            <div class="guidance">Para <strong>${data.reps} reps</strong>. Foco: ${data.purpose}.</div>
+                        </li>`;
+                });
+                resultsHtml += '</ul>';
+                resultsHtml += `<p class="strength-level-details mt-4"><i class="fas fa-info-circle text-askesis-blue mr-2"></i>Estas son estimaciones generales. Adapta las repeticiones a tu RPE (Esfuerzo Percibido) o RIR (Repeticiones en Reserva).</p>`;
+
+
+                rmPercentagesResultOutput.innerHTML = `<div class="result-table mt-4">${resultsHtml}</div>`;
+                rmPercentagesResultOutput.className = 'result-output visible success';
+            });
+
+
+            // --- Herramienta: Estimador de Nivel de Fuerza (Bodyweight / Strength Standards) ---
+            const strengthLevelForm = document.getElementById('strength-level-form');
+            const bodyweightInput = document.getElementById('bodyweight');
+            const pushupsInput = document.getElementById('pushups');
+            const pullupsInput = document.getElementById('pullups');
+            const dipsInput = document.getElementById('dips');
+            const lsitHoldInput = document.getElementById('lsit-hold');
+            const strengthLevelResultOutput = document.getElementById('strength-level-result-output');
+
+            strengthLevelForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const bw = parseFloat(bodyweightInput.value);
+                const pushups = parseInt(pushupsInput.value);
+                const pullups = parseInt(pullupsInput.value);
+                const dips = parseInt(dipsInput.value);
+                const lsitHold = parseInt(lsitHoldInput.value);
+
+                if (isNaN(bw) || bw <= 0 || isNaN(pushups) || pushups < 0 || isNaN(pullups) || pullups < 0 || isNaN(dips) || dips < 0 || isNaN(lsitHold) || lsitHold < 0) {
+                    strengthLevelResultOutput.innerHTML = 'Por favor, introduce valores numéricos válidos y no negativos para todas las métricas.';
+                    strengthLevelResultOutput.className = 'result-output visible error';
+                    return;
+                }
+
+                let level = '';
+                let details = '';
+                let levelIcon = '';
+
+                // Simplified Logic for demonstration purposes. Real standards would be more complex.
+                // Thresholds are general estimates.
+                if (pullups >= 15 && pushups >= 40 && dips >= 30 && lsitHold >= 30) {
+                    level = 'ÉLITE';
+                    details = '¡Dominas la calistenia! Eres un/a atleta excepcional. Empieza a entrenar movimientos complejos como la Planche completa, Front Lever avanzado y HSPU libres. ¡Tu control corporal es superior!';
+                    levelIcon = 'fa-star';
+                } else if (pullups >= 8 && pushups >= 25 && dips >= 15 && lsitHold >= 10) {
+                    level = 'AVANZADO';
+                    details = 'Tienes una base sólida. Es hora de pulir tus movimientos básicos, introducir el Handstand libre, las primeras progresiones de Front Lever y Planche. La fuerza unilateral te espera.';
+                    levelIcon = 'fa-crown';
+                } else if (pullups >= 3 && pushups >= 10 && dips >= 5 && lsitHold >= 3) {
+                    level = 'INTERMEDIO';
+                    details = 'Estás en un buen camino. Enfócate en la consistencia de los básicos y comienza a explorar movimientos más complejos asistidos, como Handstand contra pared y Tuck Front Lever. La paciencia es clave.';
+                    levelIcon = 'fa-dumbbell';
+                } else {
+                    level = 'PRINCIPIANTE';
+                    details = 'Has comenzado el increíble viaje de la calistenia. Concentra tu esfuerzo en dominar las bases: push-ups en rodillas o inclinadas, dominadas australianas, y planchas básicas. ¡Cada repetición cuenta!';
+                    levelIcon = 'fa-seedling';
+                }
+
+                strengthLevelResultOutput.innerHTML = `
+                    <p class="level-text"><i class="fas ${levelIcon} mr-2"></i>Nivel: ${level}</p>
+                    <div class="strength-level-details"><i class="fas fa-info-circle mr-2 text-askesis-blue"></i>${details}</div>
+                `;
+                strengthLevelResultOutput.className = 'result-output visible success';
+            });
+
+            // --- Herramienta: Calculadora de Gasto Calórico Total Diario (TDEE) y Distribución de Macronutrientes ---
+            const tdeeMacroForm = document.getElementById('tdee-macro-form');
+            const ageTdeeInput = document.getElementById('age-tdee');
+            const genderTdeeInputs = document.querySelectorAll('input[name="gender-tdee"]');
+            const heightTdeeInput = document.getElementById('height-tdee');
+            const weightTdeeInput = document.getElementById('weight-tdee');
+            const activityLevelTdeeSelect = document.getElementById('activity-level-tdee');
+            const goalTdeeSelect = document.getElementById('goal-tdee');
+            const tdeeMacroResultOutput = document.getElementById('tdee-macro-result-output');
+
+            tdeeMacroForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const age = parseInt(ageTdeeInput.value);
+                let gender = null;
+                for (const rb of genderTdeeInputs) {
+                    if (rb.checked) {
+                        gender = rb.value;
+                        break;
+                    }
+                }
+                const height = parseFloat(heightTdeeInput.value);
+                const weight = parseFloat(weightTdeeInput.value);
+                const activityLevel = parseFloat(activityLevelTdeeSelect.value);
+                const goal = goalTdeeSelect.value;
+
+                if (isNaN(age) || age <= 0 || !gender || isNaN(height) || height <= 0 || isNaN(weight) || weight <= 0 || isNaN(activityLevel) || !goal) {
+                    tdeeMacroResultOutput.innerHTML = 'Por favor, rellena todos los campos con valores válidos y positivos.';
+                    tdeeMacroResultOutput.className = 'result-output visible error';
+                    return;
+                }
+
+                // Mifflin-St Jeor Equation for BMR
+                let bmr;
+                if (gender === 'male') {
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                } else { // female
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                }
+
+                const tdee = bmr * activityLevel;
+                let proteinG, carbsG, fatsG;
+
+                switch (goal) {
+                    case 'maintain':
+                        proteinG = weight * 1.6;
+                        fatsG = tdee * 0.25 / 9;
+                        carbsG = (tdee - (proteinG * 4) - (fatsG * 9)) / 4;
+                        break;
+                    case 'bulk':
+                        const bulkTdee = tdee * 1.15;
+                        proteinG = weight * 1.8;
+                        fatsG = bulkTdee * 0.25 / 9;
+                        carbsG = (bulkTdee - (proteinG * 4) - (fatsG * 9)) / 4;
+                        break;
+                    case 'cut':
+                        const cutTdee = tdee * 0.85;
+                        proteinG = weight * 2.2;
+                        fatsG = cutTdee * 0.20 / 9;
+                        carbsG = (cutTdee - (proteinG * 4) - (fatsG * 9)) / 4;
+                        break;
+                }
+
+                if (carbsG < 0) carbsG = 0;
+
+                tdeeMacroResultOutput.innerHTML = `
+                    <h4 class="font-bold text-lg mb-2">Resultados:</h4>
+                    <p class="text-askesis-text-white mb-2">Tu Gasto Calórico Total Diario (TDEE) estimado es: <span class="font-bold text-askesis-orange">${tdee.toFixed(0)} kcal</span></p>
+                    <h4 class="font-bold text-lg mt-4 mb-2">Recomendación de Macronutrientes para ${goalTdeeSelect.options[goalTdeeSelect.selectedIndex].text}:</h4>
+                    <table class="macro-table">
+                        <thead>
+                            <tr>
+                                <th>Macro</th>
+                                <th>Gramos</th>
+                                <th>Kcal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Proteínas</td>
+                                <td><span>${proteinG.toFixed(1)} g</span></td>
+                                <td><span>${(proteinG * 4).toFixed(0)} kcal</span></td>
+                            </tr>
+                            <tr>
+                                <td>Carbohidratos</td>
+                                <td><span>${carbsG.toFixed(1)} g</span></td>
+                                <td><span>${(carbsG * 4).toFixed(0)} kcal</span></td>
+                            </tr>
+                            <tr>
+                                <td>Grasas</td>
+                                <td><span>${fatsG.toFixed(1)} g</span></td>
+                                <td><span>${(fatsG * 9).toFixed(0)} kcal</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="strength-level-details mt-4"><i class="fas fa-info-circle text-askesis-blue mr-2"></i>Estas son estimaciones. Para resultados más precisos, consulta a un profesional.</p>
+                `;
+                tdeeMacroResultOutput.className = 'result-output visible success';
+            });
+
+
+            // --- Herramienta: Calculadora de Frecuencia Cardíaca de Entrenamiento (Zonas de Cardio) ---
+            const hrZonesForm = document.getElementById('hr-zones-form');
+            const ageHrInput = document.getElementById('age-hr');
+            const restingHrInput = document.getElementById('resting-hr');
+            const hrZonesResultOutput = document.getElementById('hr-zones-result-output');
+
+            hrZonesForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const age = parseInt(ageHrInput.value);
+                const restingHr = parseInt(restingHrInput.value);
+
+                if (isNaN(age) || age < 10 || isNaN(restingHr) || restingHr < 30) {
+                    hrZonesResultOutput.innerHTML = 'Por favor, introduce una edad válida (mín. 10 años) y una FC en reposo válida (mín. 30 BPM).';
+                    hrZonesResultOutput.className = 'result-output visible error';
+                    return;
+                }
+
+                const maxHr = 220 - age;
+                const hrReserve = maxHr - restingHr;
+
+                const zones = [
+                    { name: "Zona 1: Recuperación", percentage: {min: 0.50, max: 0.60}, purpose: "Calentamiento, recuperación, baja intensidad." },
+                    { name: "Zona 2: Quema de Grasa", percentage: {min: 0.60, max: 0.70}, purpose: "Entrenamiento cardiovascular base, resistencia aeróbica." },
+                    { name: "Zona 3: Resistencia Aeróbica", percentage: {min: 0.70, max: 0.80}, purpose: "Mejora del rendimiento cardiovascular y la resistencia media." },
+                    { name: "Zona 4: Umbral Anaeróbico", percentage: {min: 0.80, max: 0.90}, purpose: "Entrenamiento intenso, mejora de la capacidad anaeróbica y velocidad." },
+                    { name: "Zona 5: Máximo Esfuerzo", percentage: {min: 0.90, max: 1.00}, purpose: "Sprints, intervalos de máxima intensidad, picos de velocidad y potencia." }
+                ];
+
+                let resultsHtml = `<h4 class="font-bold text-lg mb-2 text-askesis-text-white">Tu Frecuencia Cardíaca Máxima Estimada: <span class="font-bold text-askesis-orange">${maxHr} BPM</span></h4>`;
+                resultsHtml += '<table class="zone-table"><thead><tr><th>Zona</th><th>Rango BPM</th><th>Propósito</th></tr></thead><tbody>';
+
+                zones.forEach(zone => {
+                    const minBpm = (hrReserve * zone.percentage.min) + restingHr;
+                    const maxBpm = (hrReserve * zone.percentage.max) + restingHr;
+                    resultsHtml += `
+                        <tr>
+                            <td><strong>${zone.name}</strong></td>
+                            <td><span>${minBpm.toFixed(0)} - ${maxBpm.toFixed(0)} BPM</span></td>
+                            <td>${zone.purpose}</td>
+                        </tr>
+                    `;
+                });
+                resultsHtml += '</tbody></table>';
+                resultsHtml += `<p class="strength-level-details mt-4"><i class="fas fa-info-circle text-askesis-blue mr-2"></i>Recuerda que estas son estimaciones. La medición en vivo es más precisa. Entrena de forma segura y escucha a tu cuerpo.</p>`;
+
+                hrZonesResultOutput.innerHTML = resultsHtml;
+                hrZonesResultOutput.className = 'result-output visible success';
+            });
+        });
+    </script>
+</body>
+</html>
